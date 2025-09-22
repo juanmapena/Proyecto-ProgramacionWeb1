@@ -1,0 +1,157 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+.header{
+
+    background: -webkit-linear-gradient(0deg, #1c3643, #273b47 25%, #1e5372);
+
+}
+
+.header_div{
+    display: flex;
+
+}
+
+
+.header_nav{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.header_nav_ul{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+    list-style-type: none;
+
+
+}
+
+.header_nav_ul_li_a{
+
+    text-decoration: none;
+    color: white;
+
+}
+
+.div_button{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.button{
+  background-color: #4c6faf; 
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-right: 3em;
+}
+
+.imagen_carrito{
+
+    margin-right: 2em;
+
+
+}
+
+
+.main_div{
+
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+}
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    width: 400px;
+    height: 500px;
+    background-color: rgba(169, 169, 169, 0.5); 
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.carrusel-logos {
+  overflow: hidden;      
+  width: 100%;           
+  background-color: #111; 
+  padding: 20px 0;
+}
+
+.logos {
+  display: flex;         
+  gap: 40px;             
+  animation: mover 20s linear infinite; 
+}
+
+.logos img {
+
+  height: 60px;          
+  object-fit: contain;
+  filter: brightness(0.8); 
+}
+
+
+@keyframes mover {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
+}
+
+
+
+.footer{
+
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+
+}
+
+
+.div_contenedor{
+
+    display: flex;
+    flex-direction: raw;
+    gap: 2em;
+    justify-content: space-around;
+
+}
+
+
+.div_hijo{
+
+  border: 2px solid #4CAF50;
+  border-radius: 8px;       
+  padding: 10px;
+    
+
+}
