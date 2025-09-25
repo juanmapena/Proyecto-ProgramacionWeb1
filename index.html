@@ -10,37 +10,33 @@
 
     <title>Acceder</title>
 </head>
-<body>
-    <header class="header">
-        <div id="header-logo">
-            <img src="./Assets/LogoAppscend.png" alt="imagen de marca">
-        </div>
-    </header>
-    <main class="main">
-        <div>
-            <h1>Bienvenido</h1>
-        </div>
-        <div>
-            <h2>Iniciar sesión</h2>
-        </div>  
-        <section class="section-form">
-            <form action="./index.html" method="get"> 
-                <div>
-                    <label for="name">Ingrese su usuario
-                        <input type="text" name="name" id="name">
-                    </label>
-                </div>
-                <div>
-                    <label for="password"> Ingrese su contraseña
-                        <input type="password" name="password" id="password">
-                    </label>
-                </div>
-                <div>
-                    <h4>No tienes usuario?</h4>
-                    <a href="./registro.html">Registrate!</a>
-                </div>
-                <button type="submit">Ingresar</button>
-            </form>
+<body class="body-login">
+    <main class="login-container">
+        <section class="login-card">
+            <div class="logo-area">
+                <img src="./Assets/LogoAppscend.png" alt="imagen de marca">
+            </div>
+            <div class="titles">
+                <h1>Bienvenido</h1>
+                <h2>Iniciar sesión</h2>
+            </div>  
+            <div class="div-form">
+                <form action="./index.html" method="get"> 
+                    <div class="div-inputs">
+                        <label for="name">Ingrese su usuario
+                            <input type="text" name="name" id="name">
+                        </label>
+                        <label for="password"> Ingrese su contraseña
+                            <input type="password" name="password" id="password">
+                        </label>
+                    </div>
+                    <div>
+                        <h4>No tienes usuario?</h4>
+                        <a href="./registro.html">Registrate!</a>
+                    </div>
+                    <button type="submit">Ingresar</button>
+                </form>
+            </div>
         </section>
     </main>
 </body>
