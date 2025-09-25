@@ -1,182 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Css/login-style.css">
+
+    <title>Acceder</title>
 </head>
-
 <body>
-
     <header class="header">
-
-
-        <div class="header_div">
-
-            <img src="./assets/sombrero-de-graduado.png" alt="Icono" width="40px" height="40px">
-
+        <div id="header-logo">
+            <img src="./Assets/LogoAppscend.png" alt="imagen de marca">
         </div>
-
-
-        <nav class="header_nav">
-
-            <ul class="header_nav_ul">
-
-                <li>
-
-                    <a class="header_nav_ul_li_a" href="">Link 1</a>
-
-                </li>
-
-                <li>
-
-                    <a class="header_nav_ul_li_a" href="">Link 1</a>
-
-                </li>
-
-                <li>
-
-                    <a class="header_nav_ul_li_a" href="">Link 1</a>
-
-                </li>
-
-
-                <li>
-
-                    <a class="header_nav_ul_li_a" href="">Link 1</a>
-
-                </li>
-
-
-            </ul>
-
-
-
-        </nav>
-
-
-
-        <div class="div_button">
-
-            <button class="button">Acceder</button>
-            <img class="imagen_carrito" src="./assets/icono-de-la-tienda-web.png" alt="Carrito" width="40px"
-                height="40px">
-
-        </div>
-
-
-
-
-
-
-
     </header>
-
-
-
-    <main>
-
-        <div class="main_div">
-
-            PASO 1 PARA INSCRIBIRTE A UN CURSO
-
+    <main class="main">
+        <div>
+            <h1>Bienvenido</h1>
         </div>
-
-
-        <div class="main_div">
-            PASO 2 PARA INSCRIBIRTE A UN CURSO
-
-        </div>
-
-
-        <div class="main_div">
-
-            PASO 3 PARA INSCRIBIRTE A UN CURSO
-
-        </div>
-
-
-        <h1>CURSOS DESTACADOS</h1>
-
-        <div class="card-container">
-
-            <div class="card">
-
-
-            </div>
-
-            <div class="card">
-
-
-            </div>
-
-            <div class="card">
-
-
-            </div>
-
-
-
-        </div>
-
-
-        <div class="carrusel-logos">
-            <div class="logos">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 1">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 2">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-            </div>
-        </div>
-
-
+        <div>
+            <h2>Iniciar sesión</h2>
+        </div>  
+        <section class="section-form">
+            <form action="./index.html" method="get"> 
+                <div>
+                    <label for="name">Ingrese su usuario
+                        <input type="text" name="name" id="name">
+                    </label>
+                </div>
+                <div>
+                    <label for="password"> Ingrese su contraseña
+                        <input type="password" name="password" id="password">
+                    </label>
+                </div>
+                <div>
+                    <h4>No tienes usuario?</h4>
+                    <a href="./registro.html">Registrate!</a>
+                </div>
+                <button type="submit">Ingresar</button>
+            </form>
+        </section>
     </main>
-
-
-
-    <footer class="footer">
-
-        <div class="div_contenedor">
-
-
-            <div class="div_hijo">
-
-                <p>Datos</p>
-
-            </div>
-
-
-            <div class="div_hijo">
-
-                <p>Datos</p>
-
-            </div>
-
-
-            <div class="div_hijo">
-
-                <p>Datos</p>
-
-            </div>
-
-
-        </div>
-
-
-
-    </footer>
-
-
 </body>
-
 </html>
