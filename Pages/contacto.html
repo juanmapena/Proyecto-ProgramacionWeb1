@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+
+<body>
+
+    <header>
+        <nav>
+            <h1 class="h1_nav"> ACÁ VA EL NAV</h1>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="form_aside">
+            <section class="solo_form">
+
+                <h2 class="h2_contacto"> CONTACTO </h2>
+
+                <form action="" method="get" autocomplete="off">
+
+
+                    <label for="name">
+                        <input type="text" name="name" id="name" placeholder="Ingrese su nombre" required />
+                    </label>
+                    <label for="lastname">
+                        <input type="text" name="lastname" id="lastname" placeholder="Ingrese su apellido" required />
+
+                    </label>
+                    <label for="email">
+                        <input type="email" name="email" id="email" placeholder="Ingrese su email" required />
+                    </label>
+                    <label for="phonenumber">
+                        <input type="tel" name="phonenumber" id="phonenumber"
+                            placeholder="Ingrese su número de teléfono" required />
+                    </label>
+                    <label for="message">
+                        <textarea name="message" id="message" placeholder="Ingrese su consulta" required></textarea>
+                    </label>
+
+                    <button class="boton_enviar" type="button" popovertarget="my-popover">
+                        Enviar
+                    </button>
+
+                    <div popover id="my-popover">
+                        Perfecto! Ya recibimos tu formulario! <br>
+                        &#128077;
+                    </div>
+                </form>
+            </section>
+
+            <section class="solo_aside">
+                <aside>
+                    <h2>DATOS DE CONTACTO</h2>
+                    <p><strong>Dirección:</strong> Vito Dumas 284, B1644BID Victoria, Provincia de Buenos Aires</p>
+                    <p><strong>Teléfono:</strong> (011) 4567-8910</p>
+                    <p><strong>Email:</strong> contacto@miempresa.com</p>
+                    <p><strong>Horario:</strong> Lunes a Viernes de 9 a 18 hs</p>
+
+                    <div class="iconos_redes">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-x-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </aside>
+            </section>
+        </div>
+
+
+
+
+        <section>
+            <h2 class="h2_ubicacion">UBICACIÓN</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3290.219229338782!2d-58.53196392515598!3d-34.44658244921506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcafe9caa04e91%3A0xab200d654151ec0b!2sUniversidad%20de%20San%20Andr%C3%A9s!5e0!3m2!1ses!2sar!4v1758393735296!5m2!1ses!2sar"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <h2> Acá va el Footer</h2>
+    </footer>
+
+
+
+</body>
+
+</html>
