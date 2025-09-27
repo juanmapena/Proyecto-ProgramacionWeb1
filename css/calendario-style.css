@@ -40,7 +40,11 @@ h3, h4, h5{
 
 .calendario-fechas{
     background-color: #FAFAFA;
-  
+}
+
+.primer-dia {
+  grid-column-start: 3;
+  /*background-color:#29b8c0;*/
 }
 
 .fecha{
@@ -64,12 +68,12 @@ h3, h4, h5{
     text-decoration: none;
     padding: 0 5px;
     border-radius: 5px;
-    background-color: #bbc7af;
+    background-color: #d9ff96;
     margin-top: 0.5em;
     text-align: center;
 }
 
 .fecha-info a:hover{
-	color: #474d42;
+	color: #343633;
 	transition: 0.5s;
 }
