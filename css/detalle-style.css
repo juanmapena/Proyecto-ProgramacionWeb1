@@ -1,0 +1,158 @@
+.section_imagen{
+
+width: 20%;
+height: 1em;
+
+
+}
+
+.div_section{
+
+  display: flex;
+  max-width: 1100px;
+    margin: 2rem auto;
+    display: flex;
+    gap: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+
+}
+
+.button_inscripcion{
+
+    padding: 0.75rem 1.5rem;
+    background-color: #84c318;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    
+
+}
+
+.section_contenidos{
+    margin: 2rem auto;
+    padding: 1rem;
+
+}
+
+.h1_contenidos{
+
+  font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    color: #000000;
+    text-align: center;
+
+}
+
+.details{
+
+  background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+
+}
+
+.summary{
+
+  padding: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    background-color: #e8eaf6;
+    list-style: none;
+}
+
+h2{
+
+  text-align: center;
+}
+
+.section_curso{
+
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+
+
+
+.section_profesor{
+
+display: flex;
+justify-content: space-between;
+gap: 3em;
+background-color: #004346;
+margin: 1em;
+border-radius: 0.125em;
+padding: 2rem;
+border-radius: 12px;
+color: white;
+
+
+
+}
+
+
+
+
+.section_foto{
+
+  flex-basis: 30%; /*a esa parte de la section ocupale ese ancho de pantalla */
+
+}
+
+.imagen_profesor_javascript{
+
+  height: 25em;
+  width: 30em;
+
+}
+
+.section_descripcion{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+
+}
+
+.icono{
+
+    width: 3em;
+    height: 3em;
+    vertical-align: middle;
+}
+
+
+.card_detalle{
+
+    width: 20em;
+    height: 20em;
+    background-color: rgba(169, 169, 169, 0.5); 
+    margin: 1em;
+    border-radius: 0.125em;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+
+}
+
+.card-container_detalle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 3em;
+}
