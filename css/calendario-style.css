@@ -1,0 +1,75 @@
+*{
+    font-family: 'Lato', sans-serif;
+}
+
+h3, h4, h5{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*Calendario*/
+.calendario{
+    padding: 2em 2.5em;
+}
+
+.calendario-header{
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5FBEF;
+    border-radius: 60px;
+}
+
+.header__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.calendario-dias ul, .calendario-fechas{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    place-items: center;
+}
+
+.calendario-dias li{
+    padding: 10px 0;
+	list-style: none;
+}
+
+.calendario-fechas{
+    background-color: #FAFAFA;
+  
+}
+
+.fecha{
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #61616125;
+}
+
+.fecha-info{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.fecha-info a{
+    display: block;
+    text-decoration: none;
+    padding: 0 5px;
+    border-radius: 5px;
+    background-color: #bbc7af;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+.fecha-info a:hover{
+	color: #474d42;
+	transition: 0.5s;
+}
