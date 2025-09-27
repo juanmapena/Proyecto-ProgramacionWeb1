@@ -221,24 +221,25 @@ color: #172A3A;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 3em;
 }
 
 .card {
     width: 400px;
     height: 300px;
-    background-color: rgba(169, 169, 169, 0.5); 
+    background-color: white; 
     margin: 20px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-image: url(../assets/python-imagen.jpg);
+
 }
 
 .card1{
 
     width: 400px;
     height: 300px;
-    background-color: rgba(169, 169, 169, 0.5); 
+    background-color: white; 
     margin: 20px;
     border-radius: 10px;
     overflow: hidden;
@@ -247,46 +248,60 @@ color: #172A3A;
 
 }
 
+
 .card2{
 
     width: 400px;
     height: 300px;
-    background-color: rgba(169, 169, 169, 0.5); 
+    background-color: white; 
     margin: 20px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-image: url(../assets/python-imagen.jpg);
+
 
 
 
 }
+
+.imagenes_cursos{
+  width: 100%;          /* La imagen ocupa todo el ancho de la card */
+  height: 100%;         /* Mantiene proporción */
+  object-fit: contain;  /* Ajusta la imagen dentro sin recortarla */
+  border-radius: 10px;  /* Bordes redondeados */
+  padding: 1rem;        /* Espaciado interno */
+  background: white;
+ 
+}
+
+
 
 
 .carrusel-logos {
   overflow: hidden;      
   width: 100%;           
-  background-color: #111; 
   padding: 20px 0;
+  margin-bottom: 3em;
 }
 
 .logos {
-  display: flex;         
+  display: flex;    
+  justify-content: center;     
   gap: 40px;             
-  animation: mover 20s linear infinite; 
+  animation: mover 15s linear infinite; 
 }
 
 .logos img {
 
   height: 60px;          
-  object-fit: contain;
   filter: brightness(0.8); 
+  transition: filter 0.3s;
 }
 
 
 @keyframes mover {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } 
+  100% { transform: translateX(-100%); } 
 }
 
 
