@@ -2,56 +2,41 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
 }
 
 .header{
-
     background: -webkit-linear-gradient(0deg, #1c3643, #273b47 25%, #1e5372);
-
 }
 
 .header_div{
     display: flex;
-
 }
 
-
 .header_nav{
-
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    
-
+    align-items: center;   
 }
 
 .header_nav_ul{
-
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 1em;
     list-style-type: none;
-
-
 }
 
 .header_nav_ul_li_a{
-
     text-decoration: none;
     color: white;
-
 }
 
 .div_button{
-
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-
 }
 
 .button{
@@ -67,18 +52,13 @@
 }
 
 .imagen_carrito{
-
     margin-right: 2em;
-
-
 }
 
 
 .main_div{
-
     margin-top: 2em;
     margin-bottom: 2em;
-
 }
 
 
@@ -113,7 +93,6 @@
 }
 
 .logos img {
-
   height: 60px;          
   object-fit: contain;
   filter: brightness(0.8); 
@@ -128,30 +107,23 @@
 
 
 .footer{
-
   background-color: #333;
   color: white;
   text-align: center;
   padding: 20px;
-
 }
 
 
 .div_contenedor{
-
     display: flex;
     flex-direction: raw;
     gap: 2em;
     justify-content: space-around;
-
 }
 
 
 .div_hijo{
-
   border: 2px solid #4CAF50;
   border-radius: 8px;       
   padding: 10px;
-    
-
 }
