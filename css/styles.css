@@ -32,6 +32,13 @@ h1{
 
 }
 
+.imagen_logo{
+
+  height: 2.5em;
+  width: 2.5 em;
+
+}
+
 
 .header_nav{
 
@@ -69,6 +76,7 @@ h1{
     align-items: center;
     font-weight: bold;
     padding: 0.5rem 1.2rem;
+    position: relative;
 }
 
 .button{
@@ -81,6 +89,16 @@ h1{
   font-size: 16px;
   transition: background-color 0.3s;
   margin-right: 3em;
+}
+
+.span_carrito{
+
+  position: absolute;
+  color: white;
+  top: 0;
+  padding-right: 1em;
+
+
 }
 
 
@@ -204,7 +222,8 @@ color: #172A3A;
 .imagen_carrito{
 
     margin-right: 2em;
-
+    height: 2.5em;
+    width: 2.5em;
 
 }
 
@@ -326,7 +345,7 @@ color: #172A3A;
 }
 
 
-.div_hijo{
+.section_hijo{
   border-radius: 8px;       
   padding: 10px;
     
