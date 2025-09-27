@@ -103,10 +103,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 11em;
-    height: 7.5em;
+    width: 15em;
+    height: 11em;
     font-size: 2em;
-
 
     justify-content: center;
     align-items: center;
@@ -118,4 +117,18 @@ body {
     border-radius: 0.5em;
     box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
     border: none;
+
+}
+
+#my-popover a{
+    text-decoration: none;
+    color: white;
+}
+
+#my-popover p{
+    background-color: #004346;
+}
+
+#my-popover span{
+    color: #84c318;
 }
