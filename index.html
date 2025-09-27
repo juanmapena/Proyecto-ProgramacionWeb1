@@ -7,34 +7,40 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Css/login-style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="imagen/x-icon">
 
     <title>Acceder</title>
 </head>
 <body class="body-login">
-    <main class="login-container">
+    <div class="img-background">
+        <!--- <img src="./Assets/fondoLogin.png" alt="Imagen de fondo del login"> --->
+    </div>
+    <main>
         <section class="login-card">
             <div class="logo-area">
-                <img src="./Assets/LogoAppscend.png" alt="imagen de marca">
+                <img src="./Assets/appscendLogo-02.svg" alt="imagen de marca">
             </div>
             <div class="titles">
                 <h1>Bienvenido</h1>
                 <h2>Iniciar sesión</h2>
             </div>  
             <div class="div-form">
-                <form action="./index.html" method="get"> 
+                <form action="./Pages/home.html" method="get"> 
                     <div class="div-inputs">
-                        <label for="name">Ingrese su usuario
+                        <label for="name">
+                            <span>Usuario</span>
                             <input type="text" name="name" id="name">
                         </label>
-                        <label for="password"> Ingrese su contraseña
+                        <label for="password">
+                            <span>Contraseña</span>
                             <input type="password" name="password" id="password">
                         </label>
                     </div>
-                    <div>
+                    <div class="div-register">
                         <h4>No tienes usuario?</h4>
                         <a href="./registro.html">Registrate!</a>
                     </div>
-                    <button type="submit">Ingresar</button>
+                    <button type="submit">Login</button>
                 </form>
             </div>
         </section>

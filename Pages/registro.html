@@ -3,23 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/register-styles.css">
+    <link rel="shortcut icon" href="../favicon.svg" type="imagen/x-icon">
     <title>Registrarse</title>
 </head>
 <body>
     <header>
+
     </header>
     <main>
         <div>
             <h1>Registrarse</h1>
         </div>
-        <section>
-            <form action="./registro.html" method="get">
+        <section class="section-form" method="get">
+            <form action="../index.html" method="get">
                 <label for="nombre">
-                    <input type="text" class="nombre" id="nombre">
+                    <input type="text" class="nombre" id="nombre" placeholder="Nombre">
                 </label>
-                <label for="nombre">
-                    <input type="text" class="nombre" id="nombre">
+                <label for="nombre-usuario">
+                    <input type="text" class="nombre-usuario" id="nombre-usuario" placeholder="Usuario">
                 </label>
+                <label for="password">
+                    <input type="password" class="password" id="password" placeholder="Contraseña">
+                </label>
+                <label for="repeat-password">
+                    <input type="password" class="repeat-password" id="repeat-password" placeholder="Confirmar contraseña">
+                </label>
+                <button type="submit">Registrarse</button>
             </form>
         </section>
     </main>
