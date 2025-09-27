@@ -1,4 +1,4 @@
-.div_home{
+.div_home {
   display: flex;
   justify-content: space-between;
   margin-top: 4em;
@@ -6,11 +6,11 @@
 
 }
 
-.section_home{
+.section_home {
 
   padding-right: 8em;
   padding-left: 8em;
-  color : #172A3A;
+  color: #172A3A;
 
 
 
@@ -18,7 +18,7 @@
 
 
 
-.section_home h1{
+.section_home h1 {
 
 
   padding-bottom: 0.175em;
@@ -35,56 +35,56 @@
 }
 
 
-.article img{
+.article img {
   height: 80%;
   width: 80%;
-  
-
-}
-
-.div_pasos{
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 5em;
 
 
 }
 
+.div_pasos {
 
-.titulo_pasos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 5em;
+
+
+}
+
+
+.titulo_pasos {
 
   text-align: center;
-   color : #172A3A;
-   margin-top: 2em;
-   margin-bottom: 2em;
+  color: #172A3A;
+  margin-top: 2em;
+  margin-bottom: 2em;
 
 }
 
-.div_pasos section{
+.div_pasos section {
 
-   width: 15em;
-    height: 12em;
-     background-color: #172A3A;
-    margin: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: white;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 15em;
+  height: 12em;
+  background-color: #172A3A;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   border-top: 4px solid #4caf50;
   transition: transform 0.3s ease;
   background: linear-gradient(to bottom, #0b2239, #123b5c);
 
 }
 
-.div_pasos section:hover{
+.div_pasos section:hover {
   transform: scale(1.05);
 }
 
 
-.div_pasos section h4{
+.div_pasos section h4 {
 
   text-align: center;
   padding-bottom: 1em;
@@ -92,7 +92,7 @@
 
 }
 
-.div_parrafo{
+.div_parrafo {
 
 
   text-align: center;
@@ -103,106 +103,117 @@
 
 }
 
-.h1{
+.h1 {
 
-text-align: center;
-color: #172A3A;
+  text-align: center;
+  color: #172A3A;
 
 }
 
 
 
-.main_div{
+.main_div {
 
-    margin-top: 2em;
-    margin-bottom: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 
 }
 
 
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 3em;
 }
 
 .card {
-    width: 400px;
-    height: 300px;
-    background-color: white; 
-    margin: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 }
 
-.card1{
+.card1 {
 
-    width: 400px;
-    height: 300px;
-    background-color: white; 
-    margin: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
-
-}
-
-
-.card2{
-
-    width: 400px;
-    height: 300px;
-    background-color: white; 
-    margin: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 
 }
 
-.imagenes_cursos{
-  width: 100%;          /* La imagen ocupa todo el ancho de la card */
-  height: 100%;         /* Mantiene proporción */
-  object-fit: contain;  /* Ajusta la imagen dentro sin recortarla */
-  border-radius: 10px;  /* Bordes redondeados */
-  padding: 1rem;        /* Espaciado interno */
+
+.card2 {
+
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+
+
+}
+
+.imagenes_cursos {
+  width: 100%;
+  /* La imagen ocupa todo el ancho de la card */
+  height: 100%;
+  /* Mantiene proporción */
+  object-fit: contain;
+  /* Ajusta la imagen dentro sin recortarla */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  padding: 1rem;
+  /* Espaciado interno */
   background: white;
- 
+
 }
 
 
 
 
 .carrusel-logos {
-  overflow: hidden;      
-  width: 100%;           
+  overflow: hidden;
+  width: 100%;
   padding: 20px 0;
   margin-bottom: 3em;
 }
 
 .logos {
-  display: flex;    
-  justify-content: center;     
-  gap: 40px;             
-  animation: mover 15s linear infinite; 
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  animation: mover 15s linear infinite;
 }
 
 .logos img {
 
-  height: 60px;          
-  filter: brightness(0.8); 
+  height: 3em;
+  width: 6em;
+  filter: brightness(0.8);
   transition: filter 0.3s;
 }
 
 
 @keyframes mover {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); } 
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
