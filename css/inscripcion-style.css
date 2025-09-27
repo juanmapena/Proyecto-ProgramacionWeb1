@@ -23,6 +23,7 @@ body{
     flex-direction: column;
     gap: 1.125em;
     padding: 1em;
+    align-items: center;
 }
 
 .persona-style {
@@ -33,7 +34,8 @@ body{
     border-radius: 0.5em;
     align-items:center ;
     margin-bottom: 1.5em;
-    max-width: 70%;
+    max-width: 100%;
+    
 }
 
 .importe-style {
