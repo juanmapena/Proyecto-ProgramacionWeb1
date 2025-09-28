@@ -1,42 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../Css/register-styles.css">
-    <link rel="shortcut icon" href="../favicon.svg" type="imagen/x-icon">
-    <title>Registrarse</title>
-</head>
-<body>
-    <header>
-
-    </header>
-    <main>
-        <div>
-            <h1>Registrarse</h1>
-        </div>
-        <section class="section-form" method="get">
-            <form action="../index.html" method="get">
-                <label for="nombre">
-                    <input type="text" class="nombre" id="nombre" placeholder="Nombre">
-                </label>
-                <label for="nombre-usuario">
-                    <input type="text" class="nombre-usuario" id="nombre-usuario" placeholder="Usuario">
-                </label>
-                <label for="password">
-                    <input type="password" class="password" id="password" placeholder="Contraseña">
-                </label>
-                <label for="repeat-password">
-                    <input type="password" class="repeat-password" id="repeat-password" placeholder="Confirmar contraseña">
-                </label>
-                <button type="submit">Registrarse</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-    </footer>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registrarse</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../Css/register-styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
+            rel="stylesheet">
+        <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="header_div">
+                <img class="imagen_logo" src="../assets/appscendLogo-02.svg" alt="Icono"> 
+            </div>
+        </header>
+        <main>
+            <section class="section-form" method="get">
+                <form action="../index.html" method="get">
+                    <div class="div-h1">
+                        <h1>Registrarse</h1>
+                    </div>
+                    <label for="nombre">
+                        <input type="text" class="nombre" id="nombre" placeholder="Nombre y Apellido" required>
+                    </label>
+                    <label for="email">
+                        <input type="email" name="email" id="email" placeholder="Email" required>
+                    </label>
+                    <label for="nombre-usuario">
+                        <input type="text" class="nombre-usuario" id="nombre-usuario" placeholder="Usuario" required>
+                    </label>
+                    <label for="password">
+                        <input type="password" class="password" id="password" placeholder="Contraseña" required>
+                    </label>
+                    <label for="repeat-password">
+                        <input type="password" class="repeat-password" id="repeat-password" placeholder="Confirmar contraseña" required>
+                    </label>
+                    <p>Al registrarte, aceptas nuestras politicas de privacidad.</p>
+                    <button type="submit">Registrarse</button>
+                </form>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="div_contenedor">
+                <section class="section_hijo">
+                            <p>Emanuel Ruiz Díaz (40.380.499) </p>
+                            <p>Juan Manuel Pena (45.495.738)
+                            <p>
+                            <p>Santiago Javier Falconi (44.099.057)
+                            <p>
+                            <p>Luna Melanie Daiana (41.713.955)
+                            <p>
+                            <p>Alan Cahuana Rodríguez (37.996.385)
+                            <p>
+                </section>
+                <section class="section_hijo">
+                    <a class="ancla" href="https://x.com/?lang=es">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a class="ancla" href="https://www.instagram.com/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="ancla" href="https://www.youtube.com/">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a class="ancla" href="https://discord.com/">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </section>
+                <section class="section_hijo">
+                    <h4>Copyright © <h4>
+                            <p>Todos los derechos están reservados
+                            <p>
+                </section>
+            </div>
+        </footer>
+    </body>
 </html>
