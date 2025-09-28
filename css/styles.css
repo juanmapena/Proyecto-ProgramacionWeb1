@@ -5,10 +5,12 @@
     font-family: "Lato", sans-serif;
 }
 
+.mobile-cart {
+  display: none;
+}
+
 body{
-
-background-color: #F5FBEF;
-
+  background-color: #F5FBEF;
 }
 
 h1{
@@ -16,7 +18,6 @@ h1{
 }
 
 .header{
-
     background-color: #172a3a;
     width: 100%;                
     padding: 1rem 2rem;          
@@ -24,63 +25,56 @@ h1{
     align-items: center;        
     justify-content: space-between; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.2)
-
 }
 
-.header_div{
+.header_div {
     display: flex;
-
 }
 
 .imagen_logo{
-
   height: 4em;
-  width: 4 em;
-
+  width: 4em;
 }
 
-
 .header_nav{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    
-
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .header_nav_ul{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1em;
-    list-style-type: none;
-
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1em;
+  list-style-type: none;
 }
 
-.header_nav_ul_li_a{
+.header_nav_ul_li_a {
+  text-decoration: none;
+  color: white;
+  padding: 2em 0;
+  font-size: 1.25em;
+}
 
-    text-decoration: none;
-    color: white;
-
+.header_nav_ul_li_a:hover {
+  cursor: pointer;
+  color: #84c318;
 }
 
 .div_button{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    font-weight: bold;
-    padding: 0.5rem 1.2rem;
-    position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  padding: 0.5rem 1.2rem;
+  position: relative;
 }
 
 .button{
- background-color: #84c318; 
+  background-color: #84c318; 
   color: white;
   padding: 10px 20px;
   border: none;
@@ -90,59 +84,114 @@ h1{
   margin-right: 3em;
 }
 
-
 .imagen_carrito{
-
-    margin-right: 2em;
-    height: 2.5em;
-    width: 2.5em;
-
+  margin-right: 2em;
+  height: 2.5em;
+  width: 2.5em;
 }
 
 .span_carrito{
-
   position: absolute;
   color: white;
   top: 0;
   padding-right: 1em;
-
-
 }
 
-
-
 .footer{
-
   background-color: #004346;
   color: white;
   text-align: center;
   padding: 20px;
-
 }
 
-
 .div_contenedor{
-
-    display: flex;
-    flex-direction: raw;
-    gap: 2em;
-    justify-content: space-around;
-
+  display: flex;
+  flex-direction: raw;
+  gap: 2em;
+  justify-content: space-around;
 }
 
 
 .section_hijo{
   border-radius: 8px;       
   padding: 10px;
-    
-
 }
 
 .ancla{
-
   color: white;
   text-decoration: none;
   list-style-type: none;
-
 }
 
+@media screen and (max-width: 1000px) {
+    header.header {
+      flex-direction: column;
+      padding: 0;
+
+      .header_div .imagen_logo {
+        height: 6em;
+        width: 6em;
+        margin-bottom: 1em;
+      }
+
+      .div_button button {
+        margin: 1em 0 0.5em;
+      }
+      
+      .imagen_carrito, .span_carrito {
+        display: none;
+      }
+    }
+
+    .header_nav {
+      width: 100%;
+      margin: auto;
+      display: flex;
+    }
+
+    .header_nav_ul {
+      width: 90%;
+
+      li {
+        width: 33.333%;
+        text-align: center;
+      }
+    }
+
+    footer {
+      section {
+        width: 100%;
+      }
+
+      a.ancla {
+        width: 20%;
+        font-size: 2em;
+        margin: 0 0.5em;
+      }
+
+      .div_contenedor {
+        flex-direction: column;
+      }
+    }
+  .fa-cart-background {
+    width: 4.75em;
+    height: 4.75em;
+    background-color: #84c318;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    border-radius: 100%;
+
+    a i {
+        font-size: 2em;
+        color: white;
+        position: fixed;
+        bottom: 1.1em;
+        right: 1.2em;
+    }
+  }
+
+  .mobile-cart {
+      display: block;
+  }
+}

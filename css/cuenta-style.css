@@ -8,12 +8,11 @@
 
 
 .imagen_cuenta{
-
-    width: 20em;
-    height: 20em;
+    width: 2em;
+    height: 2em;
     border-radius: 100%;
     object-fit: cover;
-  border: 3px solid  #004346;
+    border: 3px solid  #004346;
 ;
 
 
@@ -40,4 +39,3 @@ font-family: "Montserrat", sans-serif;
 
 
 }
-

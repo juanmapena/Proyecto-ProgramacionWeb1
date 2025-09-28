@@ -67,10 +67,9 @@ main {
     width: 100%;
     justify-content: center;
     display: flex;
-    padding-top: 2em;
 
     img {
-        width: 25%;
+        width: 30%;
     }
 }
 
@@ -150,5 +149,37 @@ main {
         a:hover {
             font-weight: bold;
         }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .login-card {
+        width: 40%;
+    }
+
+    .div-form form {
+        width: 90%;
+    }
+    
+    .logo-area img {
+        width: 40%;
+        margin-bottom: 2em;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .login-card {
+        width: 65%;
+        margin: auto;
+    }
+    
+    .logo-area img {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .login-card {
+        width: 100%;
     }
 }

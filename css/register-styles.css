@@ -64,3 +64,27 @@ main{
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .section-form {
+        width: 40%;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .section-form {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .section-form {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .section-form {
+        width: 85%;
+    }
+}
