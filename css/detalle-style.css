@@ -116,7 +116,7 @@ color: white;
 
 .imagen_profesor_javascript{
 
-  height: 25em;
+
   width: 30em;
 
 }
@@ -183,3 +183,53 @@ color: white;
   text-align: center;
   margin-bottom: 0.3em;
 }
+
+
+@media screen and (max-width : 768px) {
+
+    .div_section{
+
+
+      flex-direction: column;
+      width: 90%;
+    }
+
+    .section_contenidos{
+
+
+      width: 100%;
+
+    }
+
+
+    .section_profesor{
+
+
+      flex-direction: column;
+
+    }
+
+    .section_img{
+
+
+      width: 100%;
+
+    }
+
+
+    .imagen_profesor_javascript{
+
+      width: 100%;
+
+    }
+
+    .section_curso{
+
+
+      text-align: center;
+
+
+        }
+
+
+  }
