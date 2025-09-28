@@ -139,7 +139,7 @@ body {
     color: #84c318;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1050px) {
     .persona-style{
         flex-direction: column;
         max-width: 100%;
