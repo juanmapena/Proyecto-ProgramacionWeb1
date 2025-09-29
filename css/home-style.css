@@ -217,3 +217,70 @@
     transform: translateX(-100%);
   }
 }
+
+
+
+@media screen and (max-width: 1000px) {
+
+
+.article img{
+
+  height: 60%;
+
+}
+
+.article_img_primerfoto{
+
+
+  display: none;
+
+}
+
+
+@media screen and (max-width: 700px){
+
+.div_home{
+
+  flex-direction: column;
+
+
+}
+
+
+.article_img{
+  margin: 1em 2em 0 4em;
+
+}
+
+
+.section_home{
+
+  text-align: center;
+
+
+}
+
+.button{
+
+  margin: 1em 0 0.5em;
+}
+
+}
+
+
+
+}
+
+@media screen and (max-width: 415px){
+
+
+  .section_home{
+
+  text-align: center;
+  font-size: 0.85em;
+
+
+}
+
+
+}
