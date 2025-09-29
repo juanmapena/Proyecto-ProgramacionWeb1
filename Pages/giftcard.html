@@ -20,40 +20,78 @@
 <body class="class_body">
 
     <header class="header">
+
+
         <div class="header_div">
+
             <a href="./home.html">
+
                 <img class="imagen_logo" src="../assets/appscendLogo-02.svg" alt="Icono">
+
             </a>
+
         </div>
 
+
         <nav class="header_nav">
+
             <ul class="header_nav_ul">
+
                 <li>
+
                     <a class="header_nav_ul_li_a" href="./home.html">Home</a>
+
                 </li>
+
                 <li>
+
                     <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
+
                 </li>
+
                 <li>
+
                     <a class="header_nav_ul_li_a" href="./calendario.html">Calendario</a>
+
                 </li>
+
+                <li>
+
+                    <a class="header_nav_ul_li_a" href="./giftcard.html">Gift Card</a>
+
+                </li>
+
+
             </ul>
+
+
+
         </nav>
+
+
+
         <div class="div_button">
+
             <a href="./cuenta.html">
+
                 <button class="button">Mi cuenta</button>
+
             </a>
+
             <img class="imagen_carrito" src="../assets/carrito-de-compras (1).png" alt="Carrito"> <span
                 class="span_carrito">1</span>
+
+
         </div>
+
+
     </header>
 
 
     <main>
         <div class="contenedor_principal">
             <article>
-                <img class="foto" src="../assets/gitftcard_foto.png"
-                    alt="Foto de la tarjeta"> <span class="class_span">
+                <img class="foto" src="https://chaunlegendnails.com/cdn/shop/files/LGND-gft-card.png?v=1732294669" alt="Foto de la tarjeta"> <span class="class_span">
                     $100.000
                 </span>
             </article>
@@ -62,14 +100,14 @@
 
                 <h2>Personalización de Giftcard</h2>
 
-                <form action="" method="get" autocomplete="off">
+                <form action="./formasdepago.html" method="get" autocomplete="off">
 
                     <input class="input_nombre" type="text" name="name" id="name"
-                        placeholder="Ingrese el nombre del destinatario">
+                        placeholder="Nombre del destinatario: ">
 
                     <label for="colores">Seleccione el color: </label>
                     <select class="datos" id="colores">
-                        <option value="" selected disabled>-- Seleccione una opción --</option>
+                        <option value="" selected disabled>-- Elija una opción --</option>
                         <option value="Dorado">Dorado</option>
                         <option value="Blanco">Blanco</option>
                         <option value="Verde">Verde</option>
@@ -77,7 +115,7 @@
 
                     <label for="fuentes">Seleccione el tamaño de la fuente: </label>
                     <select id="fuentes">
-                        <option value="" selected disabled>-- Seleccione una opción --</option>
+                        <option value="" selected disabled>-- Elija una opción --</option>
                         <option value="28px">28px</option>
                         <option value="32px">32px</option>
                         <option value="48px">48px</option>
@@ -86,7 +124,7 @@
 
                     <label for="ubicaciones">Seleccione la ubicación del valor: </label>
                     <select id="ubicaciones">
-                        <option value="" selected disabled>-- Seleccione una opción --</option>
+                        <option value="" selected disabled>-- Elija una opción --</option>
                         <option value="Esquina inferior izquierda">Esquina inferior izquierda</option>
                         <option value="Esquina inferior derecha">Esquina inferior derecha</option>
                         <option value="Esquina superior izquierda">Esquina superior izquierda</option>
@@ -95,19 +133,19 @@
 
                     <label for="fondos">Seleccione un fondo: </label>
                     <select id="fondos">
-                        <option value="" selected disabled>-- Seleccione una opción --</option>
+                        <option value="" selected disabled>-- Elija una opción --</option>
                         <option value="Fondo1">Fondo1</option>
                         <option value="Fondo2">Fondo2</option>
                         <option value="Fondo3">Fondo3</option>
                         <option value="Fondo4">Fondo4</option>
                     </select>
 
-                    <div class="button_enviar">
+                    <div class="contenedor_boton">
 
-                        <button class="confirmar"
-                            onclick="alert('Felicidades! Tu Gift Card se procesó correctamente!');">
-                            Confirmar
-                        </button>
+                    
+                        <button type="submit" class="confirmar"> Confirmar </button>
+                        
+                           
                     </div>
 
 
@@ -192,6 +230,7 @@
             </a>
         </div>
     </div>
+
 
 
 
