@@ -1,0 +1,90 @@
+body {
+    height: 100dvh;
+
+    header {
+        display: flex;
+        height: 10%;
+    }
+    
+    footer {
+        height: 15%;
+    }
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 75%;
+}
+
+.div-h1{
+    text-align: center;
+    color: #172A3A;
+    margin-bottom: 2em;
+}
+
+.section-form{
+    margin: auto;
+    width: 35%;
+
+    input {
+            font-family: 'Lato', sans-serif;
+            font-size: 1em;
+            padding-left: 1em;
+            width: 100%;
+            height: 40px;
+            border-radius: 20px;
+            border: 2px grey solid;
+            margin-top: 1em;
+            color: #172A3A
+        }
+
+    p{
+        text-align: center;
+        margin-top: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    button{
+        background-color:#84c318;
+        border-radius: 40px;
+        width: 100%;
+        color: white;
+        font-family: 'Lato';
+        font-size: 1.5em;
+        border: none;
+        height: 50px;
+    }
+
+    button:hover {
+        background-color: #172A3A;
+        color: #F5FBEF;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .section-form {
+        width: 40%;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .section-form {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .section-form {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .section-form {
+        width: 85%;
+    }
+}

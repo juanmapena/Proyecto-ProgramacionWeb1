@@ -1,0 +1,132 @@
+*{
+    font-family: 'Lato', sans-serif;
+}
+
+h3, h4, h5{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.calendario{
+    padding: 2em 2.5em;
+}
+
+.dia-corto{
+    display: none;
+}
+
+.calendario-header{
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9ff96;
+    border-radius: 50px 50px 0 0;
+}
+
+.calendario-dias{
+    background-color: #f0efef;
+}
+
+.calendario-dias ul, .calendario-fechas{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    place-items: center;
+}
+
+.calendario-dias li{
+    padding: 10px 0;
+	list-style: none;
+}
+
+.calendario-fechas{
+    background-color: #FAFAFA;
+}
+
+.primer-dia {
+  grid-column-start: 3;
+}
+
+.fecha{
+    width: 100%;
+    min-height: 130px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #61616125;
+}
+
+.fecha-info{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fecha-info a{
+    display: block;
+    color: #575c55;
+    text-decoration: none;
+    padding: 0.5em;
+    border-radius: 10px;
+    background-color: #d9ff96;
+    text-align: justify;
+}
+
+.fecha-info a:hover{
+	color: #343633;
+	transition: 0.5s;
+    font-weight: bold;
+}
+
+ @media screen and (max-width: 800px) {
+    .calendario {
+        padding: 1.5em 1em;
+    }
+    
+    .fecha {
+        min-height: 90px;  
+        padding: 10px;     
+        font-size: 0.8em;
+        gap: 10px;
+    }
+    
+    .fecha-info a {
+        padding: 0.3em;   
+        margin-top: 0;
+    }
+    
+    .dia {
+        font-size: 0.8em;  
+    }
+} 
+
+
+@media screen and (max-width: 500px) {
+    .calendario {
+        padding: 1em 0.5em;
+    }
+    
+    .fecha {
+        min-height: 75px;
+        padding: 5px;
+        font-size: 0.7em;
+        gap: 5px;
+    }
+
+    .dia{
+        display: none;
+    }
+    .dia-corto{
+        font-size: 0.75em;  
+        display: block;
+    }
+
+    .fa-cart-background {
+    width: 3em;
+    height: 3em;
+    a i {
+        font-size: 1.5em;
+    }
+  }
+}

@@ -1,0 +1,232 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+
+    header {
+        display: flex;
+        height: 10%;
+    }
+
+    main{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 75%;
+        width: 80%;
+        margin:auto;
+        padding-top: 3em;
+    }
+
+    footer {
+        height: 15%;
+    }
+
+    h1{
+        color: #172A3A;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+.profile-data{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+
+    .profile-img {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3em;
+        text-align: center;
+        width: 75%;
+        
+        img{
+            width: 100%;
+            margin: auto;
+            border-radius: 100%;
+        }
+
+        h2 {
+            color:#172A3A;
+            margin: 1em auto 0;
+            font-size: 1.5em;
+        }
+    }
+}
+
+.data-form{
+    width: 40%;
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+
+        label{
+            margin-top: 1em;
+            display: flex;
+            flex-direction: column;
+
+            input{
+                padding-left: 1em;
+                margin-top: 0.5em;
+                border: none;
+                border-radius: 20px;
+                height: 30px;
+            }
+        }
+
+        button{
+            margin-top: 3em;
+            background-color:#84c318;
+            border-radius: 40px;
+            width: 100%;
+            color: white;
+            font-family: 'Lato';
+            font-size: 1.5em;
+            border: none;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #172A3A;
+            color: #F5FBEF;
+        }
+        
+        #popover-profile {
+            flex-direction: column;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background-color: rgba(0, 67, 70, 0.85);
+            color: #F5FBEF;
+            padding: 2em;
+            border-radius: 0.5em;
+            box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+            border: none;
+
+            .popover-content {
+                display: flex;
+            }
+        }
+    }
+}
+.courses-list{
+    display:flex;
+    flex-direction: column;
+    width: 25%;
+}
+.images-container{
+    display: flex;
+    flex-direction: column;
+    a{
+        text-decoration: none;
+
+        img{
+            width: 100%;
+            border-radius: 20px;
+            margin-top: 1em;
+        }
+
+        p{
+            color: #172A3A;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 1200px) {
+    body {
+        height: auto;
+
+        main {
+            flex-wrap: wrap;
+        }
+    }
+
+    main section.profile-data{
+        width: 30%;
+        .profile-img{
+            width: 75%;
+        }
+    }
+    
+    main section.data-form {
+        width: 70%;
+
+        form{
+            width:100%;
+        }
+    }
+
+    main section.courses-list {
+        width: 100%;
+        margin: 3em auto;
+
+        article {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            a {
+                width: 49%;
+
+                img {
+                    max-height: 15em;
+                }
+
+                p {
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    body {
+        height: auto;
+
+        main {
+            flex-direction: column;
+        }
+    }
+
+    main section.profile-data{
+        width: 100%;
+        flex-direction: column;
+        article{
+            margin:0;
+        }
+        .profile-img {
+            margin: 1em auto;
+        }
+    }
+    
+    main section.data-form {
+        width: 100%;
+        form{
+            button {
+                margin: 1em auto;
+            }
+        }
+    }
+
+    main section.courses-list {
+        .images-container{
+            flex-direction: column;
+            a{
+                width: 100%;
+            }
+        }
+    }
+}

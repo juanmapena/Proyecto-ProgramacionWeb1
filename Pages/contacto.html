@@ -4,22 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formularios</title>
+    <title>Contacto</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
         rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
 </head>
 
 
 <body>
 
-    <header>
-        <nav>
-            <h1 class="h1_nav"> ACÁ VA EL NAV</h1>
+    <header class="header">
+
+
+        <div class="header_div">
+
+            <a href="./home.html">
+
+                <img class="imagen_logo" src="../assets/appscendLogo-02.svg" alt="Icono">
+
+            </a>
+
+        </div>
+
+
+        <nav class="header_nav">
+
+            <ul class="header_nav_ul">
+
+                <li>
+
+                    <a class="header_nav_ul_li_a" href="./home.html">Home</a>
+
+                </li>
+
+                <li>
+
+                    <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
+
+                </li>
+
+                <li>
+
+                    <a class="header_nav_ul_li_a" href="./calendario.html">Calendario</a>
+
+                </li>
+
+
+            </ul>
+
+
+
         </nav>
+
+
+
+        <div class="div_button">
+
+            <a href="./cuenta.html">
+
+                <button class="button">Mi cuenta</button>
+
+            </a>
+
+            <img class="imagen_carrito" src="../assets/carrito-de-compras (1).png" alt="Carrito"> <span
+                class="span_carrito">1</span>
+
+
+        </div>
+
+
     </header>
 
 
@@ -27,9 +85,10 @@
         <div class="form_aside">
             <section class="solo_form">
 
-                <h2 class="h2_contacto"> CONTACTO </h2>
+                
 
                 <form action="" method="get" autocomplete="off">
+                    <h2 class="h2_contacto"> CONTACTO </h2>
 
 
                     <label for="name">
@@ -63,10 +122,11 @@
 
             <section class="solo_aside">
                 <aside>
-                    <h2>DATOS DE CONTACTO</h2>
+                    <h2 class="h2_contacto">NUESTROS DATOS</h2>
                     <p><strong>Dirección:</strong> Vito Dumas 284, B1644BID Victoria, Provincia de Buenos Aires</p>
                     <p><strong>Teléfono:</strong> (011) 4567-8910</p>
-                    <p><strong>Email:</strong> contacto@miempresa.com</p>
+                    <p><strong>Email:</strong> appscend@gmail.com</p>
+                    <p><strong>CUIT/ID Fiscal:</strong> 30-12345678-9</p>
                     <p><strong>Horario:</strong> Lunes a Viernes de 9 a 18 hs</p>
 
                     <div class="iconos_redes">
@@ -82,9 +142,9 @@
 
 
 
-        <section>
+        <section class="section_ubicacion">
             <h2 class="h2_ubicacion">UBICACIÓN</h2>
-            <iframe
+            <iframe class="contenedor_mapa"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3290.219229338782!2d-58.53196392515598!3d-34.44658244921506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcafe9caa04e91%3A0xab200d654151ec0b!2sUniversidad%20de%20San%20Andr%C3%A9s!5e0!3m2!1ses!2sar!4v1758393735296!5m2!1ses!2sar"
                 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
@@ -92,7 +152,68 @@
     </main>
 
     <footer class="footer">
-        <h2> Acá va el Footer</h2>
+
+        <div class="div_contenedor">
+
+
+            <section class="section_hijo">
+
+
+                <p>Emanuel Ruiz Díaz (40.380.499) </p>
+                <p>Juan Manuel Pena (45.495.738)
+                <p>
+                <p>Santiago Javier Falconi (44.099.057)
+                <p>
+                <p>Luna Melanie Daiana (41.713.955)
+                <p>
+                <p> Alan Cahuana Rodríguez (37.996.385)
+                <p>
+
+
+
+            </section>
+
+            <section class="section_hijo">
+                <a class="ancla" href="https://x.com/?lang=es">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+
+                <a class="ancla" href="https://www.instagram.com/">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a class="ancla" href="https://www.youtube.com/">
+
+                    <i class="fab fa-youtube"></i>
+
+                </a>
+
+                <a class="ancla" href="https://discord.com/">
+
+                    <i class="fab fa-discord"></i>
+
+                </a>
+
+
+            </section>
+
+
+            <section class="section_hijo">
+
+                <h4>Copyright © <h4>
+                        <p>Todos los derechos están reservados
+                        <p>
+
+
+
+
+            </section>
+
+
+        </div>
+
+
+
     </footer>
 
 

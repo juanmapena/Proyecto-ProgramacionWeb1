@@ -4,8 +4,12 @@
     box-sizing: border-box;
 }
 
-.body-login{
+body{
     background-color: #F5FBEF;
+    background-image: url(../Assets/BackgroundImg.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -63,10 +67,9 @@ main {
     width: 100%;
     justify-content: center;
     display: flex;
-    padding-top: 2em;
 
     img {
-        width: 25%;
+        width: 30%;
     }
 }
 
@@ -91,6 +94,13 @@ main {
         color: white;
         font-family: 'Lato';
         font-size: 1.5em;
+        border: none;
+    }
+
+    button:hover {
+        background-color: #C3E8BD;
+        color: #172A3A;
+        cursor: pointer;
     }
 
     .div-inputs{
@@ -114,10 +124,15 @@ main {
         }
 
         input {
+            font-family: 'Lato', sans-serif;
+            font-size: 1em;
+            padding-left: 1em;
             width: 100%;
             height: 40px;
             border-radius: 20px;
             border: 2px grey solid;
+            margin-top: 0.5em;
+            color: #172A3A
         }
     }
     .div-register{
@@ -128,6 +143,43 @@ main {
 
         a{
             color: #F5FBEF;
+            margin-left: 0.5em;
         }
+
+        a:hover {
+            font-weight: bold;
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .login-card {
+        width: 40%;
+    }
+
+    .div-form form {
+        width: 90%;
+    }
+    
+    .logo-area img {
+        width: 40%;
+        margin-bottom: 2em;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .login-card {
+        width: 65%;
+        margin: auto;
+    }
+    
+    .logo-area img {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .login-card {
+        width: 100%;
     }
 }

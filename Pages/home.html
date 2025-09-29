@@ -5,7 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/home-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -15,7 +22,11 @@
 
         <div class="header_div">
 
-            <img src="./assets/sombrero-de-graduado.png" alt="Icono" width="40px" height="40px">
+            <a href="./home.html">
+
+                <img class="imagen_logo" src="../assets/appscendLogo-02.svg" alt="Icono">
+
+            </a>
 
         </div>
 
@@ -26,26 +37,25 @@
 
                 <li>
 
-                    <a class="header_nav_ul_li_a" href="">Link 1</a>
+                    <a class="header_nav_ul_li_a" href="./home.html">Home</a>
 
                 </li>
 
                 <li>
 
-                    <a class="header_nav_ul_li_a" href="">Link 1</a>
+                    <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
 
                 </li>
 
                 <li>
 
-                    <a class="header_nav_ul_li_a" href="">Link 1</a>
+                    <a class="header_nav_ul_li_a" href="./calendario.html">Calendario</a>
 
                 </li>
 
+                    <li>
 
-                <li>
-
-                    <a class="header_nav_ul_li_a" href="">Link 1</a>
+                    <a class="header_nav_ul_li_a" href="./giftcard.html">Gift Card</a>
 
                 </li>
 
@@ -60,16 +70,17 @@
 
         <div class="div_button">
 
-            <button class="button">Acceder</button>
-            <img class="imagen_carrito" src="./assets/icono-de-la-tienda-web.png" alt="Carrito" width="40px"
-                height="40px">
+            <a href="./cuenta.html">
+
+                <button class="button">Mi cuenta</button>
+
+            </a>
+
+            <img class="imagen_carrito" src="../assets/carrito-de-compras (1).png" alt="Carrito"> <span
+                class="span_carrito">1</span>
+
 
         </div>
-
-
-
-
-
 
 
     </header>
@@ -78,66 +89,169 @@
 
     <main>
 
-        <div class="main_div">
 
-            PASO 1 PARA INSCRIBIRTE A UN CURSO
+
+        <div class="div_home">
+
+            <section class="section_home">
+                <h1>Transforma tu futuro</h1>
+                <h1>Aprende con Appscend</h1>
+                <h4>Cursos online y presencial para todos</h4>
+
+                <a href="./inscripcion.html">
+
+                    <button class="button">Inscribite a un curso</button>
+
+                </a>
+
+            </section>
+
+            <article class="article">
+
+                <img class="article_img_primerfoto" src="../assets/chica_programando.jpg" alt="Chica estudiando programacion">
+
+            </article>
+
+            <article class="article">
+                <img class="article_img" src="../assets/chica_sentada_estudiando.jpg"
+                    alt="Chica estudiando con su notebook">
+
+
+
+            </article>
+
+
+
 
         </div>
 
 
-        <div class="main_div">
-            PASO 2 PARA INSCRIBIRTE A UN CURSO
+        <h3 class="titulo_pasos "> ¿Cómo inscribirte a un curso? </h3>
+
+
+        <div class="div_pasos">
+
+            <section>
+
+                <h4>Paso 1</h4>
+                <p class="div_parrafo">
+                    Explorá los cursos disponibles y elegí el que más te interese.</p>
+
+
+
+            </section>
+
+            <section>
+
+
+                <h4>Paso 2</h4>
+                <p class="div_parrafo">
+                    Hacé clic en el boton "Inscribite a un curso" y completá el formulario con tus datos
+                <p>
+
+
+            </section>
+
+
+
+            <section>
+
+                <h4>Paso 3</h4>
+                <p class="div_parrafo">
+                    Recibí la confirmación por correo y comenzá tu curso.</p>
+
+
+            </section>
+
 
         </div>
 
 
-        <div class="main_div">
-
-            PASO 3 PARA INSCRIBIRTE A UN CURSO
-
-        </div>
-
-
-        <h1>CURSOS DESTACADOS</h1>
+        <h1 class="h1">
+            Cursos Destacados </h1>
 
         <div class="card-container">
 
-            <div class="card">
+            <section class="card">
+
+                <a href="./detalle_python.html">
+
+                    <img class="imagenes_cursos" src="../assets/logo_phyton_home.jpg" alt="Logo Python">
+
+                </a>
 
 
-            </div>
-
-            <div class="card">
+            </section>
 
 
-            </div>
+            <section class="card1">
 
-            <div class="card">
+                <a href="../pages/detalle_java.html">
+
+                    <img class="imagenes_cursos" src="../assets/logo_java.jpg" alt="LogoJava">
+
+                </a>
 
 
-            </div>
+            </section>
+
+            <section class="card2">
+
+                <a href="../pages/detalle_javascript.html">
+
+                    <img class="imagenes_cursos" src="../assets/logo_javascript_home.jpg" alt="Logo JavaScript">
+
+                </a>
+
+
+            </section>
 
 
 
         </div>
 
 
-        <div class="carrusel-logos">
+        <h1 class="h1">
+            Empresas que confían en Nosotros </h1>
+
+        <section class="carrusel-logos">
             <div class="logos">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 1">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 2">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
-                <img src="./assets/logo-apple.jpg" alt="Imagen 3">
+                <img src="../assets/nike.svg" alt="Logo Nike">
+                <img src="../assets/apple.svg" alt="Logo Apple">
+                <img src="../assets/fravega.svg" alt="Logo Fravega">
+                <img src="../assets/santander.svg" alt="Logo Santander">
+                <img src="../assets/galicia.svg" alt="Logo Galicia">
+                <img src="../assets/mcdonalds.svg" alt="Logo Mcdonalds">
+                <img src="../assets/mostaza.png" alt="Logo Mostaza">
+                <img src="../assets/cocacola.svg" alt="Logo CocaCola">
+                <img src="../assets/hp.svg" alt="Logo HP">
+                <img src="../assets/samsung.svg" alt="Logo Samsung">
+                <img src="../assets/lg.svg" alt="Logo LG">
+                <img src="../assets/nike.svg" alt="Logo Nike">
+                <img src="../assets/apple.svg" alt="Logo Apple">
+                <img src="../assets/fravega.svg" alt="Logo Fravega">
+                <img src="../assets/santander.svg" alt="Logo Santander">
+                <img src="../assets/galicia.svg" alt="Logo Galicia">
+                <img src="../assets/mcdonalds.svg" alt="Logo Mcdonalds">
+                <img src="../assets/mostaza.png" alt="Logo Mostaza">
+                <img src="../assets/cocacola.svg" alt="Logo CocaCola">
+                <img src="../assets/hp.svg" alt="Logo HP">
+                <img src="../assets/samsung.svg" alt="Logo Samsung">
+                <img src="../assets/lg.svg" alt="Logo LG">
+                 <img src="../assets/nike.svg" alt="Logo Nike">
+                <img src="../assets/apple.svg" alt="Logo Apple">
+                <img src="../assets/fravega.svg" alt="Logo Fravega">
+                <img src="../assets/santander.svg" alt="Logo Santander">
+                <img src="../assets/galicia.svg" alt="Logo Galicia">
+                <img src="../assets/mcdonalds.svg" alt="Logo Mcdonalds">
+                <img src="../assets/mostaza.png" alt="Logo Mostaza">
+                 <img src="../assets/cocacola.svg" alt="Logo CocaCola">
+                <img src="../assets/hp.svg" alt="Logo HP">
+                <img src="../assets/samsung.svg" alt="Logo Samsung">
+                <img src="../assets/lg.svg" alt="Logo LG">
+
             </div>
-        </div>
+        </section>
 
 
     </main>
@@ -149,25 +263,58 @@
         <div class="div_contenedor">
 
 
-            <div class="div_hijo">
-
-                <p>Datos</p>
-
-            </div>
+            <section class="section_hijo">
 
 
-            <div class="div_hijo">
+                <p>Emanuel Ruiz Díaz (40.380.499) </p>
+                <p>Juan Manuel Pena (45.495.738)
+                <p>
+                <p>Santiago Javier Falconi (44.099.057)
+                <p>
+                <p>Luna Melanie Daiana (41.713.955)
+                <p>
+                <p> Alan Cahuana Rodríguez (37.996.385)
+                <p>
 
-                <p>Datos</p>
-
-            </div>
 
 
-            <div class="div_hijo">
+            </section>
 
-                <p>Datos</p>
+            <section class="section_hijo">
+                <a class="ancla" href="https://x.com/?lang=es">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
 
-            </div>
+                <a class="ancla" href="https://www.instagram.com/">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a class="ancla" href="https://www.youtube.com/">
+
+                    <i class="fab fa-youtube"></i>
+
+                </a>
+
+                <a class="ancla" href="https://discord.com/">
+
+                    <i class="fab fa-discord"></i>
+
+                </a>
+
+
+            </section>
+
+
+            <section class="section_hijo">
+
+                <h4>Copyright © <h4>
+                        <p>Todos los derechos están reservados
+                        <p>
+
+
+
+
+            </section>
 
 
         </div>
@@ -175,6 +322,14 @@
 
 
     </footer>
+
+    <div class="mobile-cart">
+        <div class="fa-cart-background">
+            <a href="#">
+                <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
 
 
 </body>

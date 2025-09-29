@@ -1,0 +1,165 @@
+* {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 2em;
+}
+
+body {
+    background-color: #f5fbef;
+}
+
+.inscripcion-style {
+    display: flex;
+    flex-direction: column;
+    gap: 1.125em;
+    padding: 1em;
+    align-items: center;
+    margin-bottom: 4.6em;
+}
+
+.persona-style {
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+    border: 0.063em solid #ccc;
+    border-radius: 0.5em;
+    align-items: center;
+    margin-bottom: 1.5em;
+    max-width: 100%;
+}
+
+.persona-style input, select{
+    height: 2.5em;
+    padding-left: 1em;
+    border-radius: 1.25em;
+    border: 0.125em grey solid;
+}
+
+.importe-style {
+    display: flex;
+    align-items: center;
+    gap: 1.125em;
+    padding: 0.5em;
+    margin-top: 2em;
+}
+
+.importe-style p {
+    background-color: black;
+    color: white;
+    padding: 0.5em 1em;
+    margin: 0;
+}
+
+.inscribir-style {
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background-color: #84c318;
+    color: white;
+}
+
+.agregar-persona {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+.agregar-persona button {
+    font-size: 1.5em;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: #84c318;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.eliminar {
+    margin-left: auto;
+    background-color: #84c318;
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+}
+
+#my-popover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15em;
+    height: 11em;
+    font-size: 2em;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-color: #004346;
+    color: white;
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+    border: none;
+
+}
+
+#my-popover a{
+    text-decoration: none;
+    color: white;
+}
+
+#my-popover p{
+    background-color: #004346;
+}
+
+#my-popover span{
+    color: #84c318;
+}
+
+@media screen and (max-width: 1050px) {
+    .persona-style{
+        flex-direction: column;
+        max-width: 100%;
+        align-items: stretch;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .persona-style{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+        
+    }
+
+    .importe-style{
+        flex-direction: row;
+    }
+}
+
+

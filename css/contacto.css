@@ -14,26 +14,15 @@ h1 {
     font-family: 'Montserrat', sans-serif;
 }
 
-nav {
-    margin: auto;
-    height: 5em;
-    background-color: #172a3a;
-    color: white;
-
-}
-
-.h1_nav {
-    text-align: center;
-}
-
 .h2_contacto {
     margin-bottom: 1em;
     text-align: left;
+    color: #172A3A;
 
 }
 
 .form_aside {
-    margin: 2em;
+    margin: 3em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,8 +54,9 @@ nav {
 }
 
 .form_aside .solo_aside aside {
+    margin: 0, auto;
     border: 0.125em solid #ccc;
-    padding: 1.25em;
+    padding: 1.4em;
 }
 
 form {
@@ -76,14 +66,27 @@ form {
     gap: 1em;
     width: 100%;
     margin: 0;
+
+    padding: 1em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.1);
+}
+
+.h2_contacto {
+    color: #172A3A;
 }
 
 input,
 textarea {
-    border-radius: 0.5em;
+    padding: 1em;
     width: 100%;
+    height: 2.5em;
+    margin-top: 0.4em;
+    padding: 0.4em 0.75em;
+    border: 1px solid #ced4da;
+    border-radius: 0.25em;
     box-sizing: border-box;
-    height: 2.3em;
+    font-size: 1em;
 }
 
 textarea {
@@ -91,12 +94,12 @@ textarea {
 }
 
 .boton_enviar {
-    background-color: #84c318;
-    color: #FFFFFF;
-    width: 6em;
-    height: 3em;
+    width: 8em;
+    height: 2em;
     align-self: flex-end;
-    border-radius: 10%;
+    color: white;
+    border-radius: 0.2em;
+    background-color: #84c318;
 }
 
 #my-popover {
@@ -105,12 +108,10 @@ textarea {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 10em;
-    /* ancho relativo al font-size */
-    height: 5em;
-    /* alto relativo al font-size */
+    height: 7em;
     font-size: 2em;
 
-   
+
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -127,19 +128,35 @@ textarea {
 
 .h2_ubicacion,
 .h2_aside {
-    margin: 1em;
+    margin-bottom: 1em;
     text-align: center;
+    color: #172A3A;
 }
 
+.section_ubicacion {
+    margin-bottom: 3em;
+}
 
-
-iframe {
-    width: 55em;
-    height: 16em;
+.contenedor_mapa {
     display: block;
+    width: 80%;
+    height: 50vh;
     margin: 0 auto;
-    border: 0;
+    padding: 1em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border: none;
 }
+
+
+.mapa-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+}
+
 
 .iconos_redes {
     font-size: 2em;
@@ -147,25 +164,4 @@ iframe {
     display: flex;
     gap: 15px;
     align-self: center;
-}
-
-.fa-facebook {
-    color: #4267B2;
-}
-
-.fa-twitter {
-    color: black;
-}
-
-.fa-instagram {
-    color: #E1306C;
-}
-
-.fa-youtube {
-    color: red;
-}
-
-.footer {
-    margin-top: 1em;
-    text-align: center;
 }
