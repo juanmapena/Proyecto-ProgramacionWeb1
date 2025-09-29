@@ -55,7 +55,6 @@ input, select {
     border-radius: 0.25em;
     box-sizing: border-box; 
     font-size: 1em;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .h4_fechas {
