@@ -16,14 +16,12 @@
 </head>
 
 <body>
-
     <header class="header">
         <div class="header_div">
             <a href="./home.html">
                 <img class="imagen_logo" src="../assets/appscendLogo-02.svg" alt="Icono">
             </a>
         </div>
-
         <nav class="header_nav">
             <ul class="header_nav_ul">
                 <li>
@@ -34,6 +32,9 @@
                 </li>
                 <li>
                     <a class="header_nav_ul_li_a" href="./calendario.html">Calendario</a>
+                </li>
+                    <li>
+                    <a class="header_nav_ul_li_a" href="./giftcard.html">Gift Card</a>
                 </li>
             </ul>
         </nav>
@@ -46,16 +47,66 @@
         </div>
     </header>
     <main>
-        <section class="contenedor_cuenta">
-            <article class="section_cuenta">
-                <img class="imagen_cuenta" src="../assets/avatar.jpg" alt="Avatar">
-                <h1 class="user-title">Datos del usuario:</h1>
-                <h2>santi1234</h2>
-                <h3>Santiago Javier Falconi</h3>
-                <h3>santi1234@gmail.com</h3>
-            </article>
+        <section class="profile-data">
             <article>
-                <h1 class="cursos-title">Cursos inscriptos</h1>
+                <h1>Mi Perfil</h1>
+            </article>
+            <article class="profile-img">
+                <img src="../Assets/perfilUsuario.jpg" alt="Foto de perfil">
+                <h2>Santi3214</h2>
+            </article>
+        </section>
+        <section class="data-form">
+            <article>
+                <h1>Datos personales</h1>
+            </article>
+            <form action="#" method="get">
+                <label for="name">
+                    <span>Nombre</span>
+                    <input type="text" class="name" id="name" placeholder="Santiago Javier">
+                </label>
+                <label for="last-name">
+                    <span>Apellido</span>
+                    <input type="text" class="last-name" id="last-name" placeholder="Falconi">
+                </label>
+                <label for="email">
+                    <span>Email</span>
+                    <input type="email" class="email" id="email" placeholder="santiJFalconi123@outlook.com.ar">
+                </label>
+                <label for="current-password">
+                    <span>Contraseña actual</span>
+                    <input type="password" class="current-password" id="current-password" placeholder="Ingrese su contraseña actual">
+                </label>
+                <label for="password">
+                    <span>Nueva contraseña</span>
+                    <input type="new-password" class="new-password" id="new-password" placeholder="Ingrese la nueva contraseña">
+                </label>
+                <label for="">
+                    <span>Repetir nueva contraseña</span>
+                    <input type="repeat-password" class="repeat-password" id="repeat-password" placeholder="Repita la nueva contraseña">
+                </label>
+                <button type="button" popovertarget="popover-profile">Guardar</button>
+                <div popover id="popover-profile">
+                    <div class="popover-content">
+                        Datos actualizados correctamente
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section class="courses-list">
+            <article>
+                <h1>Mis cursos</h1>
+            </article>
+            <article class="images-container">
+                <a href="./detalle_java.html">
+                    <img src="../Assets/java_detalle.jpg" alt="Imagen de curso de java">
+                    <p>Programación inicial en Java</p>
+                </a>
+                
+                <a href="./detalle_python.html">
+                    <img src="../Assets/python-imagen.jpg" alt="Imagen curso de Python">
+                    <p>Programación avanzada en Python</p>
+                </a>
             </article>
         </section>
     </main>
@@ -63,14 +114,10 @@
         <div class="div_contenedor">
             <section class="section_hijo">
                 <p>Emanuel Ruiz Díaz (40.380.499) </p>
-                <p>Juan Manuel Pena (45.495.738)
-                <p>
-                <p>Santiago Javier Falconi (44.099.057)
-                <p>
-                <p>Luna Melanie Daiana (41.713.955)
-                <p>
-                <p> Alan Cahuana Rodríguez (37.996.385)
-                <p>
+                <p>Juan Manuel Pena (45.495.738)<p>
+                <p>Santiago Javier Falconi (44.099.057)<p>
+                <p>Luna Melanie Daiana (41.713.955)<p>
+                <p>Alan Cahuana Rodríguez (37.996.385)<p>
             </section>
             <section class="section_hijo">
                 <a class="ancla" href="https://x.com/?lang=es">
@@ -88,8 +135,7 @@
             </section>
             <section class="section_hijo">
                 <h4>Copyright © <h4>
-                        <p>Todos los derechos están reservados
-                        <p>
+                <p>Todos los derechos están reservados<p>
             </section>
         </div>
     </footer>

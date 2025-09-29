@@ -106,7 +106,7 @@ h1{
 
 .div_contenedor{
   display: flex;
-  flex-direction: raw;
+  flex-direction: row;
   gap: 2em;
   justify-content: space-around;
 }
