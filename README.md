@@ -41,7 +41,7 @@ El sistema está compuesto por las siguientes páginas:
 Este proyecto fue desarrollado en equipo por estudiantes de la **Universidad Nacional de La Matanza**:
 
 - ✨ Emanuel Ruíz Díaz  
-- ✨ Juan Manuel Peña  
+- ✨ Juan Manuel Pena  
 - ✨ Santiago Javier Falconi  
 - ✨ Luna Melanie Daiana  
 - ✨ Alan Cahuana Rodríguez  
