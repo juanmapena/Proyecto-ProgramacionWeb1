@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendario</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/home-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/home-style.css">
     <link rel="stylesheet" href="../css/calendario-style.css">
 </head>
 <body>
     <header class="header">
         <div class="header_div">
             <a href="./home.html">
-            <img class="imagen_logo" src="../assets/appscendLogo-02.svg" alt="Icono"> 
-             </a>
+                <img class="imagen_logo" src="../assets/appscendLogo-02.svg" alt="Icono">
+            </a>
         </div>
         <nav class="header_nav">
             <ul class="header_nav_ul">
@@ -32,24 +31,23 @@
                 <li>
                     <a class="header_nav_ul_li_a" href="./calendario.html">Calendario</a>
                 </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./giftcard.html">Gift Card</a>
+                </li>
             </ul>
         </nav>
         <div class="div_button">
-
             <a href="./cuenta.html">
-
                 <button class="button">Mi cuenta</button>
-
             </a>
-
-            <img class="imagen_carrito" src="../assets/icono-de-la-tienda-web.png" alt="Carrito" width="40px"
-                height="40px">
+            <img class="imagen_carrito" src="../assets/carrito-de-compras (1).png" alt="Carrito"> <span
+                class="span_carrito">1</span>
         </div>
     </header>
 
     <main>
         <section class="calendario">
-            <!--<p>Este calendario contiene las fechas de inicio de los proximos cursos de LogoAppscend.</p> -->
+            <!--<p>Calendario con las fechas de inicio de los proximo cursos de LogoAppscend.</p> -->
              <div class="calendario-header">
                 <h3>Octubre 2025</h3>
              </div>
@@ -57,24 +55,31 @@
                 <ul>
                     <li>
                         <h4 class="dia">Lunes</h4>
+                        <h4 class="dia-corto">LUN</h4>
                     </li>
                     <li>
                         <h4 class="dia">Martes</h4>
+                        <h4 class="dia-corto">MAR</h4>
                     </li>
                     <li>
                         <h4 class="dia">Miercoles</h4>
+                        <h4 class="dia-corto">MIE</h4>
                     </li>
                     <li>
                         <h4 class="dia">Jueves</h4>
+                        <h4 class="dia-corto">JUE</h4>
                     </li>
                     <li>
                         <h4 class="dia">Viernes</h4>
+                        <h4 class="dia-corto">VIE</h4>
                     </li>
                     <li>
                         <h4 class="dia">Sabado</h4>
+                        <h4 class="dia-corto">SAB</h4>
                     </li>
                     <li>
                         <h4 class="dia">Domingo</h4>
+                        <h4 class="dia-corto">DOM</h4>
                     </li>
                 </ul>
              </section>
@@ -131,7 +136,7 @@
                 </li>
                 <li class="fecha">
                     <div class="fecha-info"><h5>17</h5>
-                        <a href="detalle_javascript.html">Curso de JavaScript</a>
+                        <a href="detalle_javascript.html">Curso JavaScript</a>
                     </div>
                 </li>
                 <li class="fecha">
@@ -204,9 +209,16 @@
             </section>
             <section class="section_hijo">
                 <h4>Copyright © <h4>
-                        <p>Todos los derechos están reservados</p>
+                <p>Todos los derechos están reservados</p>
             </section>
         </div>
     </footer>
+    <div class="mobile-cart">
+        <div class="fa-cart-background">
+            <a href="#">
+                <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
