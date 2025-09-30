@@ -1,190 +1,128 @@
-.div_home {
+.title_section {
   display: flex;
   justify-content: space-between;
-  margin-top: 4em;
-  margin-bottom: 4em;
-
+  background-image: url(../Assets/heroImage.jpg);
+  background-size: cover;
+  background-position: top;
+  padding: 0;
+  height: 50dvh;
 }
 
-.section_home {
-
-  padding-right: 8em;
-  padding-left: 8em;
-  color: #172A3A;
-
-
-
-}
-
-
-
-.section_home h1 {
-
-
-  padding-bottom: 0.175em;
-  padding-top: 0.175em;
-
-
-}
-
-.section_home h4 {
-
-
-  padding-bottom: 1em;
-
-}
-
-
-.article img {
-  height: 80%;
+.principal_title {
   width: 80%;
-
-
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  color: #172A3A;
+  h1{
+    text-align: start;
+    font-size: 3em;
+  }
 }
 
-.div_pasos {
+.title_section h3 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
 
+.title_section button {
+  font-size: 1.5em;
+  margin-top: 1em;
+}
+
+.steps_section {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-around;
   margin-bottom: 5em;
-
-
 }
 
+.title{
+      font-size: 1.5em;
+      text-align: center;
+      color: #172A3A;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      text-align: center;
+      padding-bottom: 1em;
+      padding-top: 1em;
+  }
 
-.titulo_pasos {
 
-  text-align: center;
-  color: #172A3A;
-  margin-top: 2em;
-  margin-bottom: 2em;
+.steps{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 
+  div {
+    width: 15%;
+    padding: 3em 1em;
+    background-color: #172A3A;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-top: 4px solid #4caf50;
+    transition: transform 0.3s ease;
+    background: linear-gradient(to bottom, #0b2239, #123b5c);
+
+    h4{
+      text-align: center;
+      font-size: 1.5em;
+      color: #F5FBEF;
+    }
+
+    p{
+      margin-top: 1em;
+      text-align: center;
+      font-size: 1em;
+    }
+  }
 }
-
-.div_pasos section {
-
-  width: 15em;
-  height: 12em;
-  background-color: #172A3A;
-  margin: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  border-top: 4px solid #4caf50;
-  transition: transform 0.3s ease;
-  background: linear-gradient(to bottom, #0b2239, #123b5c);
-
-}
-
-.div_pasos section:hover {
+.steps div:hover {
   transform: scale(1.05);
 }
 
-
-.div_pasos section h4 {
-
-  text-align: center;
-  padding-bottom: 1em;
-  padding-top: 1em;
-
-}
-
-.div_parrafo {
-
-
-  text-align: center;
-  padding-top: 0.125em;
-  padding-left: 0.125em;
-  padding-right: 0.125em;
-
-
-}
-
-.h1 {
-
+h1 {
   text-align: center;
   color: #172A3A;
-
 }
 
-
-
-.main_div {
-
-  margin-top: 2em;
-  margin-bottom: 2em;
-
-}
-
-
-.card-container {
+.courses_section {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
   margin-bottom: 3em;
 }
-
-.card {
-  width: 400px;
-  height: 300px;
-  background-color: white;
-  margin: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
+.courses_title{
+    color: #172A3A;
+    font-size: 1.5em;
+    text-align: center;
 }
 
-.card1 {
+.details{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 
-  width: 400px;
-  height: 300px;
-  background-color: white;
-  margin: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-
+  div{
+    margin-top: 2em;
+    width: 15%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 }
-
-
-.card2 {
-
-  width: 400px;
-  height: 300px;
-  background-color: white;
-  margin: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-
-
-
-}
-
 .imagenes_cursos {
   width: 100%;
-  /* La imagen ocupa todo el ancho de la card */
   height: 100%;
-  /* Mantiene proporción */
   object-fit: contain;
-  /* Ajusta la imagen dentro sin recortarla */
   border-radius: 10px;
-  /* Bordes redondeados */
   padding: 1rem;
-  /* Espaciado interno */
   background: white;
-
 }
-
-
-
-
 .carrusel-logos {
   overflow: hidden;
   width: 100%;
@@ -192,17 +130,22 @@
   margin-bottom: 3em;
 }
 
+.carrusel-title{
+  color:#172A3A ;
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 2em;
+}
 .logos {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 80px;
   animation: mover 15s linear infinite;
 }
 
 .logos img {
-
-  height: 3em;
-  width: 6em;
+  height: 6em;
+  width: 12em;
   filter: brightness(0.8);
   transition: filter 0.3s;
 }
@@ -218,69 +161,94 @@
   }
 }
 
-
+@media screen and (max-width: 1400px) {
+  main {
+    .steps_section .steps{
+      div{
+        width: 20%;
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 1000px) {
+  main {
+    .steps_section .steps{
+      div{
+        width: 25%;
+      }
+    }
 
-
-.article img{
-
-  height: 60%;
-
+    .courses_section .details{
+      div{
+        width: 15%;
+      }
+    }
+  }
 }
 
-.article_img_primerfoto{
+@media screen and (max-width: 700px) {
+  main {
+    h2{
+      font-size: 1.25em;
+    }
+    .steps_section .title{
+      width: 75%;
+      margin: 2em auto 0;
+    }
+    .steps_section .steps{
+      flex-direction: column;
+      div{
+        width: 65%;
+        margin: 1em auto;
+      }
+    }
 
+    .courses_section .details{
+      flex-direction: column;
+      div{
+        width: 75%;
+        margin: 1em auto;
+      }
+    }
 
-  display: none;
+    .courses_section .courses_title{
+      width: 75%;
+      margin: 0 auto 1em;
+    }
 
+    .carrusel-logos {
+      margin-bottom: 0;
+      padding: 0;
+      .carrusel-title{
+        width: 75%;
+        margin: 1em auto;
+      }
+
+      .logos {
+        gap: 40px;
+        margin-bottom: 2em;
+        img{
+          align-self: center;
+          width: 20%;
+          height: 100%;
+        }
+      }
+    }
+
+    .principal_title h3 {
+      width: 75%;
+    }
+  }
 }
 
 
-@media screen and (max-width: 700px){
-
-.div_home{
-
-  flex-direction: column;
+@media screen and (max-width: 415px) {
 
 
-}
+  .section_home {
 
-
-.article_img{
-  margin: 1em 2em 0 4em;
-
-}
-
-
-.section_home{
-
-  text-align: center;
-
-
-}
-
-.button{
-
-  margin: 1em 0 0.5em;
-}
-
-}
-
-
-
-}
-
-@media screen and (max-width: 415px){
-
-
-  .section_home{
-
-  text-align: center;
-  font-size: 0.85em;
-
-
-}
-
-
+    text-align: center;
+    font-size: 0.85em;
+  }
 }

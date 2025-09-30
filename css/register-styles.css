@@ -2,7 +2,6 @@ body {
     height: 100dvh;
 
     header {
-        display: flex;
         height: 10%;
     }
     
@@ -74,6 +73,20 @@ main{
 @media screen and (max-width: 1000px) {
     .section-form {
         width: 50%;
+    }
+
+    body {
+        height: auto;
+
+        footer {
+            height: auto;
+        }
+        header {
+            height: auto;
+        }
+        main {
+            padding: 5em 0;
+        }
     }
 }
 

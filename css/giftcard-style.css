@@ -1,15 +1,9 @@
-* {
-    padding: 0%;
-    box-sizing: border-box;
-}
-
-.class_body {
+body {
     font-family: 'lato', sans-serif;
     background-color: #f5fbef;
-
 }
 
-.contenedor_principal {
+.principal_container {
     margin-top: 1em;
     display: flex;
     justify-content: center;
@@ -19,18 +13,23 @@
     padding: 2.5em;
 }
 
+.form_dates {
+    box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.1);
+    padding: 3em;
+    border-radius: 1.5em;
+}
 
-.contenedor_principal article {
 
+.principal_container article {
     position: relative;
 }
 
-.foto {
+.photo {
     width: 70vh;
     height: 55vh;
 }
 
-.class_span {
+.price {
     position: absolute;
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
@@ -42,16 +41,16 @@
     font-weight: bold;
 }
 
-.contenedor_principal h2 {
+h2 {
     margin-top: 0;
-
+    margin-bottom: 1em;
 }
 
 
 
-.input_nombre,
-select {
-    width: 20em;
+.input_name {
+    width: 100%;
+    height: 3.3em;
     padding: 0.4em 0.75em;
     margin-top: 0.4em;
     border: 1px solid #ced4da;
@@ -60,31 +59,42 @@ select {
     font-size: 1em;
 }
 
+select {
+    width: 100%;
+    max-height: 3.4em;
+    margin-top: 0.4em;
+    padding: 0.4em 0.75em;
+    border: 1px solid #ced4da;
+    border-radius: 1.25em;
+    box-sizing: border-box;
+    font-size: 1em;
+    padding: 1em;
+    margin-top: 0.4em;
+}
 
 
-.confirmar {
+.button_confirm {
+    display: flex;
+    justify-content: center; /* Esto centra el botón horizontalmente */
+    margin-top: 1em; /* Un poco de espacio arriba para separarlo del último select */
+}
+
+.confirm {
+    margin-top: 2em;
     background-color: #84c318;
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 8px;
+    border-radius: 1.5em;
     cursor: pointer;
     font-size: 1em;
-    margin-top: 1em;
-}
-
-.contenedor_boton {
-    display: flex;
-    justify-content: flex-start;
+    width: 8em;
+    height: 2.4em;
 }
 
 label {
     display: block;
     margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-h2 {
     margin-bottom: 1em;
 }
 
@@ -120,7 +130,7 @@ h2 {
         text-align: center;
     }
 
-    .contenedor_boton {
+    .confirm {
         justify-content: center;
     }
 }
@@ -145,7 +155,7 @@ h2 {
     }
 
     select {
-        width: 90%;
+        width: 100%;
     }
 
 }
