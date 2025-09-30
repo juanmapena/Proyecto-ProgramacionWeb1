@@ -87,76 +87,66 @@
 
     </header>
 
-
     <main>
-        <div class="contenedor_principal">
-            <article>
-                <img class="foto" src="https://chaunlegendnails.com/cdn/shop/files/LGND-gft-card.png?v=1732294669" alt="Foto de la tarjeta"> <span class="class_span">
+        <seccion class="principal_container">
+            <article class="photo_principal">
+                <img class="photo" src="https://chaunlegendnails.com/cdn/shop/files/LGND-gft-card.png?v=1732294669"
+                    alt="Foto de la tarjeta"> <span class="price">
                     $100.000
                 </span>
             </article>
 
-            <section class="section_form">
-
+            <article class="form_dates">
                 <h2>Personalización de Giftcard</h2>
-
                 <form action="./formasdepago.html" method="get" autocomplete="off">
+                    <input class="input_name" type="text" name="name" id="name" placeholder="Nombre del destinatario: ">
 
-                    <input class="input_nombre" type="text" name="name" id="name"
-                        placeholder="Nombre del destinatario: ">
-
-                    <label for="colores">Seleccione el color: </label>
-                    <select class="datos" id="colores">
-                        <option value="" selected disabled>-- Elija una opción --</option>
+                    <label for="colours">Seleccione el color:</label>
+                    <select id="colours">
+                        <option value="" selected disabled>** Elija una opción **</option>
                         <option value="Dorado">Dorado</option>
                         <option value="Blanco">Blanco</option>
                         <option value="Verde">Verde</option>
                     </select>
 
-                    <label for="fuentes">Seleccione el tamaño de la fuente: </label>
-                    <select id="fuentes">
-                        <option value="" selected disabled>-- Elija una opción --</option>
+                    <label for="fountain">Seleccione el tamaño de la fuente:</label>
+                    <select id="fountain">
+                        <option value="" selected disabled>** Elija una opción **</option>
                         <option value="28px">28px</option>
                         <option value="32px">32px</option>
                         <option value="48px">48px</option>
                         <option value="64px">64px</option>
                     </select>
 
-                    <label for="ubicaciones">Seleccione la ubicación del valor: </label>
-                    <select id="ubicaciones">
-                        <option value="" selected disabled>-- Elija una opción --</option>
+                    <label for="ubicatios">Seleccione la ubicación del valor:</label>
+                    <select id="ubications">
+                        <option value="" selected disabled>** Elija una opción **</option>
                         <option value="Esquina inferior izquierda">Esquina inferior izquierda</option>
                         <option value="Esquina inferior derecha">Esquina inferior derecha</option>
                         <option value="Esquina superior izquierda">Esquina superior izquierda</option>
                         <option value="Esquina superior derecha">Esquina superior derecha</option>
                     </select>
 
-                    <label for="fondos">Seleccione un fondo: </label>
-                    <select id="fondos">
-                        <option value="" selected disabled>-- Elija una opción --</option>
+                    <label for="background">Seleccione un fondo:</label>
+                    <select id="background">
+                        <option value="" selected disabled>** Elija una opción **</option>
                         <option value="Fondo1">Fondo1</option>
                         <option value="Fondo2">Fondo2</option>
                         <option value="Fondo3">Fondo3</option>
                         <option value="Fondo4">Fondo4</option>
                     </select>
 
-                    <div class="contenedor_boton">
-
-                    
-                        <button type="submit" class="confirmar"> Confirmar </button>
-                        
-                           
+                    <div class="button_container">
+                        <button class="confirm" type="submit"> Confirmar </button>
                     </div>
 
-
                 </form>
-
-            </section>
-
-        </div>
+            </article>
+        </seccion>
 
 
     </main>
+
 
     <footer>
         <section class="about_us">
