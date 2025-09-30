@@ -1,49 +1,49 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Lato", sans-serif;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
 }
 
 .mobile-cart {
   display: none;
 }
 
-body{
+body {
   background-color: #F5FBEF;
 }
 
-h1{
+h1 {
   font-family: "Montserrat", sans-serif;
 }
 
-.header{
-    background-color: #172a3a;
-    width: 100%;                
-    padding: 1rem 2rem;          
-    display: flex;              
-    align-items: center;        
-    justify-content: space-between; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2)
+.header {
+  background-color: #172a3a;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
 }
 
 .header_div {
-    display: flex;
+  display: flex;
 }
 
-.imagen_logo{
+.imagen_logo {
   height: 4em;
   width: 4em;
 }
 
-.header_nav{
+.header_nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.header_nav_ul{
+.header_nav_ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -63,7 +63,7 @@ h1{
   color: #84c318;
 }
 
-.div_button{
+.div_button {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -73,8 +73,8 @@ h1{
   position: relative;
 }
 
-.button{
-  background-color: #84c318; 
+.button {
+  background-color: #84c318;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -84,95 +84,96 @@ h1{
   margin-right: 3em;
 }
 
-.imagen_carrito{
+.imagen_carrito {
   margin-right: 2em;
   height: 2.5em;
   width: 2.5em;
 }
 
-.span_carrito{
+.span_carrito {
   position: absolute;
   color: white;
   top: 0;
   padding-right: 1em;
 }
 
-.footer{
+footer {
   background-color: #004346;
   color: white;
   text-align: center;
   padding: 20px;
 }
 
-.div_contenedor{
+.about_us {
   display: flex;
   flex-direction: row;
   gap: 2em;
   justify-content: space-around;
+
+  article {
+    border-radius: 8px;
+    padding: 10px;
+  }
 }
 
-
-.section_hijo{
-  border-radius: 8px;       
-  padding: 10px;
-}
-
-.ancla{
+.ancla {
   color: white;
   text-decoration: none;
   list-style-type: none;
 }
 
 @media screen and (max-width: 1000px) {
-    header.header {
-      flex-direction: column;
-      padding: 0;
+  header.header {
+    flex-direction: column;
+    padding: 0;
 
-      .header_div .imagen_logo {
-        height: 6em;
-        width: 6em;
-        margin-bottom: 1em;
-      }
-
-      .div_button button {
-        margin: 1em 0 0.5em;
-      }
-      
-      .imagen_carrito, .span_carrito {
-        display: none;
-      }
+    .header_div .imagen_logo {
+      height: 6em;
+      width: 6em;
+      margin-bottom: 1em;
     }
 
-    .header_nav {
+    .div_button button {
+      margin: 1em 0 0.5em;
+    }
+
+    .imagen_carrito,
+    .span_carrito {
+      display: none;
+    }
+  }
+
+  .header_nav {
+    width: 100%;
+    margin: auto;
+    display: flex;
+  }
+
+  .header_nav_ul {
+    width: 90%;
+
+    li {
+      width: 25%;
+      text-align: center;
+    }
+  }
+
+  footer {
+    section {
       width: 100%;
-      margin: auto;
-      display: flex;
     }
 
-    .header_nav_ul {
-      width: 90%;
-
-      li {
-        width: 25%;
-        text-align: center;
-      }
+    a.ancla {
+      width: 20%;
+      font-size: 2em;
+      margin: 0 0.5em;
     }
 
-    footer {
-      section {
-        width: 100%;
-      }
-
-      a.ancla {
-        width: 20%;
-        font-size: 2em;
-        margin: 0 0.5em;
-      }
-
-      .div_contenedor {
-        flex-direction: column;
-      }
+    .about_us {
+      flex-direction: column;
     }
+  }
+
   .fa-cart-background {
     width: 4.75em;
     height: 4.75em;
@@ -183,15 +184,15 @@ h1{
     border-radius: 100%;
 
     a i {
-        font-size: 2em;
-        color: white;
-        position: fixed;
-        bottom: 1.1em;
-        right: 1.2em;
+      font-size: 2em;
+      color: white;
+      position: fixed;
+      bottom: 1.1em;
+      right: 1.2em;
     }
   }
 
   .mobile-cart {
-      display: block;
+    display: block;
   }
 }
