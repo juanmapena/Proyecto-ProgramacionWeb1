@@ -1,69 +1,46 @@
-.div_home {
+.first_section {
   display: flex;
   justify-content: space-between;
   margin-top: 4em;
   margin-bottom: 4em;
-
 }
 
-.section_home {
-
+.principal_img {
   padding-right: 8em;
   padding-left: 8em;
   color: #172A3A;
-
-
-
 }
 
-
-
-.section_home h1 {
-
-
+.first_section h1 {
   padding-bottom: 0.175em;
   padding-top: 0.175em;
-
-
 }
 
-.section_home h4 {
-
-
+.first_section h4 {
   padding-bottom: 1em;
-
 }
-
 
 .article img {
   height: 80%;
   width: 80%;
-
-
 }
 
-.div_pasos {
-
+.second_section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: 5em;
 
-
+  h2 {
+    text-align: center;
+    color: #172A3A;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
 }
 
 
-.titulo_pasos {
-
-  text-align: center;
-  color: #172A3A;
-  margin-top: 2em;
-  margin-bottom: 2em;
-
-}
-
-.div_pasos section {
-
+.second_section article {
   width: 15em;
   height: 12em;
   background-color: #172A3A;
@@ -76,15 +53,14 @@
   border-top: 4px solid #4caf50;
   transition: transform 0.3s ease;
   background: linear-gradient(to bottom, #0b2239, #123b5c);
-
 }
 
-.div_pasos section:hover {
+.section_home article:hover {
   transform: scale(1.05);
 }
 
 
-.div_pasos section h4 {
+.second_section h2 {
 
   text-align: center;
   padding-bottom: 1em;
@@ -92,42 +68,36 @@
 
 }
 
-.div_parrafo {
-
-
+.step_1,
+.step_2,
+.step_3 {
   text-align: center;
   padding-top: 0.125em;
   padding-left: 0.125em;
   padding-right: 0.125em;
-
-
 }
 
 .h1 {
-
   text-align: center;
   color: #172A3A;
-
 }
 
 
 
 .main_div {
-
   margin-top: 2em;
   margin-bottom: 2em;
-
 }
 
 
-.card-container {
+.courses_section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: 3em;
 }
 
-.card {
+.phyton_card {
   width: 400px;
   height: 300px;
   background-color: white;
@@ -138,8 +108,7 @@
 
 }
 
-.card1 {
-
+.java_card {
   width: 400px;
   height: 300px;
   background-color: white;
@@ -147,13 +116,10 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-
 }
 
 
-.card2 {
-
+.js_card {
   width: 400px;
   height: 300px;
   background-color: white;
@@ -161,10 +127,6 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-
-
-
 }
 
 .imagenes_cursos {
@@ -200,7 +162,6 @@
 }
 
 .logos img {
-
   height: 3em;
   width: 6em;
   filter: brightness(0.8);
@@ -223,64 +184,53 @@
 @media screen and (max-width: 1000px) {
 
 
-.article img{
+  .article img {
 
-  height: 60%;
+    height: 60%;
+  }
 
-}
-
-.article_img_primerfoto{
-
-
-  display: none;
-
-}
+  .article_img_primerfoto {
 
 
-@media screen and (max-width: 700px){
-
-.div_home{
-
-  flex-direction: column;
+    display: none;
+  }
 
 
-}
+  @media screen and (max-width: 700px) {
+
+    .div_home {
+
+      flex-direction: column;
+    }
 
 
-.article_img{
-  margin: 1em 2em 0 4em;
-
-}
-
-
-.section_home{
-
-  text-align: center;
+    .article_img {
+      margin: 1em 2em 0 4em;
+    }
 
 
-}
+    .section_home {
 
-.button{
+      text-align: center;
+    }
 
-  margin: 1em 0 0.5em;
-}
+    .button {
 
-}
+      margin: 1em 0 0.5em;
+    }
+
+  }
 
 
 
 }
 
-@media screen and (max-width: 415px){
+@media screen and (max-width: 415px) {
 
 
-  .section_home{
+  .section_home {
 
-  text-align: center;
-  font-size: 0.85em;
-
-
-}
-
-
+    text-align: center;
+    font-size: 0.85em;
+  }
 }
