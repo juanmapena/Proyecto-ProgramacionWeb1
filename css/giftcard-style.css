@@ -6,6 +6,7 @@
 .class_body {
     font-family: 'lato', sans-serif;
     background-color: #f5fbef;
+
 }
 
 .contenedor_principal {
@@ -20,12 +21,13 @@
 
 
 .contenedor_principal article {
+
     position: relative;
 }
 
 .foto {
     width: 70vh;
-    height: 40vh;
+    height: 55vh;
 }
 
 .class_span {
@@ -49,7 +51,7 @@
 
 .input_nombre,
 select {
-    width: 20em;       
+    width: 20em;
     padding: 0.4em 0.75em;
     margin-top: 0.4em;
     border: 1px solid #ced4da;
@@ -69,13 +71,81 @@ select {
     cursor: pointer;
     font-size: 1em;
     margin-top: 1em;
-    margin-right: 3em;
-    align-items: center;
+}
 
+.contenedor_boton {
+    display: flex;
+    justify-content: flex-start;
 }
 
 label {
     display: block;
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+h2 {
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 1050px) {
+    .contenedor_principal {
+        display: flex;
+        justify-content: space-around;
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 895px) {
+
+    .contenedor_principal {
+        max-width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .foto {
+        max-width: 100%;
+        width: 19em;
+        height: auto;
+    }
+
+    label {
+        text-align: center;
+    }
+
+    ::placeholder {
+        text-align: center;
+    }
+
+    .contenedor_boton {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 410px) {
+
+    .contenedor_principal {
+        max-width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .foto {
+        max-width: 90%;
+        width: 18em;
+        height: auto;
+        justify-content: center;
+    }
+
+    .input_nombre {
+        width: 90%;
+    }
+
+    select {
+        width: 90%;
+    }
+
 }
