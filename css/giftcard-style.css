@@ -72,8 +72,7 @@ select {
     margin-top: 0.4em;
 }
 
-
-.button_confirm {
+.button_container {
     display: flex;
     justify-content: center; /* Esto centra el botón horizontalmente */
     margin-top: 1em; /* Un poco de espacio arriba para separarlo del último select */
@@ -98,16 +97,7 @@ label {
     margin-bottom: 1em;
 }
 
-@media screen and (max-width: 1050px) {
-    .contenedor_principal {
-        display: flex;
-        justify-content: space-around;
-        width: 95%;
-    }
-}
-
-@media screen and (max-width: 895px) {
-
+@media screen and (max-width: 1000px) {
     .contenedor_principal {
         max-width: 100%;
         flex-direction: column;
@@ -133,9 +123,34 @@ label {
     .confirm {
         justify-content: center;
     }
+
+    .principal_container {
+        padding: 0;
+    }
+
+    .form_dates {
+        margin:auto 2em 2em;
+    }
+
+    .photo_principal{
+        width: 70%;
+        display:flex;
+        justify-content: center;
+    }
+
+    .photo {
+        border-radius: 5%;
+        width: 100%;
+        height: auto;
+    }
+
+    .price {
+        top: 5%;
+        right: 10%;
+    }
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 500px) {
 
     .contenedor_principal {
         max-width: 100%;
@@ -158,4 +173,7 @@ label {
         width: 100%;
     }
 
+    .photo_principal{
+        width: 85%;
+    }
 }
