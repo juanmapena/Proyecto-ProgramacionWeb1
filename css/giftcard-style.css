@@ -13,6 +13,29 @@ body {
     padding: 2.5em;
 }
 
+
+h2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+    color: #172A3A;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h4 {
+    margin-top: 1em;
+    color: black;
+
+}
+
+h2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+    color: #172A3A;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .form_dates {
     box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.1);
     padding: 3em;
@@ -27,6 +50,7 @@ body {
 .photo {
     width: 70vh;
     height: 55vh;
+    border-radius: 0.8em;
 }
 
 .price {
@@ -72,17 +96,31 @@ select {
     margin-top: 0.4em;
 }
 
-.button_container {
+.button_contaniner {
     display: flex;
-    justify-content: center; /* Esto centra el botón horizontalmente */
-    margin-top: 1em; /* Un poco de espacio arriba para separarlo del último select */
+    justify-content: space-between;
+    align-items: center;
+    /* Esto centra el botón horizontalmente */
+    margin-top: 1em;
+    /* Un poco de espacio arriba para separarlo del último select */
 }
 
 .confirm {
-    margin-top: 2em;
     background-color: #84c318;
     color: white;
-    padding: 10px 20px;
+    padding: 0.5em 0.5em;
+    border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+    font-size: 1em;
+    width: 8em;
+    height: 2.4em;
+}
+
+.cancel {
+    background-color: red;
+    color: white;
+    padding: 0.5em 0.5em;
     border: none;
     border-radius: 1.5em;
     cursor: pointer;
@@ -96,6 +134,150 @@ label {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
+p {
+    font-family: monserrat;
+}
+
+.pixel_box {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 1.5em;
+    margin-bottom: 1em;
+    border: none;
+    gap: 1em;
+}
+
+
+
+
+/* 1. ESTILO BASE PARA LOS CONTENEDORES (LABELS) */
+.color_box,
+.location-option,
+.background-option {
+    display: inline-flex;
+    flex-direction: column;
+    /* Apila el contenido (diseño + radio) */
+    align-items: center;
+    /* Centra el diseño y el radio horizontalmente */
+    cursor: pointer;
+    margin-right: 1.5em;
+    margin-bottom: 1em;
+    border: none;
+}
+
+
+
+.color_box::before {
+    content: '';
+    /* Necesario para que el pseudo-elemento se renderice */
+    display: block;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    border: none;
+    margin-bottom: 0.3em;
+    box-sizing: border-box;
+}
+
+/* Aplicamos los colores de fondo a los pseudo-elementos */
+label[for="golden"].color_box::before {
+    background-color: goldenrod;
+}
+
+label[for="red"].color_box::before {
+    background-color: red;
+}
+
+label[for="blue"].color_box::before {
+    background-color: blue;
+}
+
+label[for="green"].color_box::before {
+    background-color: green;
+}
+
+label[for="grey"].color_box::before {
+    background-color: grey;
+}
+
+.location-option::before,
+.background-option::before {
+    content: '';
+    /* Necesario */
+    display: block;
+    width: 2.5em;
+    /* Tamaño del cuadrado */
+    height: 2.5em;
+    border-radius: 0.3em;
+    border: 0.1em solid #ccc;
+    /* Borde base para el cuadrado */
+    margin-bottom: 0.3em;
+    /* Espacio entre el cuadrado y el radio */
+    box-sizing: border-box;
+}
+
+
+/* 6. ESTILOS INDIVIDUALES DE UBICACIÓN (ÍCONOS) */
+/* Los bordes se aplican al pseudo-elemento del label */
+label[for="ubicacion_inferior_izquierda"]::before {
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+label[for="ubicacion_inferior_derecha"]::before {
+    border-bottom: 5px solid black;
+    border-right: 5px solid black;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+
+label[for="ubicacion_superior_derecha"]::before {
+    border-top: 5px solid black;
+    border-right: 5px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+
+label[for="ubicacion_superior_izquierda"]::before {
+    border-top: 5px solid black;
+    border-left: 5px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+
+
+
+/* 7. ESTILOS INDIVIDUALES DE FONDO */
+/* Aplicamos los colores de fondo a los pseudo-elementos */
+label[for="fondo1"]::before {
+    background-color: #888888;
+}
+
+label[for="fondo2"]::before {
+    background-color: #555555;
+}
+
+label[for="fondo3"]::before {
+    background-color: #AAAAAA;
+}
+
+label[for="fondo4"]::before {
+    background-color: #222222;
+}
+
+label[for="fondo5"]::before {
+    background-color: #CCCCCC;
+}
+
+/* ========================================================== */
+
+/* Mantén el resto de tu CSS (header, main, footer, media queries, etc.) como está. */
 
 @media screen and (max-width: 1000px) {
     .contenedor_principal {
@@ -129,12 +311,12 @@ label {
     }
 
     .form_dates {
-        margin:auto 2em 2em;
+        margin: auto 2em 2em;
     }
 
-    .photo_principal{
+    .photo_principal {
         width: 70%;
-        display:flex;
+        display: flex;
         justify-content: center;
     }
 
@@ -173,7 +355,20 @@ label {
         width: 100%;
     }
 
-    .photo_principal{
+    .photo_principal {
         width: 85%;
     }
-}
+
+    .button_contaniner {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+
+        label.color_box,
+        label.location-option,
+        label.background-option {
+            flex-direction: column;
+            align-items: center;
+        }
+    }

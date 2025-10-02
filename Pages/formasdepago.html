@@ -49,17 +49,18 @@
     </header>
 
     <main>
-        <section class="data">
-            <form action="#" method="get" autocomplete="off">
+        <section>
+            <form action="./home.html" method="get" autocomplete="off">
                 <h2>Pago con tarjeta</h2>
                 <label for="card">
                     Numero de tarjeta:
-                    <input type="text" name="card" id="card" maxlength="19" placeholder="Ingrese numero de la tarjeta">
+                    <input type="text" name="card" id="card" maxlength="19" placeholder="Ingrese numero de la tarjeta"
+                        required>
                 </label>
                 <h4 class="dates_h4"> Seleccione la fecha de vencimiento de la tarjeta</h4>
                 <div class="dates">
                     <label for="mes">Mes:</label>
-                    <select id="mes" name="mes">
+                    <select id="mes" name="mes" required>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -74,7 +75,7 @@
                         <option value="12">12</option>
                     </select>
                     <label for="anio">Año:</label>
-                    <select id="anio" name="anio">
+                    <select id="anio" name="anio" required>
                         <option value="2025">2025</option>
                         <option value="2026">2026</option>
                         <option value="2027">2027</option>
@@ -105,17 +106,26 @@
                 </div>
                 <label for="code">
                     Ingrese el código de seguridad:
-                    <input type="text" name="code" id="code" placeholder="555" maxlength="3">
+                    <input type="password" name="code" id="code" placeholder="555" maxlength="3" required>
                 </label>
                 <label for="name">
                     Ingrese el nombre del titular:
-                    <input type="text" name="name" id="name" placeholder="Ingrese el nombre del titular">
+                    <input type="text" name="name" id="name" placeholder="Ingrese el nombre del titular" required>
                 </label>
                 <label for="id">
                     Ingrese el DNI:
-                    <input type="text" name="id" id="id" maxlength="10" placeholder="00.000.000">
+                    <input type="text" name="id" id="id" maxlength="10" placeholder="00.000.000" required>
                 </label>
-                <button onclick="alert('Tu pago se realizó exitosamente');" class="pay"> Pagar </button>
+
+
+                <div class="buttons">
+                    <button class="cancel" type="button" onclick="window.location.href='./home.html'"> Cancelar ❌
+                    </button>
+
+                   <button class="pay" type="submit" onclick="alert('✅ Pago realizado con éxito')">Pagar ✓</button>
+
+                </div>
+
             </form>
         </section>
     </main>

@@ -98,47 +98,104 @@
 
             <article class="form_dates">
                 <h2>Personalización de Giftcard</h2>
-                <form action="./formasdepago.html" method="get" autocomplete="off">
-                    <input class="input_name" type="text" name="name" id="name" placeholder="Nombre del destinatario: ">
+                <form action="" method="get" autocomplete="off">
+                    <input class="input_name" type="text" name="name" id="name" placeholder="Nombre del destinatario:" required>
 
-                    <label for="colours">Seleccione el color:</label>
-                    <select id="colours">
-                        <option value="" selected disabled>** Elija una opción **</option>
-                        <option value="Dorado">Dorado</option>
-                        <option value="Blanco">Blanco</option>
-                        <option value="Verde">Verde</option>
-                    </select>
 
-                    <label for="fountain">Seleccione el tamaño de la fuente:</label>
-                    <select id="fountain">
-                        <option value="" selected disabled>** Elija una opción **</option>
-                        <option value="28px">28px</option>
-                        <option value="32px">32px</option>
-                        <option value="48px">48px</option>
-                        <option value="64px">64px</option>
-                    </select>
+                    <h4> Seleccione el color de la Gift Card: </h4>
 
-                    <label for="ubicatios">Seleccione la ubicación del valor:</label>
-                    <select id="ubications">
-                        <option value="" selected disabled>** Elija una opción **</option>
-                        <option value="Esquina inferior izquierda">Esquina inferior izquierda</option>
-                        <option value="Esquina inferior derecha">Esquina inferior derecha</option>
-                        <option value="Esquina superior izquierda">Esquina superior izquierda</option>
-                        <option value="Esquina superior derecha">Esquina superior derecha</option>
-                    </select>
+                    <label for="golden" class="color_box">
+                        <input type="radio" name="colours" id="golden" value="Dorado">
+                    </label>
+                    <label for="red" class="color_box">
+                        <input type="radio" name="colours" id="red" value="Rojo">
+                    </label>
+                    <label for="blue" class="color_box">
+                        <input type="radio" name="colours" id="blue" value="Azul">
+                    </label>
+                    <label for="green" class="color_box">
+                        <input type="radio" name="colours" id="green" value="Verde">
+                    </label>
+                    <label for="grey" class="color_box">
+                        <input type="radio" name="colours" id="grey" value="Gris">
+                    </label>
 
-                    <label for="background">Seleccione un fondo:</label>
-                    <select id="background">
-                        <option value="" selected disabled>** Elija una opción **</option>
-                        <option value="Fondo1">Fondo1</option>
-                        <option value="Fondo2">Fondo2</option>
-                        <option value="Fondo3">Fondo3</option>
-                        <option value="Fondo4">Fondo4</option>
-                    </select>
 
-                    <div class="button_container">
-                        <button class="confirm" type="submit"> Confirmar </button>
+                    <h4>Seleccione la fuente:</h4>
+
+                    <label for="20px" class="pixel_box">
+                        20px:
+                        <input type="radio" name="fountain" id="20px" value="20px">
+                    </label>
+                    <label for="28px" class="pixel_box">
+                        28px:
+                        <input type="radio" name="fountain" id="28px" value="28px">
+                    </label>
+                    <label for="32px" class="pixel_box">
+                        32px:
+                        <input type="radio" name="fountain" id="32px" value="32px">
+                    </label>
+                    <label for="48px" class="pixel_box">
+                        48px:
+                        <input type="radio" name="fountain" id="48px" value="48px">
+                    </label>
+                    <label for="64px" class="pixel_box">
+                        64px:
+                        <input type="radio" name="fountain" id="64px" value="464x">
+                    </label>
+
+
+                    <h4>Seleccione la ubicación del valor:</h4>
+
+                    <label for="ubicacion_inferior_izquierda" class="location-option">
+                        <input type="radio" name="ubications" id="ubicacion_inferior_izquierda"
+                            value="Esquina inferior izquierda">
+                    </label>
+
+                    <label for="ubicacion_inferior_derecha" class="location-option">
+                        <input type="radio" name="ubications" id="ubicacion_inferior_derecha"
+                            value="Esquina inferior derecha">
+                    </label>
+
+                    <label for="ubicacion_superior_derecha" class="location-option">
+                        <input type="radio" name="ubications" id="ubicacion_superior_derecha"
+                            value="Esquina superior derecha">
+                    </label>
+
+                    <label for="ubicacion_superior_izquierda" class="location-option">
+                        <input type="radio" name="ubications" id="ubicacion_superior_izquierda"
+                            value="Esquina superior izquierda">
+                    </label>
+
+
+                    <h4>Seleccione un fondo:</h4>
+
+                    <label for="fondo1" class="background-option">
+                        <input type="radio" name="background" id="fondo1" value="fondo1">
+                    </label>
+
+                    <label for="fondo2" class="background-option">
+                        <input type="radio" name="background" id="fondo2" value="fondo2">
+                    </label>
+
+                    <label for="fondo3" class="background-option">
+                        <input type="radio" name="background" id="fondo3" value="fondo3">
+                    </label>
+
+                    <label for="fondo4" class="background-option">
+                        <input type="radio" name="background" id="fondo4" value="fondo4">
+                    </label>
+
+                    <label for="fondo5" class="background-option">
+                        <input type="radio" name="background" id="fondo5" value="fondo5">
+                    </label>
+
+                    <div class="button_contaniner">
+                        <button class="cancel" type="button" onclick="history.back()"> Cancelar ❌ </button>
+
+                        <button class="confirm" type="submit"> Confirmar ✓</button>
                     </div>
+
 
                 </form>
             </article>

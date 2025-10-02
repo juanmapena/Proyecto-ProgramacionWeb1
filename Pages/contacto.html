@@ -91,7 +91,7 @@
 
         <section class="principal_section">
             <article class="data">
-                <form action="#" method="get" autocomplete="off">
+                <form action="./home.html" method="get" autocomplete="off">
                     <h2 class="h2_contacto"> CONTACTO </h2>
                     <label for="name">
                         <input type="text" name="name" id="name" placeholder="Ingrese su nombre" required />
@@ -111,14 +111,10 @@
                     </label>
 
 
-                    <button class="button_send" type="button" popovertarget="my-popover">
-                        Enviar
-                    </button>
+                    <button class="button_send" type="submit"
+                        onclick="alert('Tu mensaje fue rececbido con éxito! en breve te contestaremos por email')">
+                        Enviar</button>
 
-                    <div popover id="my-popover">
-                        Perfecto! Ya recibimos tu formulario! <br>
-                        &#128077;
-                    </div>
                 </form>
             </article>
 
