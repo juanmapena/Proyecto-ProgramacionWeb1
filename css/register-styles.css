@@ -63,6 +63,27 @@ main{
     }
 }
 
+.back-button{
+    margin-left: 5em;
+    margin-top: 2em;
+    button{
+        background-color: #004346;
+        border: 2px solid #004346;
+        border-radius: 40px;
+        font-size: 1em;
+        color: #F5FBEF;
+        width: fit-content; 
+        padding: 0.7em 2em ;
+    }
+
+    button:hover {
+        border: 2px solid #172A3A;
+        background-color: #F5FBEF;
+        color: #172A3A;
+        cursor: pointer;
+    }
+}
+
 @media screen and (max-width: 1200px) {
     .section-form {
         width: 40%;
@@ -85,7 +106,12 @@ main{
             height: auto;
         }
         main {
-            padding: 5em 0;
+            padding: 2em 0;
+
+            .back-button{
+                margin-top: 0;
+                margin-bottom: 0.5em;
+            }
         }
     }
 }
@@ -94,10 +120,33 @@ main{
     .section-form {
         width: 75%;
     }
+    
+    .back-button{
+        button .only-desktop {
+            display: none;
+        }
+    }
 }
 
 @media screen and (max-width: 500px) {
+
+    body {
+        main {
+            padding: 0.5em;
+        }
+    }
+
+    body main .back-button{
+        margin: 1.5em 2em;
+        button .only-desktop {
+            display: none;
+        }
+    }
+    
     .section-form {
         width: 85%;
+        button{
+            margin-bottom: 2em;
+        }
     }
 }
