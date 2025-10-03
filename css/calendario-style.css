@@ -52,7 +52,6 @@ h3, h4, h5{
     padding: 15px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
     border: 1px solid #61616125;
 }
 
@@ -60,17 +59,28 @@ h3, h4, h5{
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-between;
 }
 
-.fecha-info a{
+
+.fecha-info{
+    a{
     display: block;
     color: #575c55;
     text-decoration: none;
     padding: 0.5em;
     border-radius: 10px;
     background-color: #d9ff96;
-    text-align: justify;
+    text-align: center;
+    }
+
+    span{
+        background-color: #d9ff96;
+        color: #343633;
+        height: 1.5em;
+        width: 1.5em;
+        border-radius: 50%;
+        text-align: center;
+    }
 }
 
 .fecha-info a:hover{
@@ -79,7 +89,7 @@ h3, h4, h5{
     font-weight: bold;
 }
 
- @media screen and (max-width: 800px) {
+ @media screen and (max-width: 870px) {
     .calendario {
         padding: 1.5em 1em;
     }
@@ -88,30 +98,11 @@ h3, h4, h5{
         min-height: 90px;  
         padding: 10px;     
         font-size: 0.8em;
-        gap: 10px;
     }
     
     .fecha-info a {
         padding: 0.3em;   
         margin-top: 0;
-    }
-    
-    .dia {
-        font-size: 0.8em;  
-    }
-} 
-
-
-@media screen and (max-width: 500px) {
-    .calendario {
-        padding: 1em 0.5em;
-    }
-    
-    .fecha {
-        min-height: 75px;
-        padding: 5px;
-        font-size: 0.7em;
-        gap: 5px;
     }
 
     .dia{
@@ -121,12 +112,25 @@ h3, h4, h5{
         font-size: 0.75em;  
         display: block;
     }
+} 
 
-    .fa-cart-background {
-    width: 3em;
-    height: 3em;
-    a i {
-        font-size: 1.5em;
+
+@media screen and (max-width: 500px) {
+    .calendario {
+        padding: 1em 0.2em;
     }
-  }
+    
+    .fecha {
+        min-height: 75px;
+        padding: 5px;
+        font-size: 0.7em;
+    }
+
+    .dia {
+        font-size: 0.8em;  
+    }
+
+    .fecha-info a {
+        padding: 0.3em 0;   
+    }
 }
