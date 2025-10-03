@@ -17,20 +17,21 @@
 
 <body>
 
-   <header class="header">
+     <header class="header">
         <div class="header_div">
             <a href="./home.html">
                 <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
             </a>
         </div>
 
+   
         <nav class="header_nav">
             <ul class="header_nav_ul">
                 <li>
-                    <a class="header_nav_ul_li_a" href="./home.html">Home</a>
+                    <a class="header_nav_ul_li_a" href="./cursos.html">Cursos</a>
                 </li>
                 <li>
-                    <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
+                    <a class="header_nav_ul_li_a" href="./cuenta.html">Perfil</a>
                 </li>
                 <li>
                     <a class="header_nav_ul_li_a" href="./calendario.html">Calendario</a>
@@ -42,15 +43,38 @@
 
                 </li>
 
+                <li>
+
+                    <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
+
+                </li>
+
 
             </ul>
         </nav>
+
+
         <div class="div_button">
-            <a href="./cuenta.html">
-                <button class="button">Mi cuenta</button>
+
+            <form class="form_busqueda" action="" autocomplete="off">
+
+
+                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+
+
+            </form>
+
+
+            <a id="ancla_cerrarsesion" href="../index.html">
+                <button class="button">Cerrar sesión</button>
             </a>
-            <img class="imagen_carrito" src="../assets/carrito-de-compras (1).png" alt="Carrito"> <span
-                class="span_carrito">1</span>
+
+            <a class="ancla_carrito" href="">
+
+                <i class="fa-solid fa-cart-shopping"></i> 
+
+            </a>
+            
         </div>
     </header>
 
@@ -61,17 +85,17 @@
     <main>
 
 
-        <div class="div_section">
+        <section class="section_curso">
 
-            <section>
+            <article>
 
                 <img class="section_img" class="img_java" src="../assets/java_detalle.jpg" alt="Logo JavaScript">
 
-            </section>
+            </article>
 
-            <section class="section_curso">
+            <article class="article_descripcion">
 
-                <h1 class="section_titulo">Java</h1>
+                <h1 class="article_titulo">Java</h1>
                 <p><strong>Valor curso:</strong> $110</p>
                 <p><strong>Tiempo de dedicación necesario:</strong> 10 semanas</p>
                 <p><strong>Descripción del curso:</strong> Aprende a programar en Java, uno de los lenguajes más
@@ -83,8 +107,8 @@
                     <button class="button_inscripcion" type="submit">Inscribirse</button>
                 </a>
 
-            </section>
-        </div>
+            </article>
+        </section>
 
 
 
@@ -118,31 +142,27 @@
             </details>
         </section>
 
+        <section>
+
+            <h1 class="h1_contenidos">DOCENTE</h1>
+
+        </section>
+
+         
+
+        <section class="section_profesor">
 
 
+            <article class="article_contenedor_foto">
 
-
-        <h2>DOCENTE</h2>
-
-
-
-
-
-
-
-        <div class="section_profesor">
-
-
-            <section class="section_foto">
-
-                <img class="imagen_profesor_javascript" src="../assets/profesor_java.jpg"
+                <img class="imagen_profesor" src="../assets/profesor_java.jpg"
                     alt="Profesor de programación">
 
-            </section>
+            </article>
 
 
 
-            <section class="section_descripcion">
+            <article class="article_descripcion_profesor">
 
                 <h2>Tomás Urquiza</h2>
                 <p>⭐⭐⭐⭐⭐</p>
@@ -167,14 +187,19 @@
                     principales herramientas. Actualmente, combina su labor docente con proyectos freelance en
                     desarrollo de APIs, microservicios y aplicaciones móviles en Android.</p>
 
-            </section>
+            </article>
 
 
-        </div>
+        </section>
 
 
 
-        <h2>Otros cursos</h2>
+        <section>
+
+            <h1 class="h1_contenidos">Otros Cursos</h1>
+
+        </section>
+
 
         <section class="card-container_detalle">
 

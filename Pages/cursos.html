@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cursos</title>
         <link rel="stylesheet" href="../css/styles.css">
-        <!-- <link rel="stylesheet" href="../css/home-style.css"> -->
         <link rel="stylesheet" href="../css/cursos-style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,41 +14,67 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     </head>
     <body>
-         <!-- Pagina de cursos mostradando una caja con el nombre del curso y un encabezado con algo de informacion (Nombre curso, nivel, duracion, link(Ver Detalle),?)
-         Reutilizar section del home con los cursos o sacarlo del detalle_curso -->
-        <header class="header">
-            <div class="header_div">
-                <a href="./home.html">
-                    <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
-                </a>
-            </div>
-            <nav class="header_nav">
-                <ul class="header_nav_ul">
-                    <li>
-                        <a class="header_nav_ul_li_a" href="./home.html">Home</a>
-                    </li>
-                    <li>
-                        <a class="header_nav_ul_li_a" href="./cursos.html">Cursos</a>
-                    </li>
-                    <li>
-                        <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
-                    </li>
-                    <li>
-                        <a class="header_nav_ul_li_a" href="./calendario.html">Calendario</a>
-                    </li>
-                    <li>
-                        <a class="header_nav_ul_li_a" href="./giftcard.html">Gifts</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="div_button">
-                <a href="./cuenta.html">
-                    <button class="button">Mi cuenta</button>
-                </a>
-                <img class="imagen_carrito" src="../assets/carrito-de-compras (1).png" alt="Carrito"> <span
-                    class="span_carrito">1</span>
-            </div>
-        </header>
+       
+         <header class="header">
+        <div class="header_div">
+            <a href="./home.html">
+                <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
+            </a>
+        </div>
+
+   
+        <nav class="header_nav">
+            <ul class="header_nav_ul">
+                <li>
+                    <a class="header_nav_ul_li_a" href="./cursos.html">Cursos</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./cuenta.html">Perfil</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./calendario.html">Calendario</a>
+                </li>
+
+                <li>
+
+                    <a class="header_nav_ul_li_a" href="./giftcard.html">Gifts</a>
+
+                </li>
+
+                <li>
+
+                    <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
+
+                </li>
+
+
+            </ul>
+        </nav>
+
+
+        <div class="div_button">
+
+            <form class="form_busqueda" action="" autocomplete="off">
+
+
+                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+
+
+            </form>
+
+
+            <a id="ancla_cerrarsesion" href="../index.html">
+                <button class="button">Cerrar sesión</button>
+            </a>
+
+            <a class="ancla_carrito" href="">
+
+                <i class="fa-solid fa-cart-shopping"></i> 
+
+            </a>
+            
+        </div>
+    </header>
         <main>
             <div class="titulo-container">
                 <h1>Nuestro Cursos</h2>
@@ -63,8 +88,8 @@
                         <h3>Curso de Javascript</h4>
                         <p><strong>Nivel:</strong>  Inicial</p>
                         <p><strong>Duracion:</strong>  10 semanas</p>
-                        <p><strong>Requisitos previos:</strong> Conocimientos básicos de programación.</p>
-                        <a href="../pages/inscripcion.html">
+                        <p><strong>Requisitos previos:</strong> Conocimientos básicos de informática.</p>
+                        <a href="./detalle_javascript.html">
                             <button class="button_detalle" type="submit">Ver detalle</button>
                         </a>
                     </div>
@@ -78,7 +103,7 @@
                         <p><strong>Nivel:</strong>  Inicial</p>
                         <p><strong>Duracion:</strong>  14 semanas</p>
                         <p><strong>Requisitos previos:</strong> Conocimientos básicos de programación.</p>
-                        <a href="../pages/inscripcion.html">
+                        <a href="./detalle_java.html">
                             <button class="button_detalle" type="submit">Ver detalle</button>
                         </a>
                     </div>
@@ -91,8 +116,8 @@
                         <h3>Curso de Python</h4>
                         <p><strong>Nivel:</strong>  Inicial</p>
                         <p><strong>Duracion:</strong>  12 semanas</p>
-                        <p><strong>Requisitos previos:</strong> Conocimientos básicos de programación.</p>
-                        <a href="../pages/inscripcion.html">
+                        <p><strong>Requisitos previos:</strong> Conocimientos básicos de informática.</p>
+                        <a href="./detalle_python.html">
                             <button class="button_detalle" type="submit">Ver detalle</button>
                         </a>
                     </div>
@@ -105,22 +130,22 @@
                         <h3>Curso de Python</h4>
                         <p><strong>Nivel:</strong>  Inicial</p>
                         <p><strong>Duracion:</strong>  12 semanas</p>
-                        <p><strong>Requisitos previos:</strong> Conocimientos básicos de programación.</p>
-                        <a href="../pages/inscripcion.html">
+                        <p><strong>Requisitos previos:</strong> Conocimientos básicos de informática.</p>
+                        <a href="./detalle_python.html">
                             <button class="button_detalle" type="submit">Ver detalle</button>
                         </a>
                     </div>
                 </article>
                 <article class="curso-tarjeta">
                     <div class="curso-logo">
-                        <img class="imagenes_cursos" src="../assets/logo_typescript.png" alt="Logo Typescript">
+                        <img class="imagenes_cursos" src="../assets/logo_javascript_home.jpg" alt="Logo Typescript">
                     </div>
                     <div class="curso-contenido">
-                        <h3>Curso de TypeScript</h4>
-                        <p><strong>Nivel:</strong>  Intermedio</p>
+                       <h3>Curso de Javascript</h4>
+                        <p><strong>Nivel:</strong>  Inicial</p>
                         <p><strong>Duracion:</strong>  10 semanas</p>
-                        <p><strong>Requisitos previos:</strong> Conocimientos de programación con JavaScript.</p>
-                        <a href="../pages/inscripcion.html">
+                        <p><strong>Requisitos previos:</strong> Conocimientos básicos de informática.</p>
+                        <a href="./detalle_javascript.html">
                             <button class="button_detalle" type="submit">Ver detalle</button>
                         </a>
                     </div>
@@ -134,38 +159,11 @@
                         <p><strong>Nivel:</strong>  Inicial</p>
                         <p><strong>Duracion:</strong>  14 semanas</p>
                         <p><strong>Requisitos previos:</strong> Conocimientos básicos de programación.</p>
-                        <a href="../pages/inscripcion.html">
+                        <a href="./detalle_java.html">
                             <button class="button_detalle" type="submit">Ver detalle</button>
                         </a>
                     </div>
                 </article>
-                <!-- <article class="details">
-                    <div>
-                        <a href="./detalle_python.html">
-                            <img class="imagenes_cursos" src="../assets/logo_phyton_home.jpg" alt="Logo Python">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="../pages/detalle_java.html">
-                            <img class="imagenes_cursos" src="../assets/logo_java.jpg" alt="LogoJava">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="../pages/detalle_javascript.html">
-                            <img class="imagenes_cursos" src="../assets/logo_javascript_home.jpg" alt="Logo JavaScript">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="./detalle_python.html">
-                            <img class="imagenes_cursos" src="../assets/logo_phyton_home.jpg" alt="Logo Python">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="../pages/detalle_java.html">
-                            <img class="imagenes_cursos" src="../assets/logo_java.jpg" alt="LogoJava">
-                        </a>
-                    </div>
-                </article> -->
             </section>
         </main>
     <footer>
