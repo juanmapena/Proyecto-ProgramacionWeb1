@@ -118,7 +118,7 @@ select {
 }
 
 .cancel {
-    background-color: red;
+    background-color: rgb(100, 0, 0);
     color: white;
     padding: 0.5em 0.5em;
     border: none;
