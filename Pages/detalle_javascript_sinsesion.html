@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/detalle-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Detalle</title>
+</head>
+
+<body>
+   <header class="header">
+        <div class="header_div">
+            <a href="../index.html">
+                <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
+            </a>
+        </div>
+
+   
+        <nav class="header_nav">
+            <ul class="header_nav_ul">
+                <li>
+                   <a class="header_nav_ul_li_a" href="./cursos_sinsesion.html">Cursos</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./login.html">Perfil</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./login.html">Calendario</a>
+                </li>
+
+                <li>
+
+                    <a class="header_nav_ul_li_a" href="./login.html">Gifts</a>
+
+                </li>
+
+                <li>
+
+                    <a class="header_nav_ul_li_a" href="./contacto_sinsesion.html">Contacto</a>
+
+                </li>
+
+
+            </ul>
+        </nav>
+
+
+        <div class="div_button">
+
+            <form class="form_busqueda" action="./cursos_sinsesion.html" autocomplete="off">
+
+
+                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+
+
+            </form>
+
+
+            <a id="ancla_cerrarsesion" href="./login.html">
+                <button class="button">Iniciar sesión</button>
+            </a>
+
+            <a class="ancla_carrito" href="./login.html">
+
+                <i class="fa-solid fa-cart-shopping"></i> 
+
+            </a>
+            
+        </div>
+    </header>
+
+
+
+
+    <main>
+
+
+        <section class="section_curso">
+
+            <article>
+
+                <img class="section_img" src="../assets/logo-javascript.jpg" alt="Logo JavaScript">
+
+            </article>
+
+            <article class="article_descripcion">
+
+                <h1 class="article_titulo">JavaScript</h1>
+                <p><strong>Valor curso:</strong> $150</p>
+                <p><strong>Tiempo de dedicación necesario:</strong> 12 semanas</p>
+                <p><strong>Descripción del curso:</strong> Aprende a programar en JavaScript, el lenguaje esencial para
+                    el desarrollo web, con proyectos prácticos y dinámicos.</p>
+                <p><strong>Requisitos previos:</strong> Conocimientos básicos de informática.</p>
+                <a href="./login.html">
+                    <button class="button_inscripcion" type="submit">Inscribirse</button>
+                </a>
+            </article>
+        </section>
+
+
+
+        <section class="section_contenidos">
+
+            <h1 class="h1_contenidos">CONTENIDOS POR CLASE</h1>
+
+            <details class="details">
+
+                <summary class="summary">Introducción</summary>
+                <p>Video</p>
+                <p>Audio</p>
+                <p>Examen</p>
+            </details>
+
+
+            <details class="details">
+
+                <summary class="summary">Unidad 2</summary>
+                <p>Contenidos</p>
+
+
+            </details>
+
+            <details class="details">
+
+                <summary class="summary">Unidad 3</summary>
+                <p>Contenidos</p>
+
+
+            </details>
+        </section>
+
+
+
+
+   <section>
+
+            <h1 class="h1_contenidos">DOCENTE</h1>
+
+        </section>
+
+
+
+
+        <section class="section_profesor">
+
+
+            <article class="article_contenedor_foto">
+
+                <img class="imagen_profesor" src="../assets/profesor_python_nuevo.jpg" alt="Profesor de programación">
+
+            </article>
+
+
+
+            <article class="article_descripcion_profesor">
+
+                <h2>Jorge Medina</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>
+                    Con más de 7 años de experiencia en desarrollo web, Jorge se especializa en
+                    JavaScript, tanto en el lado del cliente como en el servidor.
+                    Ha impartido cursos en universidades y plataformas online, enseñando desde los
+                    fundamentos del lenguaje hasta frameworks modernos como React y
+                    Node.js.
+                    Apasionado por la creación de aplicaciones dinámicas e interactivas, utiliza proyectos prácticos
+                    para que los estudiantes adquieran experiencia real en el desarrollo web.
+                </p>
+
+
+                <h3>Trayectoria</h3>
+
+                <p> Inició su carrera como desarrollador frontend en una agencia digital, donde trabajó en
+                    proyectos de diseño y programación de sitios web interactivos. Posteriormente, se desempeñó
+                    como desarrollador fullstack en empresas tecnológicas, aplicando JavaScript junto con
+                    herramientas como Express y MongoDB. Paralelamente, comenzó a dar clases
+                    de JavaScript en academias de programación y bootcamps, formando a cientos de estudiantes
+                    en tecnologías web modernas. Actualmente, combina la enseñanza con el desarrollo freelance
+                    de aplicaciones web y móviles.</p>
+
+            </article>
+
+
+        </section>
+
+
+
+        <section>
+
+            <h1 class="h1_contenidos">Otros Cursos</h1>
+
+        </section>
+
+
+        <section class="card-container_detalle">
+           <div class="card_detalle">
+                <img class="card-imagenes" src="../assets/logo_java.jpg" alt="Logo Java">
+                <p id="nombre-curso"> <strong>Java</strong></p>
+                <p id="duracion-curso"><strong>Duracion:</strong> 10 semanas</p>
+                <a href="./detalle_java_sinsesion.html">
+                    <p>Ver más detalles</p>
+                </a>
+                </div>
+            <div class="card_detalle">
+                <img class="card-imagenes" src="../assets/logo_phyton_home.jpg" alt="Logo Python">
+                <p id="nombre-curso"> <strong>Python</strong> </p>
+                <p id="duracion-curso"><strong>Duracion:</strong> 6 semanas</p>
+                <a href="./detalle_python_sinsesion.html">
+                    <p>Ver más detalles</p>
+                </a>
+                </div>
+        </section>
+
+
+
+
+
+
+
+
+
+    </main>
+
+   <footer>
+        <section class="about_us">
+            <article>
+                <p>Emanuel Ruiz Díaz (40.380.499) </p>
+                <p>Juan Manuel Pena (45.495.738)
+                <p>
+                <p>Santiago Javier Falconi (44.099.057)
+                <p>
+                <p>Luna Melanie Daiana (41.713.955)
+                <p>
+                <p> Alan Cahuana Rodríguez (37.996.385)
+                <p>
+            </article>
+            <article>
+                <a class="ancla" href="https://x.com/?lang=es">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a class="ancla" href="https://www.instagram.com/">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="ancla" href="https://www.youtube.com/">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a class="ancla" href="https://discord.com/">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </article>
+
+
+            <article>
+                <h4>Copyright © <h4>
+                        <p>Todos los derechos están reservados
+                        <p>
+                        
+            </article>
+        </section>
+    </footer>
+    
+        <div class="mobile-cart">
+        <div class="fa-cart-background">
+            <a href="./login.html">
+                <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

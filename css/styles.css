@@ -216,20 +216,19 @@ footer {
 
   header .div_button {
     width: 90%;
-   justify-content: space-between;
-   margin: 0.5em auto;
-    form{
-      width: 60%;
+    justify-content: space-between;
+    margin: 0.5em auto;
+      form{
+        width: 60%;
 
-    .input_busqueda{
-      height: 2.5em;
-    }
+      .input_busqueda{
+        height: 2.5em;
+      }
 
-    }
+      }
 
 
     #ancla_cerrarsesion{
-
       width: 30%;
       
       .button{
@@ -247,9 +246,14 @@ footer {
 
 
   .header_nav_ul{
-
     display: flex;
     flex-direction: column;
+
+    li, li a {
+      width: 100%;
+      display: block;
+      padding: 0;
+    }
   }
 
 

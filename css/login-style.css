@@ -152,6 +152,28 @@ main {
     }
 }
 
+.back-button{
+    margin-left: 1em;
+    position: absolute;
+    top: 4em;
+    button{
+        background-color: #F5FBEF;
+        border: 2px solid #F5FBEF;
+        border-radius: 40px;
+        font-size: 1em;
+        color: #004346;
+        width: fit-content; 
+        padding: 0.5em 1em;
+    }
+
+    button:hover {
+        border: 2px solid #F5FBEF;
+        background-color: #172A3A;
+        color: #F5FBEF;
+        cursor: pointer;
+    }
+}
+
 @media screen and (max-width: 1400px) {
     .login-card {
         width: 40%;
