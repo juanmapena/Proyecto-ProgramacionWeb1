@@ -16,50 +16,81 @@
 </head>
 
 <body>
-    <header class="header">
+         
+         <header class="header">
         <div class="header_div">
             <a href="./home.html">
                 <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
             </a>
         </div>
+
+   
         <nav class="header_nav">
             <ul class="header_nav_ul">
                 <li>
-                    <a class="header_nav_ul_li_a" href="./home.html">Home</a>
+                    <a class="header_nav_ul_li_a" href="./cursos.html">Cursos</a>
                 </li>
                 <li>
-                    <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
+                    <a class="header_nav_ul_li_a" href="./cuenta.html">Perfil</a>
                 </li>
                 <li>
                     <a class="header_nav_ul_li_a" href="./calendario.html">Calendario</a>
                 </li>
+
                 <li>
+
                     <a class="header_nav_ul_li_a" href="./giftcard.html">Gifts</a>
+
                 </li>
+
+                <li>
+
+                    <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
+
+                </li>
+
+
             </ul>
         </nav>
 
+
         <div class="div_button">
-            <a href="./cuenta.html">
-                <button class="button">Mi cuenta</button>
+
+            <form class="form_busqueda" action="" autocomplete="off">
+
+
+                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+
+
+            </form>
+
+
+            <a id="ancla_cerrarsesion" href="../index.html">
+                <button class="button">Cerrar sesión</button>
             </a>
-            <img class="imagen_carrito" src="../assets/carrito-de-compras (1).png" alt="Carrito"> <span
-                class="span_carrito">1</span>
+
+            <a class="ancla_carrito" href="./carrito.html">
+
+                <i class="fa-solid fa-cart-shopping"></i> 
+
+            </a>
+            
         </div>
     </header>
 
     <main>
-        <section class="data">
-            <form action="#" method="get" autocomplete="off">
+        <section>
+            <form action="./home.html" method="get" autocomplete="off">
                 <h2>Pago con tarjeta</h2>
                 <label for="card">
                     Numero de tarjeta:
-                    <input type="text" name="card" id="card" maxlength="19" placeholder="Ingrese numero de la tarjeta">
+                    <input type="text" name="card" id="card" maxlength="19" placeholder="Ingrese numero de la tarjeta"
+                        required>
                 </label>
                 <h4 class="dates_h4"> Seleccione la fecha de vencimiento de la tarjeta</h4>
                 <div class="dates">
                     <label for="mes">Mes:</label>
-                    <select id="mes" name="mes">
+                    <select id="mes" name="mes" required>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -74,7 +105,7 @@
                         <option value="12">12</option>
                     </select>
                     <label for="anio">Año:</label>
-                    <select id="anio" name="anio">
+                    <select id="anio" name="anio" required>
                         <option value="2025">2025</option>
                         <option value="2026">2026</option>
                         <option value="2027">2027</option>
@@ -105,17 +136,26 @@
                 </div>
                 <label for="code">
                     Ingrese el código de seguridad:
-                    <input type="text" name="code" id="code" placeholder="555" maxlength="3">
+                    <input type="password" name="code" id="code" placeholder="555" maxlength="3" required>
                 </label>
                 <label for="name">
                     Ingrese el nombre del titular:
-                    <input type="text" name="name" id="name" placeholder="Ingrese el nombre del titular">
+                    <input type="text" name="name" id="name" placeholder="Ingrese el nombre del titular" required>
                 </label>
                 <label for="id">
                     Ingrese el DNI:
-                    <input type="text" name="id" id="id" maxlength="10" placeholder="00.000.000">
+                    <input type="text" name="id" id="id" maxlength="10" placeholder="00.000.000" required>
                 </label>
-                <button onclick="alert('Tu pago se realizó exitosamente');" class="pay"> Pagar </button>
+
+
+                <div class="buttons">
+                    <button class="cancel" type="button" onclick="window.location.href='./home.html'"> Cancelar ❌
+                    </button>
+
+                   <button class="pay" type="submit" onclick="alert('✅ Pago realizado con éxito')">Pagar ✓</button>
+
+                </div>
+
             </form>
         </section>
     </main>
@@ -156,7 +196,7 @@
     </footer>
     <div class="mobile-cart">
         <div class="fa-cart-background">
-            <a href="#">
+            <a href="./carrito.html">
                 <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
             </a>
         </div>

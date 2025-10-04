@@ -16,34 +16,64 @@
 </head>
 
 <body>
-    <header class="header">
+     <header class="header">
         <div class="header_div">
             <a href="./home.html">
                 <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
             </a>
         </div>
+
+   
         <nav class="header_nav">
             <ul class="header_nav_ul">
                 <li>
-                    <a class="header_nav_ul_li_a" href="./home.html">Home</a>
+                    <a class="header_nav_ul_li_a" href="./cursos.html">Cursos</a>
                 </li>
                 <li>
-                    <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
+                    <a class="header_nav_ul_li_a" href="./cuenta.html">Perfil</a>
                 </li>
                 <li>
                     <a class="header_nav_ul_li_a" href="./calendario.html">Calendario</a>
                 </li>
-                    <li>
+
+                <li>
+
                     <a class="header_nav_ul_li_a" href="./giftcard.html">Gifts</a>
+
                 </li>
+
+                <li>
+
+                    <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
+
+                </li>
+
+
             </ul>
         </nav>
+
+
         <div class="div_button">
-            <a href="./cuenta.html">
-                <button class="button">Mi cuenta</button>
+
+            <form class="form_busqueda" action="" autocomplete="off">
+
+
+                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+
+
+            </form>
+
+
+            <a id="ancla_cerrarsesion" href="../index.html">
+                <button class="button">Cerrar sesión</button>
             </a>
-            <img class="imagen_carrito" src="../assets/carrito-de-compras (1).png" alt="Carrito"> <span
-                class="span_carrito">1</span>
+
+            <a class="ancla_carrito" href="./carrito.html">
+
+                <i class="fa-solid fa-cart-shopping"></i> 
+
+            </a>
+            
         </div>
     </header>
     <main>
@@ -54,6 +84,7 @@
             <article class="profile-img">
                 <img src="../Assets/perfilUsuario.jpg" alt="Foto de perfil">
                 <h2>Santi3214</h2>
+                <a href="../index.html" id="delete-account">Eliminar cuenta</a>
             </article>
         </section>
         <section class="data-form">
@@ -63,34 +94,29 @@
             <form action="#" method="get">
                 <label for="name">
                     <span>Nombre</span>
-                    <input type="text" class="name" id="name" placeholder="Santiago Javier">
+                    <input type="text" class="name" id="name" placeholder="Santiago Javier" required>
                 </label>
                 <label for="last-name">
                     <span>Apellido</span>
-                    <input type="text" class="last-name" id="last-name" placeholder="Falconi">
+                    <input type="text" class="last-name" id="last-name" placeholder="Falconi" required>
                 </label>
                 <label for="email">
                     <span>Email</span>
-                    <input type="email" class="email" id="email" placeholder="santiJFalconi123@outlook.com.ar">
+                    <input type="email" class="email" id="email" placeholder="santiJFalconi123@outlook.com.ar" required>
                 </label>
                 <label for="current-password">
                     <span>Contraseña actual</span>
-                    <input type="password" class="current-password" id="current-password" placeholder="Ingrese su contraseña actual">
+                    <input type="password" class="current-password" id="current-password" placeholder="Ingrese su contraseña actual" required>
                 </label>
-                <label for="password">
+                <label for="new-password">
                     <span>Nueva contraseña</span>
-                    <input type="new-password" class="new-password" id="new-password" placeholder="Ingrese la nueva contraseña">
+                    <input type="password" class="new-password" id="new-password" placeholder="Ingrese la nueva contraseña" required>
                 </label>
-                <label for="">
+                <label for="repeat-password">
                     <span>Repetir nueva contraseña</span>
-                    <input type="repeat-password" class="repeat-password" id="repeat-password" placeholder="Repita la nueva contraseña">
+                    <input type="password" class="repeat-password" id="repeat-password" placeholder="Repita la nueva contraseña" required>
                 </label>
-                <button type="button" popovertarget="popover-profile">Guardar</button>
-                <div popover id="popover-profile">
-                    <div class="popover-content">
-                        Datos actualizados correctamente
-                    </div>
-                </div>
+                <button type="submit" onclick="alert('Datos actualizados correctamente');">Guardar</button>
             </form>
         </section>
         <section class="courses-list">
@@ -148,7 +174,7 @@
     </footer>
     <div class="mobile-cart">
         <div class="fa-cart-background">
-            <a href="#">
+            <a href="./carrito.html">
                 <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
             </a>
         </div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/login-style.css">
+    <link rel="shortcut icon" href="../favicon.svg" type="imagen/x-icon">
+
+    <title>Acceder</title>
+</head>
+<body>
+    <main>
+        <section class="login-card">
+            <div class="back-button">
+                <button onclick="history.back()">
+                    <span class="only-desktop">←</span> Volver
+                </button>
+            </div>
+            <div class="logo-area">
+                <img src="../Assets/ProyectoAppscend.png" alt="imagen de marca">
+            </div>
+            <div class="titles">
+                <h1>Bienvenido</h1>
+                <h2>Iniciar sesión</h2>
+            </div>  
+            <div class="div-form">
+                <form action="./home.html" method="get"> 
+                    <div class="div-inputs">
+                        <label for="name">
+                            <span>Usuario</span>
+                            <input type="text" name="name" id="name" required>
+                        </label>
+                        <label for="password">
+                            <span>Contraseña</span>
+                            <input type="password" name="password" id="password" required>
+                        </label>
+                    </div>
+                    <div class="div-register">
+                        <h4>¿No tienes usuario?</h4>
+                        <a href="./registro.html">¡Registrate!</a>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

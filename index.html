@@ -1,46 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./Css/login-style.css">
-    <link rel="shortcut icon" href="favicon.svg" type="imagen/x-icon">
-
-    <title>Acceder</title>
-</head>
-<body>
-    <main>
-        <section class="login-card">
-            <div class="logo-area">
-                <img src="./Assets/ProyectoAppscend.png" alt="imagen de marca">
-            </div>
-            <div class="titles">
-                <h1>Bienvenido</h1>
-                <h2>Iniciar sesión</h2>
-            </div>  
-            <div class="div-form">
-                <form action="./Pages/home.html" method="get"> 
-                    <div class="div-inputs">
-                        <label for="name">
-                            <span>Usuario</span>
-                            <input type="text" name="name" id="name">
-                        </label>
-                        <label for="password">
-                            <span>Contraseña</span>
-                            <input type="password" name="password" id="password">
-                        </label>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="./Css/styles.css">
+        <link rel="stylesheet" href="./Css/home-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
+            rel="stylesheet">
+        <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
+    <body>
+            <header class="header">
+        <div class="header_div">
+            <a href="#">
+                <img class="imagen_logo" src="./assets/ProyectoAppscend.png" alt="Icono">
+            </a>
+        </div>
+        <nav class="header_nav">
+            <ul class="header_nav_ul">
+                <li>
+                    <a class="header_nav_ul_li_a" href="./Pages/cursos_sinsesion.html">Cursos</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./Pages/login.html">Perfil</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./Pages/login.html">Calendario</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./Pages/login.html">Gifts</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./Pages/contacto_sinsesion.html">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="div_button">
+            <form class="form_busqueda" action="" autocomplete="off">
+                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+            </form>
+            <a id="ancla_cerrarsesion" href="./Pages/login.html">
+                <button class="button">Iniciar sesión</button>
+            </a>
+            <a class="ancla_carrito" href="./Pages/login.html">
+                <i class="fa-solid fa-cart-shopping"></i> 
+            </a>
+            
+        </div>
+    </header>
+        <main>
+            <section class="title_section">
+                <article class="principal_title">
+                    <h2>Transforma tu futuro</h2>
+                    <h1>Aprende con Appscend</h1>
+                    <h3>Cursos online y presencial para todos</h3>
+                    <a href="./Pages/cursos_sinsesion.html">
+                        <button class="button">Inscribite a un curso</button>
+                    </a>
+                </article>
+            </section>
+            <section class="steps_section">
+                <article class="title">
+                    <h2>¿Cómo inscribirte a un curso?</h2>
+                </article>
+                <article class="steps">
+                    <div>
+                        <h4>Paso 1</h4>
+                        <p>
+                            Explorá los cursos disponibles y elegí el que más te interese.
+                        </p>
                     </div>
-                    <div class="div-register">
-                        <h4>No tienes usuario?</h4>
-                        <a href="pages/registro.html">¡Registrate!</a>
+                    <div>
+                        <h4>Paso 2</h4>
+                        <p>
+                            Inscribite a un curso y completá el formulario con tus datos
+                        <p>
                     </div>
-                    <button type="submit">Login</button>
-                </form>
+                    <div>
+                        <h4>Paso 3</h4>
+                        <p>
+                            Recibí la confirmación por correo y comenzá tu curso.
+                        </p>
+                    </div>
+                </article>
+            </section>
+            <section class="courses_section">
+                <article class="courses_title">
+                    <h2>Cursos Destacados</h2>
+                </article>
+                <article class="details">
+                    <div>
+                        <a href="./Pages/detalle_python_sinsesion.html">
+                            <img class="imagenes_cursos" src="./assets/logo_phyton_home.jpg" alt="Logo Python">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="./Pages/detalle_java_sinsesion.html">
+                            <img class="imagenes_cursos" src="./assets/logo_java.jpg" alt="Logo Java">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="./Pages/detalle_javascript_sinsesion.html">
+                            <img class="imagenes_cursos" src="./assets/logo_javascript_home.jpg" alt="Logo JavaScript">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="./Pages/detalle_python_sinsesion.html">
+                            <img class="imagenes_cursos" src="./assets/logo_phyton_home.jpg" alt="Logo Python">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="./Pages/detalle_java_sinsesion.html">
+                            <img class="imagenes_cursos" src="./assets/logo_java.jpg" alt="Logo Java">
+                        </a>
+                    </div>
+                </article>
+            </section>
+            <section class="carrusel-logos">
+                <article class="carrusel-title">
+                    <h2>Empresas que confían en Nosotros</h2>
+                </article>
+                <article class="logos">
+                    <img src="./assets/apple.svg" alt="Logo Apple">
+                    <img src="./assets/fravega.svg" alt="Logo Fravega">
+                    <img src="./assets/santander.svg" alt="Logo Santander">
+                    <img src="./assets/galicia.svg" alt="Logo Galicia">
+                    <img src="./assets/mcdonalds.svg" alt="Logo Mcdonalds">
+                    <img src="./assets/mostaza.png" alt="Logo Mostaza">
+                    <img src="./assets/cocacola.svg" alt="Logo CocaCola">
+                    <img src="./assets/hp.svg" alt="Logo HP">
+                    <img src="./assets/samsung.svg" alt="Logo Samsung">
+                    <img src="./assets/lg.svg" alt="Logo LG">
+                    <img src="./assets/apple.svg" alt="Logo Apple">
+                    <img src="./assets/fravega.svg" alt="Logo Fravega">
+                    <img src="./assets/santander.svg" alt="Logo Santander">
+                    <img src="./assets/galicia.svg" alt="Logo Galicia">
+                    <img src="./assets/mcdonalds.svg" alt="Logo Mcdonalds">
+                    <img src="./assets/mostaza.png" alt="Logo Mostaza">
+                    <img src="./assets/cocacola.svg" alt="Logo CocaCola">
+                    <img src="./assets/hp.svg" alt="Logo HP">
+                    <img src="./assets/samsung.svg" alt="Logo Samsung">
+                    <img src="./assets/lg.svg" alt="Logo LG">
+                    <img src="./assets/apple.svg" alt="Logo Apple">
+                    <img src="./assets/fravega.svg" alt="Logo Fravega">
+                    <img src="./assets/santander.svg" alt="Logo Santander">
+                    <img src="./assets/galicia.svg" alt="Logo Galicia">
+                    <img src="./assets/mcdonalds.svg" alt="Logo Mcdonalds">
+                    <img src="./assets/mostaza.png" alt="Logo Mostaza">
+                    <img src="./assets/cocacola.svg" alt="Logo CocaCola">
+                    <img src="./assets/hp.svg" alt="Logo HP">
+                    <img src="./assets/samsung.svg" alt="Logo Samsung">
+                    <img src="./assets/lg.svg" alt="Logo LG">
+                    <img src="./assets/apple.svg" alt="Logo Apple">
+                    <img src="./assets/fravega.svg" alt="Logo Fravega">
+                    <img src="./assets/santander.svg" alt="Logo Santander">
+                    <img src="./assets/galicia.svg" alt="Logo Galicia">
+                    <img src="./assets/mcdonalds.svg" alt="Logo Mcdonalds">
+                    <img src="./assets/mostaza.png" alt="Logo Mostaza">
+                    <img src="./assets/cocacola.svg" alt="Logo CocaCola">
+                    <img src="./assets/hp.svg" alt="Logo HP">
+                    <img src="./assets/samsung.svg" alt="Logo Samsung">
+                    <img src="./assets/lg.svg" alt="Logo LG">
+                </article>
+            </section>
+        </main>
+    <footer>
+            <section class="about_us">
+                <article>
+                    <p>Emanuel Ruiz Díaz (40.380.499) </p>
+                    <p>Juan Manuel Pena (45.495.738)
+                    <p>
+                    <p>Santiago Javier Falconi (44.099.057)
+                    <p>
+                    <p>Luna Melanie Daiana (41.713.955)
+                    <p>
+                    <p> Alan Cahuana Rodríguez (37.996.385)
+                    <p>
+                </article>
+                <article>
+                    <a class="ancla" href="https://x.com/?lang=es">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a class="ancla" href="https://www.instagram.com/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="ancla" href="https://www.youtube.com/">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a class="ancla" href="https://discord.com/">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </article>
+                <article>
+                    <h4>Copyright © <h4>
+                            <p>Todos los derechos están reservados
+                            <p>
+                </article>
+            </section>
+        </footer>
+        <div class="mobile-cart">
+            <div class="fa-cart-background">
+                <a href="./Pages/login.html">
+                    <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                </a>
             </div>
-        </section>
-    </main>
-</body>
+        </div>
+    </body>
 </html>

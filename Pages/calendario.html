@@ -20,34 +20,63 @@
                 <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
             </a>
         </div>
+
+   
         <nav class="header_nav">
             <ul class="header_nav_ul">
                 <li>
-                    <a class="header_nav_ul_li_a" href="./home.html">Home</a>
+                    <a class="header_nav_ul_li_a" href="./cursos.html">Cursos</a>
                 </li>
                 <li>
-                    <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
+                    <a class="header_nav_ul_li_a" href="./cuenta.html">Perfil</a>
                 </li>
                 <li>
                     <a class="header_nav_ul_li_a" href="./calendario.html">Calendario</a>
                 </li>
+
                 <li>
+
                     <a class="header_nav_ul_li_a" href="./giftcard.html">Gifts</a>
+
                 </li>
+
+                <li>
+
+                    <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
+
+                </li>
+
+
             </ul>
         </nav>
+
+
         <div class="div_button">
-            <a href="./cuenta.html">
-                <button class="button">Mi cuenta</button>
+
+            <form class="form_busqueda" action="" autocomplete="off">
+
+
+                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+
+
+            </form>
+
+
+            <a id="ancla_cerrarsesion" href="../index.html">
+                <button class="button">Cerrar sesión</button>
             </a>
-            <img class="imagen_carrito" src="../assets/carrito-de-compras (1).png" alt="Carrito"> <span
-                class="span_carrito">1</span>
+
+            <a class="ancla_carrito" href="./carrito.html">
+
+                <i class="fa-solid fa-cart-shopping"></i> 
+
+            </a>
+            
         </div>
     </header>
 
     <main>
         <section class="calendario">
-            <!--<p>Calendario con las fechas de inicio de los proximo cursos de LogoAppscend.</p> -->
              <div class="calendario-header">
                 <h3>Octubre 2025</h3>
              </div>
@@ -110,7 +139,7 @@
                 </li>
                 <li class="fecha">
                     <div class="fecha-info"><h5>9</h5>
-                        <a href="detalle_python.html">Curso Python</a>
+                        <a href="detalle_python.html">Curso de Python</a>
                     </div>
                 </li>
                 <li class="fecha">
@@ -136,7 +165,7 @@
                 </li>
                 <li class="fecha">
                     <div class="fecha-info"><h5>17</h5>
-                        <a href="detalle_javascript.html">Curso JavaScript</a>
+                        <a href="detalle_java.html">Curso de Java</a>
                     </div>
                 </li>
                 <li class="fecha">
@@ -222,7 +251,7 @@
     </footer>
     <div class="mobile-cart">
         <div class="fa-cart-background">
-            <a href="#">
+            <a href="./carrito.html">
                 <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
             </a>
         </div>

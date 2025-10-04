@@ -6,7 +6,7 @@ height: 1em;
 
 }
 
-.div_section{
+.section_curso{
 
   display: flex;
   max-width: 1100px;
@@ -28,7 +28,9 @@ height: 1em;
     color: white;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: 8px;
+    border-radius: 1.5em;
+    border: none;
+    cursor: pointer;
     
 
 }
@@ -45,7 +47,7 @@ height: 1em;
     font-weight: 700;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    color: #000000;
+    color: #172a3a;
     text-align: center;
 
 }
@@ -58,6 +60,7 @@ height: 1em;
     margin-bottom: 1rem;
     overflow: hidden;
     transition: all 0.3s ease;
+    
 
 
 }
@@ -70,14 +73,19 @@ height: 1em;
     color: #333;
     background-color: #e8eaf6;
     list-style: none;
+    
 }
+
+
+
+
 
 h2{
 
   text-align: center;
 }
 
-.section_curso{
+.article_descripcion{
 
     flex: 2;
     display: flex;
@@ -108,20 +116,20 @@ color: white;
 
 
 
-.section_foto{
+.article_contenedor_foto{
 
   flex-basis: 30%; /*a esa parte de la section ocupale ese ancho de pantalla */
 
 }
 
-.imagen_profesor_javascript{
+.imagen_profesor{
 
 
   width: 30em;
 
 }
 
-.section_descripcion{
+.article_descripcion_profesor{
     flex: 2;
     display: flex;
     flex-direction: column;
@@ -149,9 +157,13 @@ color: white;
 }
 
 .card_detalle a{
-  text-decoration: none;
+
   color: #000000;
   text-align: center;
+  border: none;
+   cursor: pointer;
+
+
 }
 
 .card-container_detalle {
@@ -184,12 +196,16 @@ color: white;
   margin-bottom: 0.3em;
 }
 
+h1{
+  font-family: 'Montserrat', sans-serif;;
+}
+
 
 
 
 @media screen and (max-width : 1020px) {
 
-    .div_section{
+    .section_curso{
 
 
       flex-direction: column;
@@ -219,7 +235,7 @@ color: white;
     }
 
 
-    .imagen_profesor_javascript{
+    .imagen_profesor{
 
       width: 100%;
 
@@ -234,4 +250,4 @@ color: white;
         }
 
 
-  }
+ }

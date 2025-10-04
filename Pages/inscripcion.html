@@ -16,20 +16,21 @@
 </head>
 
 <body>
-    <header class="header">
+        <header class="header">
         <div class="header_div">
             <a href="./home.html">
                 <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
             </a>
         </div>
 
+   
         <nav class="header_nav">
             <ul class="header_nav_ul">
                 <li>
-                    <a class="header_nav_ul_li_a" href="./home.html">Home</a>
+                    <a class="header_nav_ul_li_a" href="./cursos.html">Cursos</a>
                 </li>
                 <li>
-                    <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
+                    <a class="header_nav_ul_li_a" href="./cuenta.html">Perfil</a>
                 </li>
                 <li>
                     <a class="header_nav_ul_li_a" href="./calendario.html">Calendario</a>
@@ -41,15 +42,38 @@
 
                 </li>
 
+                <li>
+
+                    <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
+
+                </li>
+
 
             </ul>
         </nav>
+
+
         <div class="div_button">
-            <a href="./cuenta.html">
-                <button class="button">Mi cuenta</button>
+
+            <form class="form_busqueda" action="" autocomplete="off">
+
+
+                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+
+
+            </form>
+
+
+            <a id="ancla_cerrarsesion" href="../index.html">
+                <button class="button">Cerrar sesión</button>
             </a>
-            <img class="imagen_carrito" src="../assets/carrito-de-compras (1).png" alt="Carrito"> <span
-                class="span_carrito">1</span>
+
+            <a class="ancla_carrito" href="./carrito.html">
+
+                <i class="fa-solid fa-cart-shopping"></i> 
+
+            </a>
+            
         </div>
     </header>
 
@@ -179,7 +203,7 @@
 
     <div class="mobile-cart">
         <div class="fa-cart-background">
-            <a href="#">
+            <a href="./carrito.html">
                 <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
             </a>
         </div>

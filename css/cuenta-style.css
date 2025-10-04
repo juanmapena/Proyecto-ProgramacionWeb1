@@ -51,6 +51,24 @@ body {
             margin: 1em auto 0;
             font-size: 1.5em;
         }
+
+        #delete-account{
+            color: #F5FBEF;
+            background-color: rgb(100, 0, 0);
+
+            width: fit-content;
+            margin: auto;
+
+            border-radius: 5px;
+            padding: 0.5em;
+            text-decoration: none;
+            margin-top: 1em;
+        }
+
+        
+        #delete-account:hover{
+            transform: scale(1.1);
+        }
     }
 }
 
@@ -92,31 +110,6 @@ body {
             background-color: #172A3A;
             color: #F5FBEF;
         }
-        
-        #popover-profile {
-            flex-direction: column;
-
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2em;
-
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-
-            background-color: rgba(0, 67, 70, 0.85);
-            color: #F5FBEF;
-            padding: 2em;
-            border-radius: 0.5em;
-            box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
-            border: none;
-
-            .popover-content {
-                display: flex;
-            }
-        }
     }
 }
 .courses-list{
@@ -134,6 +127,10 @@ body {
             width: 100%;
             border-radius: 20px;
             margin-top: 1em;
+        }
+
+        img:hover {
+            transform: scale(1.05);
         }
 
         p{
@@ -216,7 +213,7 @@ body {
         width: 100%;
         form{
             button {
-                margin: 1em auto;
+                margin: 1em auto 0;
             }
         }
     }

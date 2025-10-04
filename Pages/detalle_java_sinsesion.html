@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/detalle-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Detalle</title>
+</head>
+
+<body>
+
+     <header class="header">
+        <div class="header_div">
+            <a href="../index.html">
+                <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
+            </a>
+        </div>
+        <nav class="header_nav">
+            <ul class="header_nav_ul">
+                <li>
+                    <a class="header_nav_ul_li_a" href="./cursos_sinsesion.html">Cursos</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./login.html">Perfil</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./login.html">Calendario</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./login.html">Gifts</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./contacto_sinsesion.html">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="div_button">
+            <form class="form_busqueda" action="./cursos_sinsesion.html" autocomplete="off">
+                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+            </form>
+            <a id="ancla_cerrarsesion" href="./login.html">
+                <button class="button">Iniciar sesión</button>
+            </a>
+            <a class="ancla_carrito" href="./login.html">
+                <i class="fa-solid fa-cart-shopping"></i> 
+            </a>
+        </div>
+    </header>
+    <main>
+        <section class="section_curso">
+            <article>
+                <img class="section_img" class="img_java" src="../assets/java_detalle.jpg" alt="Logo JavaScript">
+            </article>
+            <article class="article_descripcion">
+                <h1 class="article_titulo">Java</h1>
+                <p><strong>Valor curso:</strong> $110</p>
+                <p><strong>Tiempo de dedicación necesario:</strong> 10 semanas</p>
+                <p><strong>Descripción del curso:</strong> Aprende a programar en Java, uno de los lenguajes más
+                    utilizados para aplicaciones empresariales, móviles y de escritorio. Desarrolla proyectos prácticos
+                    para dominar sus conceptos clave.</p>
+                <p><strong>Requisitos previos:</strong> Conocimientos básicos de programación.</p>
+                <a href="./login.html">
+                    <button class="button_inscripcion" type="submit">Inscribirse</button>
+                </a>
+            </article>
+        </section>
+        <section class="section_contenidos">
+            <h1 class="h1_contenidos">CONTENIDOS POR CLASE</h1>
+            <details class="details">
+                <summary class="summary">Introducción</summary>
+                <p>Video</p>
+                <p>Audio</p>
+                <p>Examen</p>
+            </details>
+
+
+            <details class="details">
+
+                <summary class="summary">Unidad 2</summary>
+                <p>Contenidos</p>
+
+
+            </details>
+
+            <details class="details">
+
+                <summary class="summary">Unidad 3</summary>
+                <p>Contenidos</p>
+
+
+            </details>
+        </section>
+
+        <section>
+
+            <h1 class="h1_contenidos">DOCENTE</h1>
+
+        </section>
+
+         
+
+        <section class="section_profesor">
+
+
+            <article class="article_contenedor_foto">
+
+                <img class="imagen_profesor" src="../assets/profesor_java.jpg"
+                    alt="Profesor de programación">
+
+            </article>
+
+
+
+            <article class="article_descripcion_profesor">
+
+                <h2>Tomás Urquiza</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>
+                    Con más de 10 años de experiencia en programación, Tomás se especializa en
+                    Java, con un enfoque en aplicaciones empresariales, móviles y de escritorio.
+                    Ha impartido cursos en universidades y academias de tecnología, enseñando desde los
+                    fundamentos del lenguaje hasta temas avanzados como programación orientada a objetos,
+                    bases de datos y desarrollo con frameworks como Spring y Hibernate.
+                    Apasionado por la enseñanza práctica, guía a sus estudiantes a construir proyectos reales
+                    que fortalecen su perfil profesional.
+                </p>
+
+
+                <h3>Trayectoria</h3>
+
+                <p>Inició su carrera como desarrollador backend en una consultora de software, trabajando en
+                    proyectos de sistemas de gestión y aplicaciones financieras. Más tarde, se incorporó en
+                    empresas internacionales como ingeniero de software, desarrollando soluciones escalables en
+                    Java y optimizando procesos con bases de datos relacionales. Paralelamente, comenzó a dar
+                    clases en cursos presenciales y online, formando a cientos de estudiantes en Java y sus
+                    principales herramientas. Actualmente, combina su labor docente con proyectos freelance en
+                    desarrollo de APIs, microservicios y aplicaciones móviles en Android.</p>
+
+            </article>
+
+
+        </section>
+
+
+
+        <section>
+
+            <h1 class="h1_contenidos">Otros Cursos</h1>
+
+        </section>
+
+
+        <section class="card-container_detalle">
+
+            <div class="card_detalle">
+
+                 <img class="card-imagenes" src="../assets/logo_javascript_home.jpg" alt="Logo JavaScript">
+
+                <p id="nombre-curso"> <strong>JavaScript</strong> </p>
+
+                <p id="duracion-curso"><strong>Duracion:</strong> 12 semanas</p>
+
+                <a href="./detalle_javascript_sinsesion.html">
+                    <p>Ver más detalles</p>
+                </a>
+                </div>
+
+            <div class="card_detalle">
+
+                 <img class="card-imagenes" src="../assets/logo_phyton_home.jpg" alt="Logo Python">
+
+                <p id="nombre-curso"> <strong>Python</strong></p>
+
+                <p id="duracion-curso"><strong>Duracion:</strong> 6 semanas</p>
+
+                <a href="./detalle_python_sinsesion.html">
+                    <p>Ver más detalles</p>
+                </a>
+                </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+    </main>
+
+
+    <footer>
+        <section class="about_us">
+            <article>
+                <p>Emanuel Ruiz Díaz (40.380.499) </p>
+                <p>Juan Manuel Pena (45.495.738)
+                <p>
+                <p>Santiago Javier Falconi (44.099.057)
+                <p>
+                <p>Luna Melanie Daiana (41.713.955)
+                <p>
+                <p> Alan Cahuana Rodríguez (37.996.385)
+                <p>
+            </article>
+            <article>
+                <a class="ancla" href="https://x.com/?lang=es">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a class="ancla" href="https://www.instagram.com/">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="ancla" href="https://www.youtube.com/">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a class="ancla" href="https://discord.com/">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </article>
+
+
+            <article>
+                <h4>Copyright © <h4>
+                        <p>Todos los derechos están reservados
+                        <p>
+            </article>
+        </section>
+    </footer>
+
+        <div class="mobile-cart">
+        <div class="fa-cart-background">
+            <a href="./login.html">
+                <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
