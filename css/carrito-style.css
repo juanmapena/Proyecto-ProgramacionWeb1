@@ -123,6 +123,10 @@ img {
     align-items: center;
 }
 
+.button_section a {
+    text-decoration: none;
+}
+
 @media screen and (max-width: 550px) {
 
     .principal_section {

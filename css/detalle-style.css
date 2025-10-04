@@ -1,203 +1,213 @@
-.section_imagen{
+.section_imagen {
 
-width: 20%;
-height: 1em;
+  width: 20%;
+  height: 1em;
 
 
 }
 
-.section_curso{
+.section_curso {
 
   display: flex;
   max-width: 1100px;
-    margin: 2rem auto;
-    display: flex;
-    gap: 2rem;
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  display: flex;
+  gap: 2rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 
 
 }
 
-.button_inscripcion{
+.button_inscripcion {
 
-    padding: 0.75rem 1.5rem;
-    background-color: #84c318;
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 1.5em;
-    border: none;
-    cursor: pointer;
-    
+  padding: 0.75rem 1.5rem;
+  background-color: #84c318;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 1.5em;
+  border: none;
+  cursor: pointer;
 
-}
-
-.section_contenidos{
-    margin: 2rem auto;
-    padding: 1rem;
 
 }
 
-.h1_contenidos{
+.section_contenidos {
+  margin: 2rem auto;
+  padding: 1rem;
+
+}
+
+.h1_contenidos {
 
   font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    color: #172a3a;
-    text-align: center;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  color: #172a3a;
+  text-align: center;
 
 }
 
-.details{
+.details {
 
   background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    margin-bottom: 1rem;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
 
 
 }
 
-.summary{
+.summary {
 
   padding: 1rem;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #333;
-    background-color: #e8eaf6;
-    list-style: none;
-    
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+  background-color: #e8eaf6;
+  list-style: none;
+
 }
 
 
 
 
 
-h2{
+h2 {
 
   text-align: center;
 }
 
-.article_descripcion{
+.article_descripcion {
 
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-}
-
-
-
-
-.section_profesor{
-
-display: flex;
-justify-content: space-between;
-gap: 3em;
-background-color: #004346;
-margin: 1em;
-border-radius: 0.125em;
-padding: 2rem;
-border-radius: 12px;
-color: white;
-
-
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
 }
 
 
 
 
-.article_contenedor_foto{
+.section_profesor {
 
-  flex-basis: 30%; /*a esa parte de la section ocupale ese ancho de pantalla */
+  display: flex;
+  justify-content: space-between;
+  gap: 3em;
+  background-color: #004346;
+  margin: 1em;
+  border-radius: 0.125em;
+  padding: 2rem;
+  border-radius: 12px;
+  color: white;
+
+
 
 }
 
-.imagen_profesor{
+
+
+
+.article_contenedor_foto {
+
+  flex-basis: 30%;
+  /*a esa parte de la section ocupale ese ancho de pantalla */
+
+}
+
+.imagen_profesor {
 
 
   width: 30em;
 
 }
 
-.article_descripcion_profesor{
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.article_descripcion_profesor {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
 
 }
 
-.icono{
+.icono {
 
-    width: 3em;
-    height: 3em;
-    vertical-align: middle;
+  width: 3em;
+  height: 3em;
+  vertical-align: middle;
 }
 
 
-.card_detalle{
+.card_detalle {
 
-    width: 20em;
-    height: 20em; 
-    margin: 1em;
-    border-radius: 0.125em;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 20em;
+  height: 20em;
+  margin: 1em;
+  border-radius: 0.125em;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card_detalle a{
+.card-container_detalle a {
 
   color: #000000;
   text-align: center;
   border: none;
-   cursor: pointer;
+  cursor: pointer;
+  text-decoration: none;
 
 
 }
 
 .card-container_detalle {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 3em;
+  
+}
+
+.card_detalle:hover {
+
+  transform: scale(1.05);
 }
 
 
-.card-imagenes{
+
+.card-imagenes {
   width: 100%;
   height: 65%;
   object-fit: contain;
   border-radius: 10px;
   padding: 1rem;
   background: white;
-  
+
 }
 
-#nombre-curso{
+#nombre-curso {
   text-align: center;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   font-size: 1.4em;
 }
 
-#duracion-curso{
+#duracion-curso {
   text-align: center;
   margin-bottom: 0.3em;
 }
 
-h1{
-  font-family: 'Montserrat', sans-serif;;
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  ;
 }
 
 
@@ -205,49 +215,49 @@ h1{
 
 @media screen and (max-width : 1020px) {
 
-    .section_curso{
+  .section_curso {
 
 
-      flex-direction: column;
-      width: 90%;
-    }
+    flex-direction: column;
+    width: 90%;
+  }
 
-    .section_contenidos{
-
-
-      width: 100%;
-
-    }
+  .section_contenidos {
 
 
-    .section_profesor{
+    width: 100%;
+
+  }
 
 
-      flex-direction: column;
-
-    }
-
-    .section_img{
+  .section_profesor {
 
 
-      width: 100%;
+    flex-direction: column;
 
-    }
+  }
 
-
-    .imagen_profesor{
-
-      width: 100%;
-
-    }
-
-    .section_curso{
+  .section_img {
 
 
-      text-align: center;
+    width: 100%;
+
+  }
 
 
-        }
+  .imagen_profesor {
+
+    width: 100%;
+
+  }
+
+  .section_curso {
 
 
- }
+    text-align: center;
+
+
+  }
+
+
+}
