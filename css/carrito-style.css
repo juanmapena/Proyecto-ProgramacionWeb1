@@ -47,6 +47,14 @@ h2 {
     font-size: 1.2em;
     margin-top: 1em;
     margin-bottom: 1em;
+
+    img {
+        margin: 0 auto;
+        width: 50%;
+        object-fit: contain;
+        border: 0.063em solid;
+        border-radius: 0.5em;
+    }
 }
 
 .button_delete {
@@ -58,15 +66,6 @@ h2 {
     width: 1.3em;
     height: 1.3em;
     border-radius: 50%;
-}
-
-
-img {
-    margin: 0 auto;
-    width: 50%;
-    object-fit: contain;
-    border: 0.063em solid;
-    border-radius: 0.5em;
 }
 
 .total_style {
@@ -104,7 +103,7 @@ img {
     align-items: center;
 }
 
-.button_style a{
+.button_style a {
     text-decoration: none;
     color: white;
 
