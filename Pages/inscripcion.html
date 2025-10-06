@@ -83,8 +83,14 @@
         </section>
 
         <section class="inscripcion-style">
-            <form method="get" action="./formasdepago.html">
-
+            <form class="inscripcion-form" method="get" action="./formasdepago.html">
+                <h4>Seleccione el tipo de inscripción que desea realizar:</h4>
+                    
+                        <input type="radio" id="input_empresa" name="tipo_inscripcion" value="empresarial" checked>
+                        <label for="input_empresa">Empresarial</label>
+                        <input type="radio" id="input_persona" name="tipo_inscripcion" value="personal">
+                        <label for="input_persona">Personal</label>
+                    
                 <div id="persona1" class="persona-style">
                     <label for="nombre1">Ingrese su nombre</label>
                     <input type="text" name="nombre1" id="nombre1" required>
@@ -145,7 +151,6 @@
                     <button type="button" class="eliminar">&#x2212;</button>
                 </div>
 
-
                 <div class="agregar-persona">
                     <button type="button">&#43;</button>
                     <span>Agregar Persona</span>
@@ -158,10 +163,7 @@
                     <button class="inscribir-style" type="submit">Inscribirse</button>
                 </div>
             </form>
-
-
         </section>
-
     </main>
 
     <footer>
