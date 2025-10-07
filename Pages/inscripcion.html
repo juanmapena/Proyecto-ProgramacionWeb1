@@ -16,14 +16,14 @@
 </head>
 
 <body>
-        <header class="header">
+    <header class="header">
         <div class="header_div">
             <a href="./home.html">
                 <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
             </a>
         </div>
 
-   
+
         <nav class="header_nav">
             <ul class="header_nav_ul">
                 <li>
@@ -58,7 +58,7 @@
             <form class="form_busqueda" action="" autocomplete="off">
 
 
-                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+                <input class="input_busqueda" type="text" id="search" name="search" placeholder="Buscar...">
 
 
             </form>
@@ -70,10 +70,10 @@
 
             <a class="ancla_carrito" href="./carrito.html">
 
-                <i class="fa-solid fa-cart-shopping"></i> 
+                <i class="fa-solid fa-cart-shopping"></i>
 
             </a>
-            
+
         </div>
     </header>
 
@@ -83,15 +83,17 @@
         </section>
 
         <section class="inscripcion-style">
-            <form class="inscripcion-form" method="get" action="./formasdepago.html">
-                <h4>Seleccione el tipo de inscripción que desea realizar:</h4>
-                    
-                        <input type="radio" id="input_empresa" name="tipo_inscripcion" value="empresarial" checked>
-                        <label for="input_empresa">Empresarial</label>
-                        <input type="radio" id="input_persona" name="tipo_inscripcion" value="personal">
-                        <label for="input_persona">Personal</label>
-                    
-                <div id="persona1" class="persona-style">
+            <form class="inscripcion-form" method="get" action="./carrito.html">
+                <article class="section__radio-style">
+                    <h4>Seleccione el tipo de inscripción que desea realizar:</h4>
+
+                    <input type="radio" id="input_empresa" name="tipo_inscripcion" value="empresarial" checked>
+                    <label for="input_empresa">Empresarial</label>
+                    <input type="radio" id="input_persona" name="tipo_inscripcion" value="personal">
+                    <label for="input_persona">Personal</label>
+                </article>
+
+                <article id="persona1" class="persona-style">
                     <label for="nombre1">Ingrese su nombre</label>
                     <input type="text" name="nombre1" id="nombre1" required>
 
@@ -109,9 +111,9 @@
                     </select>
 
                     <button type="button" class="eliminar">&#x2212;</button>
-                </div>
+                </article>
 
-                <div id="persona2" class="persona-style">
+                <article id="persona2" class="persona-style">
                     <label for="nombre2">Ingrese su nombre</label>
                     <input type="text" name="nombre2" id="nombre2" required>
 
@@ -129,9 +131,9 @@
                     </select>
 
                     <button type="button" class="eliminar">&#x2212;</button>
-                </div>
+                </article>
 
-                <div id="persona3" class="persona-style">
+                <article id="persona3" class="persona-style">
                     <label for="nombre3">Ingrese su nombre</label>
                     <input type="text" name="nombre3" id="nombre3" required>
 
@@ -149,7 +151,7 @@
                     </select>
 
                     <button type="button" class="eliminar">&#x2212;</button>
-                </div>
+                </article>
 
                 <div class="agregar-persona">
                     <button type="button">&#43;</button>
