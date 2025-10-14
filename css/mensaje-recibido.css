@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section-mensaje {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+
+.carta-exito {
+    background: #fff;
+    border-radius: 0.5em;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 2em 3em;
+    text-align: center;
+    max-width: 30rem;
+    width: 90%;
+}
+
+.carta-exito h2 {
+    margin-bottom: 0.5em;
+    font-size: 1.6rem;
+}
+
+.parrafo {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.ancla-volver {
+    text-decoration: none;
+}
+
+
+.ancla-volver button {
+    background-color: #84c318;
+    color: white;
+    padding: 0.5em 0.5em;
+    border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+    font-size: 1em;
+    width: 8em;
+    height: 2.4em;
+}
