@@ -1,13 +1,5 @@
 body {
     height: 100dvh;
-
-    header {
-        height: 10%;
-    }
-    
-    footer {
-        height: 15%;
-    }
 }
 
 main{
@@ -24,7 +16,7 @@ main{
 }
 
 .section-form{
-    margin: auto;
+    margin: 0 auto 2em;
     width: 35%;
 
     input {
@@ -66,7 +58,7 @@ main{
 .back-button{
     margin-left: 5em;
     margin-top: 2em;
-    button{
+    a{
         background-color: #004346;
         border: 2px solid #004346;
         border-radius: 40px;
@@ -74,9 +66,10 @@ main{
         color: #F5FBEF;
         width: fit-content; 
         padding: 0.7em 2em ;
+        text-decoration: none;
     }
 
-    button:hover {
+    a:hover {
         border: 2px solid #172A3A;
         background-color: #F5FBEF;
         color: #172A3A;
@@ -122,7 +115,7 @@ main{
     }
     
     .back-button{
-        button .only-desktop {
+        a .only-desktop {
             display: none;
         }
     }
@@ -138,7 +131,7 @@ main{
 
     body main .back-button{
         margin: 1.5em 2em;
-        button .only-desktop {
+        a .only-desktop {
             display: none;
         }
     }
