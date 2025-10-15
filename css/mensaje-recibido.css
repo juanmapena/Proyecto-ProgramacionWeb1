@@ -49,3 +49,17 @@
     width: 8em;
     height: 2.4em;
 }
+
+@media (max-width: 600px) {
+    .card-exito {
+        padding: 1.5em;
+    }
+
+    .card-exito h2 {
+        font-size: 1.3rem;
+    }
+
+    .card-exito .parrafo {
+        font-size: 0.95rem;
+    }
+}

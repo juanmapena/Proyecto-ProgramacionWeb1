@@ -133,10 +133,6 @@ main textarea {
     border-radius: 1em;
 }
 
-.icons_networks {
-    color: #333;
-    align-self: center;
-}
 
 @media screen and (max-width: 1050px) {
     .principal_section {
@@ -148,7 +144,6 @@ main textarea {
     .button_send {
         display: block;
         margin: 1em auto 0 auto;
-        /* margen automático en los lados */
         width: 8em;
     }
 }
