@@ -22,6 +22,30 @@ body {
     background-color: #f5fbef;
 }
 
+.section__selector {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.section__selector button {
+    background-color: #84c318;
+    padding: 0.625em 1.25em;
+    border-radius: 2.5em;
+    cursor: pointer;
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+}
+
 .inscripcion-style {
     display: flex;
     flex-direction: column;
@@ -42,16 +66,26 @@ body {
     max-width: 100%;
 }
 
-.section__radio-style {
+.form-personal {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 1em;
     padding: 1em;
     border: 0.063em solid #ccc;
     border-radius: 0.5em;
     align-items: center;
     margin-bottom: 1.5em;
-    max-width: 100%;
+    width: 40vw;
+
+    input,
+    select {
+        height: 2.5em;
+        padding-left: 1em;
+        border-radius: 1.25em;
+        border: 0.125em grey solid;
+        width: 75%;
+        margin-bottom: 1.5em;
+    }
 }
 
 .persona-style input,
@@ -119,6 +153,9 @@ select {
     height: 1.5em;
     border-radius: 50%;
 }
+
+
+
 /*
 .button_style__back {
     background-color: #172A3A;
