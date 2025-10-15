@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.section-exito {
+.section-gift {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,17 +28,17 @@
     font-size: 1.6rem;
 }
 
-.parrafo-agradecimiento {
+.parrafo-gift {
     margin-top: 1em;
     margin-bottom: 1em;
 }
 
-.ancla-pago-realizado {
+.ancla-gift {
     text-decoration: none;
     color: #84c318;
 }
 
-.ancla-pago-realizado button {
+.ancla-gift button {
     background-color: #84c318;
     color: white;
     padding: 0.5em 0.5em;
@@ -60,7 +60,7 @@
         font-size: 1.3rem;
     }
 
-    .card-exito .parrafo-agradecimiento {
+    .card-exito .parrafo-gift {
         font-size: 0.95rem;
     }
 }
