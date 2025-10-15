@@ -56,7 +56,7 @@
         <div class="div_button">
 
             <form class="form_busqueda" action="./cursos.html" autocomplete="off">
-                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+                <input class="input_busqueda" type="text" id="search" name="search" placeholder="Buscar...">
             </form>
 
 
@@ -81,47 +81,30 @@
         <section class="section__selector">
             <h3>Seleccione el tipo de inscripción que desea realizar:</h3>
             <article>
-                <a href="#">
+                <a href="./inscripcion.html">
                     <button>Empresarial</button>
                 </a>
-                <a href="./inscripcion-personal.html">
+                <a href="#">
                     <button>Personal</button>
                 </a>
             </article>
         </section>
 
         <section class="inscripcion-style">
-            <form class="inscripcion-form" method="get" action="./carrito.html">
+            <form class="inscripcion-form-personal" method="get" action="./carrito.html">
 
-                <article id="persona1" class="persona-style">
-                    <label for="nombre1">Ingrese su nombre</label>
-                    <input type="text" name="nombre1" id="nombre1" required>
+                <article id="persona" class="persona-style personal">
+                    <label for="nombre">Ingrese su nombre</label>
+                    <input type="text" name="nombre" id="nombre" required>
 
-                    <label for="apellido1">Ingrese su apellido</label>
-                    <input type="text" name="apellido1" id="apellido1" required>
+                    <label for="apellido">Ingrese su apellido</label>
+                    <input type="text" name="apellido" id="apellido" required>
 
-                    <label for="dni1">Ingrese su DNI</label>
-                    <input type="text" name="dni1" id="dni1" minlength="7" maxlength="8" required>
+                    <label for="email">Ingrese su email</label>
+                    <input type="email" name="email" id="email" required>
 
-                    <label for="curso">Seleccione el curso</label>
-                    <select class="selector-style" id="curso">
-                        <option value="Python">Python</option>
-                        <option value="Java">Java</option>
-                        <option value="JavaScript">JavaScript</option>
-                    </select>
-
-                    <button type="button" class="eliminar">&#x2212;</button>
-                </article>
-
-                <article id="persona2" class="persona-style">
-                    <label for="nombre2">Ingrese su nombre</label>
-                    <input type="text" name="nombre2" id="nombre2" required>
-
-                    <label for="apellido2">Ingrese su apellido</label>
-                    <input type="text" name="apellido2" id="apellido2" required>
-
-                    <label for="dni2">Ingrese su DNI</label>
-                    <input type="text" name="dni2" id="dni2" minlength="7" maxlength="8" required>
+                    <label for="dni">Ingrese su DNI</label>
+                    <input type="text" name="dni" id="dni" minlength="7" maxlength="8" required>
 
                     <label for="curso">Seleccione el curso</label>
                     <select class="selector-style" id="curso">
@@ -130,33 +113,7 @@
                         <option value="JavaScript">JavaScript</option>
                     </select>
 
-                    <button type="button" class="eliminar">&#x2212;</button>
                 </article>
-
-                <article id="persona3" class="persona-style">
-                    <label for="nombre3">Ingrese su nombre</label>
-                    <input type="text" name="nombre3" id="nombre3" required>
-
-                    <label for="apellido3">Ingrese su apellido</label>
-                    <input type="text" name="apellido3" id="apellido3" required>
-
-                    <label for="dni3">Ingrese su DNI</label>
-                    <input type="text" name="dni3" id="dni3" minlength="7" maxlength="8" required>
-
-                    <label for="curso">Seleccione el curso</label>
-                    <select class="selector-style" id="curso">
-                        <option value="Python">Python</option>
-                        <option value="Java">Java</option>
-                        <option value="JavaScript">JavaScript</option>
-                    </select>
-
-                    <button type="button" class="eliminar">&#x2212;</button>
-                </article>
-
-                <div class="agregar-persona">
-                    <button type="button">&#43;</button>
-                    <span>Agregar Persona</span>
-                </div>
 
                 <div class="importe-style">
                     <span>Total a Pagar:</span>
@@ -177,7 +134,7 @@
                 <p>Luna Melanie Daiana (41.713.955)</p>
                 <p> Alan Cahuana Rodríguez (37.996.385)</p>
             </article>
-              <article>
+            <article>
                 <a class="ancla" href="https://x.com/?lang=es" target="_blank">
                     <i class="fab fa-x-twitter"></i>
                 </a>
@@ -195,7 +152,7 @@
 
             <article>
                 <h4>Copyright © <h4>
-                        <p>Todos los derechos están reservados</p>
+                    <p>Todos los derechos están reservados</p>
             </article>
         </section>
     </footer>
