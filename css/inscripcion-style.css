@@ -28,10 +28,12 @@ body {
     gap: 1em;
     padding: 1em;
     align-items: center;
+
     article {
         display: flex;
         gap: 1em;
     }
+
     a {
         text-decoration: none;
     }
@@ -68,10 +70,10 @@ body {
 
     input,
     select {
-    height: 2.5em;
-    padding-left: 1em;
-    border-radius: 1.25em;
-    border: 0.125em grey solid;
+        height: 2.5em;
+        padding-left: 1em;
+        border-radius: 1.25em;
+        border: 0.125em grey solid;
     }
 }
 
@@ -151,11 +153,12 @@ body {
         max-width: 100%;
         align-items: stretch;
     }
-    
+
     .personal {
         align-items: center;
         justify-content: center;
     }
+
     .section__selector {
         flex-direction: column;
         text-align: center;
@@ -167,6 +170,12 @@ body {
 }
 
 @media screen and (max-width: 550px) {
+    .section__selector article{
+        flex-direction: column;
+        gap: 0.8em;
+        margin-top: 1.5em;
+    }
+
     .persona-style {
         display: flex;
         flex-direction: column;
@@ -181,5 +190,11 @@ body {
     .personal {
         align-items: center;
         justify-content: center;
+    }
+
+    .importe-style {
+        flex-direction: column;
+        gap: 0.8em;
+        margin-top: 1.5em;
     }
 }
