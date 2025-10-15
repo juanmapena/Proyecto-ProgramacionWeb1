@@ -31,6 +31,7 @@
 .curso-contenido{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 1em;
     flex: 1;
     margin: auto 0;
@@ -69,10 +70,6 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5em 2em;
     }
-    
-    /* .curso-tarjeta {
-        min-height: 320px;
-    } */
 }
 
 @media screen and (max-width: 500px) {
@@ -80,5 +77,4 @@
         grid-template-columns: 1fr;
         gap: 2em;
     }
-    
 }

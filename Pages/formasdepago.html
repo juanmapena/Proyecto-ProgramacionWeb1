@@ -56,12 +56,8 @@
 
         <div class="div_button">
 
-            <form class="form_busqueda" action="" autocomplete="off">
-
-
+            <form class="form_busqueda" action="./cursos.html" autocomplete="off">
                 <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
-
-
             </form>
 
 
@@ -80,7 +76,7 @@
 
     <main>
         <section>
-            <form action="./home.html" method="get" autocomplete="off">
+            <form action="./Pago-realizado.html" method="get" autocomplete="off">
                 <h2>Pago con tarjeta</h2>
                 <label for="card">
                     Numero de tarjeta:
@@ -91,6 +87,7 @@
                 <div class="dates">
                     <label for="mes">Mes:</label>
                     <select id="mes" name="mes" required>
+                         <option value= "" disabled selected></option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -106,6 +103,7 @@
                     </select>
                     <label for="anio">Año:</label>
                     <select id="anio" name="anio" required>
+                        <option value= "" disabled selected></option>
                         <option value="2025">2025</option>
                         <option value="2026">2026</option>
                         <option value="2027">2027</option>
@@ -152,7 +150,7 @@
                     <button class="cancel" type="button" onclick="window.location.href='./carrito.html'">
                         Cancelar ❌
                     </button>
-                    <button class="pay" type="submit" onclick="alert('✅ Pago realizado con éxito')">
+                    <button class="pay" type="submit">
                         Pagar ✓
                     </button>
                 </div>
@@ -174,17 +172,17 @@
                 <p> Alan Cahuana Rodríguez (37.996.385)
                 <p>
             </article>
-            <article>
-                <a class="ancla" href="https://x.com/?lang=es">
+              <article>
+                <a class="ancla" href="https://x.com/?lang=es" target="_blank">
                     <i class="fab fa-x-twitter"></i>
                 </a>
-                <a class="ancla" href="https://www.instagram.com/">
+                <a class="ancla" href="https://www.instagram.com/" target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a class="ancla" href="https://www.youtube.com/">
+                <a class="ancla" href="https://www.youtube.com/" target="_blank">
                     <i class="fab fa-youtube"></i>
                 </a>
-                <a class="ancla" href="https://discord.com/">
+                <a class="ancla" href="https://discord.com/" target="_blank">
                     <i class="fab fa-discord"></i>
                 </a>
             </article>

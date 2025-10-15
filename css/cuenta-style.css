@@ -5,21 +5,15 @@ body {
 
     header {
         display: flex;
-        height: 10%;
     }
 
     main{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        height: 75%;
         width: 80%;
-        margin:auto;
-        padding-top: 3em;
-    }
-
-    footer {
-        height: 15%;
+        margin: auto;
+        padding: 3em 0;
     }
 
     h1{

@@ -156,7 +156,7 @@ main {
     margin-left: 1em;
     position: absolute;
     top: 4em;
-    button{
+    a{
         background-color: #F5FBEF;
         border: 2px solid #F5FBEF;
         border-radius: 40px;
@@ -164,9 +164,11 @@ main {
         color: #004346;
         width: fit-content; 
         padding: 0.5em 1em;
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
     }
 
-    button:hover {
+    a:hover {
         border: 2px solid #F5FBEF;
         background-color: #172A3A;
         color: #F5FBEF;
@@ -180,16 +182,26 @@ main {
     }
 
     .div-form form {
-        width: 90%;
+        width: 70%;
     }
     
     .logo-area img {
-        width: 40%;
-        margin-bottom: 2em;
+        width: 25%;
+        margin-bottom: 0;
+    }
+
+    .titles {
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .login-card {
         width: 65%;
         margin: auto;
