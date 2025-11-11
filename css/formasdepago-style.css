@@ -91,6 +91,78 @@ select {
     height: 2.4em;
 }
 
+
+.modal-dialog {
+  
+    margin: auto; 
+    
+    border: none;
+    padding: 0; 
+    border-radius: 10px;
+    box-shadow: 0 0.3125em 0.9375em rgba(0, 0, 0, 0.5); 
+    width: 80%;
+    max-width: 400px;
+}
+
+.modal-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    /* Ajustado a 'em' */
+    padding: 1.875em; 
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-title {
+    margin-top: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #172A3A;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.modal-body {
+    color: #555;
+    margin-bottom: 1.25em; 
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1em;
+    flex-direction: row; 
+    margin-top: 1em;
+}
+
+.button-modal {
+    padding: 0.8125em 1.375em; 
+     border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+    font-weight: normal; 
+    font-size: 1em; 
+}
+
+.aceptar {
+    background-color: #84c318;
+    color: white;
+}
+
+.cancelar { 
+    background-color: #ccc;
+    color: #333;
+}
+
+.error-message {
+    color: rgb(170, 0, 0);
+    font-size: 0.85em;
+    margin-top: -1em;
+    margin-bottom: 0;
+    display: block; 
+}
 @media screen and (max-width: 1100px) {
 
     h2 {

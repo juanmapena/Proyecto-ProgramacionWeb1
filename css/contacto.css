@@ -67,7 +67,6 @@ main textarea {
     line-height: normal;
 
     vertical-align: middle;
-    /* Ayuda a alinear el texto dentro del padding */
 }
 
 
@@ -118,26 +117,24 @@ main textarea {
     border-radius: 1em;
 }
 
+
 .modal-dialog {
-    /* Por defecto, <dialog> usa un pseudo-elemento ::backdrop */
     border: none;
     padding: 0;
     margin: auto;
-    /* Centrado automático */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     width: 80%;
     max-width: 400px;
 }
 
-/* El pseudo-elemento ::backdrop para el fondo oscuro */
 .modal-dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
 .modal-content {
     background-color: #ffffff;
-    padding: 30px;
+    padding: 1.875em; 
     border-radius: 10px;
     text-align: center;
 }
@@ -149,7 +146,7 @@ main textarea {
 }
 
 .modal-body {
-    margin-bottom: 20px;
+    margin-bottom: 1.25em; 
 }
 
 .modal-actions {
@@ -160,17 +157,24 @@ main textarea {
 }
 
 .button-modal {
-    padding: 10px 20px;
+    padding: 0.8125em 1.375em; 
+    font-size: 1em;
+    font-weight: normal; 
+    
     border: none;
     border-radius: 1.5em;
     cursor: pointer;
-    font-weight: bold;
 }
 
 
 .aceptar {
     background-color: #84c318;
     color: white;
+}
+
+.cancelar { 
+    background-color: #ccc;
+    color: #333;
 }
 
 

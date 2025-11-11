@@ -14,11 +14,6 @@ export class FormularioContacto {
         this.inputApellido = document.getElementById('lastname');
         this.inputTelefono = document.getElementById('phonenumber');
         this.inputEmail = document.getElementById('email');
-
-        if (!this.formulario || !this.modalConfirmacion || !this.inputEmail) {
-            console.error('Inicialización fallida: Faltan IDs esenciales en el HTML.');
-            return;
-        }
     }
 
     validarEmail(email) {
@@ -151,11 +146,13 @@ export class FormularioContacto {
     }
 
     render() {
+        
         if (this.areaConsulta && this.contadorCaracteres) {
             this.actualizarContador();
             this.areaConsulta.addEventListener('input', () => this.actualizarContador());
         }
 
+       
         if (this.inputNombre) {
             this.inputNombre.addEventListener('input', (event) => this.manejarInputLetras(event));
         }
@@ -163,18 +160,32 @@ export class FormularioContacto {
             this.inputApellido.addEventListener('input', (event) => this.manejarInputLetras(event));
         }
 
+   
         if (this.inputTelefono) {
             this.inputTelefono.addEventListener('input', (event) => this.manejarInputTelefono(event));
         }
 
+       
         if (this.inputEmail) {
             this.inputEmail.addEventListener('input', () => this.manejarInputEmail());
         }
 
-        this.formulario.addEventListener('submit', (event) => this.manejarEnvio(event));
+     
+        if (this.formulario) {
+            this.formulario.addEventListener('submit', (event) => this.manejarEnvio(event));
+        }
 
-        this.btnAceptarConf.addEventListener('click', () => this.manejarAceptarConfirmacion());
-        this.btnCancelarConf.addEventListener('click', () => this.modalConfirmacion.close());
-        this.btnAceptarExito.addEventListener('click', () => this.manejarAceptarExito());
+     
+        if (this.btnAceptarConf) {
+            this.btnAceptarConf.addEventListener('click', () => this.manejarAceptarConfirmacion());
+        }
+
+        if (this.btnCancelarConf && this.modalConfirmacion) {
+            this.btnCancelarConf.addEventListener('click', () => this.modalConfirmacion.close());
+        }
+
+        if (this.btnAceptarExito) {
+            this.btnAceptarExito.addEventListener('click', () => this.manejarAceptarExito());
+        }
     }
 }

@@ -16,15 +16,15 @@
 </head>
 
 <body>
-         
-         <header class="header">
+
+    <header class="header">
         <div class="header_div">
             <a href="./home.html">
                 <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
             </a>
         </div>
 
-   
+
         <nav class="header_nav">
             <ul class="header_nav_ul">
                 <li>
@@ -57,7 +57,7 @@
         <div class="div_button">
 
             <form class="form_busqueda" action="./cursos.html" autocomplete="off">
-                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+                <input class="input_busqueda" type="text" id="search" name="search" placeholder="Buscar...">
             </form>
 
 
@@ -67,16 +67,16 @@
 
             <a class="ancla_carrito" href="./carrito.html">
 
-                <i class="fa-solid fa-cart-shopping"></i> 
+                <i class="fa-solid fa-cart-shopping"></i>
 
             </a>
-            
+
         </div>
     </header>
 
     <main>
         <section>
-            <form action="./Pago-realizado.html" method="get" autocomplete="off">
+            <form action="" method="get" autocomplete="off">
                 <h2>Pago con tarjeta</h2>
                 <label for="card">
                     Numero de tarjeta:
@@ -87,7 +87,7 @@
                 <div class="dates">
                     <label for="mes">Mes:</label>
                     <select id="mes" name="mes" required>
-                         <option value= "" disabled selected></option>
+                        <option value="" disabled selected></option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -103,7 +103,7 @@
                     </select>
                     <label for="anio">Año:</label>
                     <select id="anio" name="anio" required>
-                        <option value= "" disabled selected></option>
+                        <option value="" disabled selected></option>
                         <option value="2025">2025</option>
                         <option value="2026">2026</option>
                         <option value="2027">2027</option>
@@ -159,6 +159,7 @@
         </section>
     </main>
 
+
     <footer>
         <section class="about_us">
             <article>
@@ -172,7 +173,7 @@
                 <p> Alan Cahuana Rodríguez (37.996.385)
                 <p>
             </article>
-              <article>
+            <article>
                 <a class="ancla" href="https://x.com/?lang=es" target="_blank">
                     <i class="fab fa-x-twitter"></i>
                 </a>
@@ -200,6 +201,40 @@
             </a>
         </div>
     </div>
+
+    <dialog id="dialog-cancel" class="modal-dialog">
+        <div class="modal-content">
+            <h3 class="modal-title">¿Estás seguro que deseas cancelar?</h3>
+            <p class="modal-body">Serás redirigido a la página del carrito. Se perderán los datos ingresados.</p>
+            <form method="dialog" class="modal-actions">
+                <button id="confirm-cancel" class="button-modal aceptar">Sí, Cancelar</button>
+                <button class="button-modal cancelar" autofocus>No, Volver</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-confirm" class="modal-dialog">
+        <div class="modal-content">
+            <h3 class="modal-title">¿Confirmas el pago?</h3>
+            <p class="modal-body">Una vez confirmado, se procesará la transacción.</p>
+            <form method="dialog" class="modal-actions">
+                <button id="confirm-payment" class="button-modal aceptar">Sí, Pagar</button>
+                <button class="button-modal cancelar" autofocus>No, Revisar</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-success" class="modal-dialog">
+        <div class="modal-content">
+            <h3 class="modal-title">¡Pago Exitoso! 🎉</h3>
+            <p class="modal-body">Tu compra ha sido procesada correctamente.</p>
+            <form method="dialog" class="modal-actions">
+                <button id="go-home" class="button-modal aceptar">Ir al Home</button>
+            </form>
+        </div>
+    </dialog>
+
+    <script type="module" src="../js/script.js"></script>
 
 </body>
 
