@@ -219,13 +219,35 @@ export function getNombreDocenteDeCurso(cursoId) {
 
 // FUNCIONES DEL localStorage --------------------------------------------
 
-function getUsuarios() {
+export function getUsuarios() {
     const usuariosJSON = localStorage.getItem('usuarios');
     if (usuariosJSON) {
         return JSON.parse(usuariosJSON);
     } else {
         return [];
     }
+}
+
+export function existeUsuario(nombreDeUsuario, email) {
+    const listaUsuarios = getUsuarios();
+    let existeUsuario = false;
+
+    for (let i = 0; i < listaUsuarios.length; i++) {
+        const usuarioActual = listaUsuarios[i]; 
+
+        if ( usuarioActual.nombreUsuario === nombreDeUsuario || usuarioActual.email === email ) {
+            existeUsuario = true;
+            break;
+        }
+    }
+
+    return existeUsuario;
+}
+
+export function guardarNuevoUsuario(nuevoUsuario){
+    let nuevaListaDeUsuarios = getUsuarios();
+    nuevaListaDeUsuarios.push(nuevoUsuario);
+    guardarUsuarios(nuevaListaDeUsuarios);
 }
 
 export function guardarUsuarios(listaUsuarios) {
@@ -236,8 +258,25 @@ export function getUsuarioLogueado() {
     return localStorage.getItem('usuarioLogueado');
 }
 
-export function setUsuarioLogueado(username) {
-    localStorage.setItem('usuarioLogueado', username);
+export function getDatosDeUsuarioLogueado(){
+    return encontrarUsuario(getUsuarioLogueado());
+}
+
+export function getCursosDeUsuario(nombreDeUsuario){
+    let usuario = encontrarUsuario(nombreDeUsuario);
+
+    return usuario.cursosComprados;
+}
+
+export function encontrarUsuario(usuarioIngresado){
+    const listaUsuarios = getUsuarios();
+    const usuarioEncontrado = listaUsuarios.find(usuario => usuario.nombreUsuario === usuarioIngresado);
+
+    return usuarioEncontrado;
+}
+
+export function setUsuarioLogueado(nombreDeUsuario) {
+    localStorage.setItem('usuarioLogueado', nombreDeUsuario);
 }
 
 export function removerUsuarioLogueado() {

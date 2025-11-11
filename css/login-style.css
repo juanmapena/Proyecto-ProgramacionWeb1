@@ -176,6 +176,14 @@ main {
     }
 }
 
+#login-error {
+    font-family: 'Lato', sans-serif;
+    width: fit-content;
+    margin: auto;
+    color: rgb(225, 20, 20);
+    margin-top: 10px;
+}
+
 @media screen and (max-width: 1400px) {
     .login-card {
         width: 40%;

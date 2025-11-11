@@ -57,6 +57,7 @@ body {
             padding: 0.5em;
             text-decoration: none;
             margin-top: 1em;
+            cursor: pointer;
         }
 
         
@@ -87,8 +88,13 @@ body {
             }
         }
 
+        #mensaje-dinamico {
+            margin-top: 2em;
+            color: rgb(175, 20, 20);
+        }
+
         button{
-            margin-top: 3em;
+            margin-top: 0.5em;
             background-color:#84c318;
             border-radius: 40px;
             width: 100%;
@@ -132,6 +138,69 @@ body {
         }
     }
     
+}
+
+.modal-dialog {
+    display: none;
+    position: fixed;
+    top: 40%;
+
+    border: none;
+    padding: 0;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 30%;
+}
+
+.modal-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-dialog .modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-dialog .modal-title {
+    font-size: 1.5em;
+    color: #172A3A;
+    margin-bottom: 0.5em;
+}
+
+.modal-dialog .modal-body {
+    margin-bottom: 20px;
+}
+
+.modal-dialog .modal-actions {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.modal-dialog .button-modal {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#delete-account-modal #delete-account-modal-yes {
+    background-color: rgb(100, 0, 0);
+    font-size: 1em;
+    color: white;
+}
+
+#delete-account-modal #delete-account-modal-no {
+    background-color: #84c318;
+    font-size: 1em;
+    color: white;
+}
+
+#delete-account-modal #delete-modal-account-username{
+    font-weight: 800;
 }
 
 @media screen and (max-width: 1200px) {

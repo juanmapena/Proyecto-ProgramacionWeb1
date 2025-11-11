@@ -26,25 +26,35 @@
                     </a>
             </div>
             <section class="section-form">
-                <form action="./login.html" method="get">
+                <form id = "registro-form">
                     <div class="div-h1">
                         <h1>Registrarse</h1>
                     </div>
                     <label for="nombre">
-                        <input type="text" class="nombre" id="nombre" placeholder="Nombre y Apellido" required>
+                        <input type="text" class="nombre" id="nombre" placeholder="Nombre" required>
+                        <span id="nombre-error" class="mensaje-error"></span>
+                    </label>
+                    <label for="apellido">
+                        <input type="text" class="apellido" id="apellido" placeholder="Apellido" required>
+                        <span id="apellido-error" class="mensaje-error"></span>
                     </label>
                     <label for="email">
                         <input type="email" name="email" id="email" placeholder="Email" required>
+                        <span id="email-error" class="mensaje-error"></span>
                     </label>
                     <label for="nombre-usuario">
                         <input type="text" class="nombre-usuario" id="nombre-usuario" placeholder="Usuario" required>
+                        <span id="nombre-usuario-error" class="mensaje-error"></span>
                     </label>
                     <label for="password">
                         <input type="password" class="password" id="password" placeholder="Contraseña" required>
+                        <span id="password-error" class="mensaje-error"></span>
                     </label>
                     <label for="repeat-password">
                         <input type="password" class="repeat-password" id="repeat-password" placeholder="Confirmar contraseña" required>
+                        <span id="repeat-password-error" class="mensaje-error"></span>
                     </label>
+                    <div id="mensaje-dinamico"></div>
                     <p>Al registrarte, aceptas nuestras politicas de privacidad.</p>
                     <button type="submit">Registrarse</button>
                 </form>
@@ -84,5 +94,6 @@
                 </article>
             </section>
         </footer>
+    <script type="module" src="../js/registro.js"></script>
     </body>
 </html>

@@ -76,6 +76,12 @@ main{
         cursor: pointer;
     }
 }
+#mensaje-dinamico, .mensaje-error{
+    font-family: 'Lato', sans-serif;
+    color: rgb(175, 20, 20); 
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
 
 @media screen and (max-width: 1200px) {
     .section-form {
