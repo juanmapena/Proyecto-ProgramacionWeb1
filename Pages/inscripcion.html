@@ -29,45 +29,39 @@
                 <li>
                     <a class="header_nav_ul_li_a" href="./cursos.html">Cursos</a>
                 </li>
+
                 <li>
                     <a class="header_nav_ul_li_a" href="./cuenta.html">Perfil</a>
                 </li>
+
                 <li>
                     <a class="header_nav_ul_li_a" href="./calendario.html">Calendario</a>
                 </li>
 
                 <li>
-
                     <a class="header_nav_ul_li_a" href="./giftcard.html">Gifts</a>
-
                 </li>
 
                 <li>
-
                     <a class="header_nav_ul_li_a" href="./contacto.html">Contacto</a>
-
                 </li>
-
-
             </ul>
         </nav>
 
 
         <div class="div_button">
 
-            <form class="form_busqueda" action="./cursos.html" autocomplete="off">
-                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+            <form class="form_busqueda" action="./pages/detalle-general.html?name=" autocomplete="off">
+                <input class="input_busqueda" type="text" id="search" name="search" placeholder="Buscar...">
             </form>
-
 
             <a id="ancla_cerrarsesion" href="../index.html">
                 <button class="button">Cerrar sesión</button>
             </a>
 
             <a class="ancla_carrito" href="./carrito.html">
-
                 <i class="fa-solid fa-cart-shopping"></i>
-
+                <span class="contador-style" id="contador-carrito"></span>
             </a>
 
         </div>
@@ -81,86 +75,24 @@
         <section class="section__selector">
             <h3>Seleccione el tipo de inscripción que desea realizar:</h3>
             <article>
-                <a href="#">
-                    <button>Empresarial</button>
-                </a>
-                <a href="./inscripcion-personal.html">
-                    <button>Personal</button>
-                </a>
+                <button id="boton-empresarial">Empresarial</button>
+                <button id="boton-personal">Personal</button>
             </article>
         </section>
 
-        <section class="inscripcion-style">
-            <form class="inscripcion-form" method="get" action="./carrito.html">
+        <section class="inscripcion-style" id="section-form">
+            <form class="inscripcion-form" id="inscripcion-form" method="get">
 
-                <article id="persona1" class="persona-style">
-                    <label for="nombre1">Ingrese su nombre</label>
-                    <input type="text" name="nombre1" id="nombre1" required>
+                <article id="persona-container"></article> <!--Ahora dentro de este article se van a generar los inputs dinamicamente-->
 
-                    <label for="apellido1">Ingrese su apellido</label>
-                    <input type="text" name="apellido1" id="apellido1" required>
-
-                    <label for="dni1">Ingrese su DNI</label>
-                    <input type="text" name="dni1" id="dni1" minlength="7" maxlength="8" required>
-
-                    <label for="curso">Seleccione el curso</label>
-                    <select class="selector-style" id="curso">
-                        <option value="Python">Python</option>
-                        <option value="Java">Java</option>
-                        <option value="JavaScript">JavaScript</option>
-                    </select>
-
-                    <button type="button" class="eliminar">&#x2212;</button>
-                </article>
-
-                <article id="persona2" class="persona-style">
-                    <label for="nombre2">Ingrese su nombre</label>
-                    <input type="text" name="nombre2" id="nombre2" required>
-
-                    <label for="apellido2">Ingrese su apellido</label>
-                    <input type="text" name="apellido2" id="apellido2" required>
-
-                    <label for="dni2">Ingrese su DNI</label>
-                    <input type="text" name="dni2" id="dni2" minlength="7" maxlength="8" required>
-
-                    <label for="curso">Seleccione el curso</label>
-                    <select class="selector-style" id="curso">
-                        <option value="Python">Python</option>
-                        <option value="Java">Java</option>
-                        <option value="JavaScript">JavaScript</option>
-                    </select>
-
-                    <button type="button" class="eliminar">&#x2212;</button>
-                </article>
-
-                <article id="persona3" class="persona-style">
-                    <label for="nombre3">Ingrese su nombre</label>
-                    <input type="text" name="nombre3" id="nombre3" required>
-
-                    <label for="apellido3">Ingrese su apellido</label>
-                    <input type="text" name="apellido3" id="apellido3" required>
-
-                    <label for="dni3">Ingrese su DNI</label>
-                    <input type="text" name="dni3" id="dni3" minlength="7" maxlength="8" required>
-
-                    <label for="curso">Seleccione el curso</label>
-                    <select class="selector-style" id="curso">
-                        <option value="Python">Python</option>
-                        <option value="Java">Java</option>
-                        <option value="JavaScript">JavaScript</option>
-                    </select>
-
-                    <button type="button" class="eliminar">&#x2212;</button>
-                </article>
-
-                <div class="agregar-persona">
-                    <button type="button">&#43;</button>
+                <div class="agregar-persona" id="agregar-container">
+                    <button type="button" id="agregar-boton">&#43;</button>
                     <span>Agregar Persona</span>
                 </div>
 
                 <div class="importe-style">
                     <span>Total a Pagar:</span>
-                    <p>$380.00</p>
+                    <p id="total">$0.00</p>
 
                     <button class="inscribir-style" type="submit">Inscribirse</button>
                 </div>
@@ -177,7 +109,7 @@
                 <p>Luna Melanie Daiana (41.713.955)</p>
                 <p> Alan Cahuana Rodríguez (37.996.385)</p>
             </article>
-              <article>
+            <article>
                 <a class="ancla" href="https://x.com/?lang=es" target="_blank">
                     <i class="fab fa-x-twitter"></i>
                 </a>
@@ -207,6 +139,24 @@
             </a>
         </div>
     </div>
+    
+    <dialog class="modal-style" id="modal">
+        <div class="modal-header">
+            <h3>Resumen de Inscripcion</h3>
+        </div>
+
+        <div class="modal-body" id="resumen"></div> <!--Aca voy a generar el resumen de manera dinamica-->
+
+        <div class="modal-footer">
+            <button class="cancelar-style" id="cancelar">Cancelar</button>
+            <button class="inscribir-style" id="confirmar">Confirmar</button>
+        </div>
+
+    </dialog>
+
+    
+    <script type="module" src="../js/inscripcion.js"></script>
+    <script type="module" src="./js/script.js"></script>
 </body>
 
 </html>
