@@ -26,7 +26,7 @@
                     </a>
             </div>
             <section class="section-form">
-                <form id = "registro-form">
+                <form id="registro-form">
                     <div class="div-h1">
                         <h1>Registrarse</h1>
                     </div>
@@ -53,6 +53,30 @@
                     <label for="repeat-password">
                         <input type="password" class="repeat-password" id="repeat-password" placeholder="Confirmar contraseña" required>
                         <span id="repeat-password-error" class="mensaje-error"></span>
+                    </label>
+                    <label class="input-agrupado-avatar">
+                        <div class="avatar-selector">
+                            <h3>¡Elegí tu avatar!</h3>
+                            <div class="avatar-options">
+                                <label class="avatar-label" title="Avatar 1">
+                                    <img class="avatar-img" src="../assets/avatar1.png" alt="Avatar 1">
+                                    <input class="avatar-input" type="radio" name="avatar" value="1" required>
+                                </label>
+                                <label class="avatar-label" title="Avatar 2">
+                                    <img class="avatar-img" src="../assets/avatar2.png" alt="Avatar 2">
+                                    <input class="avatar-input" type="radio" name="avatar" value="2" required>
+                                </label>
+                                <label class="avatar-label" title="Avatar 3">
+                                    <img class="avatar-img" src="../assets/avatar3.png" alt="Avatar 3">
+                                    <input class="avatar-input" type="radio" name="avatar" value="3" required>
+                                </label>
+                                <label class="avatar-label" title="Avatar 4">
+                                    <img class="avatar-img" src="../assets/avatar4.png" alt="Avatar 4">
+                                    <input class="avatar-input" type="radio" name="avatar" value="4" required>
+                                </label>
+                            </div>
+                        </div>
+                        <span id="avatar-error" class="mensaje-error"></span> 
                     </label>
                     <div id="mensaje-dinamico"></div>
                     <p>Al registrarte, aceptas nuestras politicas de privacidad.</p>

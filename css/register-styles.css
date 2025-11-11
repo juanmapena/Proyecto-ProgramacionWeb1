@@ -53,6 +53,53 @@ main{
         color: #F5FBEF;
         cursor: pointer;
     }
+
+    .input-agrupado-avatar {
+        width: 100%;
+
+        .avatar-selector {
+            width: 100%;
+
+            h3 {
+                margin: auto;
+                width: fit-content;
+                margin-top: 2em;
+                margin-bottom: 0.5em;
+                font-size: 1.5em;
+                font-family: 'Lato';
+                color: #172A3A
+            }
+
+            .avatar-options {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                label {
+                    width: 24%;
+
+                    img {
+                        width: 100%;
+                        cursor: pointer;
+                        filter: brightness(50%);
+                    }
+
+                    img:hover {
+                        filter: brightness(95%);
+                    }
+
+                    img.selected-avatar {
+                        filter: brightness(100%);
+                    }
+
+                    input {
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .back-button{
@@ -82,6 +129,8 @@ main{
     margin-top: 10px; 
     margin-bottom: 10px;
 }
+
+
 
 @media screen and (max-width: 1200px) {
     .section-form {

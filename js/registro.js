@@ -23,6 +23,8 @@ import {
 
 const FORM_REGISTRO = document.getElementById('registro-form');
 const MSJ_DINAMICO = document.getElementById('mensaje-dinamico');
+const TODOS_RADIO_INPUT_AVATAR = document.querySelectorAll('#registro-form input.avatar-input');
+const TODAS_IMAGENES_AVATAR = document.querySelectorAll('#registro-form img.avatar-img');
 
 const inputNombre = document.getElementById('nombre');
 const inputApellido = document.getElementById('apellido');
@@ -111,12 +113,15 @@ function controlRegistro(event){
         return;
     }
 
+    const AVATAR_RADIO_BTN_SELECTED = document.querySelector('input[name="avatar"]:checked');
+
     const nuevoUsuario = {
         nombre,
         apellido,
         email,
         nombreUsuario,         // Username o nick
         contrasenia,
+        avatar: AVATAR_RADIO_BTN_SELECTED && AVATAR_RADIO_BTN_SELECTED.value ? AVATAR_RADIO_BTN_SELECTED.value : 1,
         carrito: [],           // Cursos en el carrito (todavía no fueron comprados)
         cursosComprados: []    // Cursos que ya fueron comprados (el cliente ya es dueño)
     }
@@ -130,5 +135,21 @@ function controlRegistro(event){
         redirigir(LOGIN_URL);
     }, 1500);
 }
+
+function elegirAvatar(elem){    
+    TODAS_IMAGENES_AVATAR.forEach((img)=>{ 
+        img.classList.remove('selected-avatar');
+    });
+
+    elem.target.classList.add('selected-avatar')
+}
+
+function inicializarAvatares(){
+    TODAS_IMAGENES_AVATAR.forEach((img)=>{ 
+        img.addEventListener('click', elegirAvatar);
+    });
+}
+
+inicializarAvatares();
 
 FORM_REGISTRO.addEventListener('submit', controlRegistro);

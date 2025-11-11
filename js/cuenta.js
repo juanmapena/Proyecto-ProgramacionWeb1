@@ -13,7 +13,8 @@ import {
     guardarUsuarios,
     getUsuarios,
     getCursosDeUsuario,
-    obtenerCursoPorId
+    obtenerCursoPorId,
+    getAvatarDelUsuarioLogueado
 } from "./bbdd.js";
 
 const FORM_PROFILE = document.getElementById("profile-form");
@@ -33,9 +34,17 @@ const profileNewPassword = document.getElementById("profile-new-password");
 const profileRepeatNewPassword = document.getElementById("profile-repeat-password");
 const profileUsername = document.getElementById("profile-username");
 
-const GUARDAR_DATOS_MODAL = document.getElementById("save-data-modal");
+const avatarImg = document.getElementById("profile-avatar");
 const nombreUsuarioEnModal = document.getElementById("delete-modal-account-username");
+
+const GUARDAR_DATOS_MODAL = document.getElementById("save-data-modal");
 const BOTON_DATOS_GUARDADOS = document.getElementById("save-data-confirm");
+
+function inicializarAvatar(){
+    let idAvatar = getAvatarDelUsuarioLogueado();
+    const avatarBasePath = "../Assets/"
+    avatarImg.src = avatarBasePath + "avatar" + idAvatar +".png";
+}
 
 function cargarCursos(){
     let nombreDeUsuarioActual = getUsuarioLogueado();
@@ -50,7 +59,7 @@ function cargarCursos(){
     cursosDeUsuario.forEach((cursoId) => {
         let cursoActual = obtenerCursoPorId(cursoId);
         
-        let cursoUrl = "../pages/detalle_curso?name=" + cursoActual.idNombre;
+        let cursoUrl = "../pages/detalle-general?name=" + cursoActual.idNombre;
 
         let nuevoAnchor = document.createElement("a");
         nuevoAnchor.href = cursoUrl;
@@ -253,6 +262,7 @@ function eliminarCuenta(){
     }
 }
 
+inicializarAvatar();    // Inicializamos el avatar elegido al registrarse
 cargarDatosIniciales(); // Inicializamos los datos apenas cargue la página
 
 FORM_PROFILE.addEventListener('submit', guardarDatosDeCuenta);

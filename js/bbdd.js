@@ -284,13 +284,21 @@ export function removerUsuarioLogueado() {
 }
 
 export function obtenerContadorDelCarrito(){
-    const nombreDeUsuario= getUsuarioLogueado();
+    const nombreDeUsuario = getUsuarioLogueado();
 
-    if(!nombreDeUsuario){
+    if(!nombreDeUsuario) {
         return 0;
     }
 
-    const usuario=encontrarUsuario(nombreDeUsuario);
+    const usuario = encontrarUsuario(nombreDeUsuario);
+
+    if ( !usuario ) {
+        return 0;
+    }
 
     return usuario.carrito.length;
+}
+
+export function getAvatarDelUsuarioLogueado(){
+    return getDatosDeUsuarioLogueado().avatar;
 }
