@@ -1,21 +1,20 @@
 body {
     font-family: 'lato', sans-serif;
     background-color: #f5fbef;
+    overflow-x: hidden;
 }
 
-.principal_container {
+.contenedor_principal {
     margin-top: 1em;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 4em;
+    gap: 8em;
     padding: 2.5em;
 }
 
-
 main {
-
     h2 {
         margin-top: 1em;
         margin-bottom: 1em;
@@ -26,51 +25,135 @@ main {
 
     h4 {
         margin-top: 1em;
+        margin-bottom: 0.8em;
         color: #172A3A;
-
     }
 
     p {
         font-family: 'Montserrat', sans-serif;
     }
-
 }
-
 
 .form_dates {
     box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.1);
-    padding: 3em;
+    padding: 2em;
     border-radius: 1.5em;
+    max-width: 30em;
 }
 
 
-.principal_container article {
+.tarjeta_contenedor {
     position: relative;
+    max-width: 25em;
+    margin-top: 3em;
+    position: sticky;
+    top: 5em;
 }
 
-.photo {
-    width: 70vh;
-    height: 55vh;
+.vista-previa-tarjeta {
+    width: 25em;
+    height: 15em;
     border-radius: 0.8em;
+    background-color: goldenrod;
+    position: relative;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
 }
 
-.price {
+.tarjeta-contenido {
+    text-align: center;
+    z-index: 10;
+}
+
+.tarjeta-texto {
+    color: white;
+    font-size: 1.3em;
+    margin: 0;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+#nombre-destinatario-vista-previa {
+    font-size: 3.5em;
+    color: white;
+    font-family: Zapfino, "Monotype Corsiva", "Brush Script MT", cursive;
+    margin: 0.2em 0;
+    word-break: break-word;
+    transition: color 0.3s ease, font-size 0.3s ease;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.texto-previsualizacion {
+    margin-top: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+.monto-vista-previa {
     position: absolute;
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 0.5em;
+    padding: 0.5em 0.8em;
     border-radius: 0.3em;
-    top: 10px;
-    right: 10px;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: bold;
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
+.superior-derecha {
+    top: 0.625em;
+    right: 0.625em;
+    left: auto;
+    bottom: auto;
+}
+
+.superior-izquierda {
+    top: 0.625em;
+    left: 0.625em;
+    right: auto;
+    bottom: auto;
+}
+
+.inferior-derecha {
+    bottom: 0.625em;
+    right: 0.625em;
+    top: auto;
+    left: auto;
+}
+
+.inferior-izquierda {
+    bottom: 0.625em;
+    left: 0.625em;
+    top: auto;
+    right: auto;
+}
 
 .input_name {
     width: 100%;
-    height: 3.3em;
-    padding: 0.4em 0.75em;
+    height: 3em;
+    padding: 0.6em 0.75em;
     margin-top: 0.4em;
     border: 1px solid #ced4da;
     border-radius: 0.25em;
@@ -78,26 +161,11 @@ main {
     font-size: 1em;
 }
 
-select {
-    width: 100%;
-    max-height: 3.4em;
-    margin-top: 0.4em;
-    padding: 0.4em 0.75em;
-    border: 1px solid #ced4da;
-    border-radius: 1.25em;
-    box-sizing: border-box;
-    font-size: 1em;
-    padding: 1em;
-    margin-top: 0.4em;
-}
-
 .button_contaniner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Esto centra el botón horizontalmente */
-    margin-top: 1em;
-    /* Un poco de espacio arriba para separarlo del último select */
+    margin-top: 1.5em;
 }
 
 .confirm {
@@ -130,237 +198,225 @@ label {
     margin-bottom: 1em;
 }
 
-
-.pixel_box {
+.caja-pixel {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    margin-right: 1.5em;
+    margin-right: 1em;
     margin-bottom: 1em;
     border: none;
-    gap: 1em;
+    gap: 0.5em;
+    font-size: 1em;
 }
 
-
-
-
-/* 1. ESTILO BASE PARA LOS CONTENEDORES (LABELS) */
-.color_box,
-.location-option,
-.background-option {
+.caja-color,
+.opcion-ubicacion,
+.opcion-fondo {
     display: inline-flex;
     flex-direction: column;
-    /* Apila el contenido (diseño + radio) */
     align-items: center;
-    /* Centra el diseño y el radio horizontalmente */
     cursor: pointer;
-    margin-right: 1.5em;
+    margin-right: 1em;
     margin-bottom: 1em;
     border: none;
 }
 
-
-
-.color_box::before {
+.caja-color::before {
     content: '';
-    /* Necesario para que el pseudo-elemento se renderice */
     display: block;
-    width: 2.5em;
-    height: 2.5em;
+    width: 2em;
+    height: 2em;
     border-radius: 50%;
-    border: none;
     margin-bottom: 0.3em;
-    box-sizing: border-box;
 }
 
-/* Aplicamos los colores de fondo a los pseudo-elementos */
-label[for="golden"].color_box::before {
+label[for="golden"].caja-color::before {
     background-color: goldenrod;
 }
 
-label[for="red"].color_box::before {
+label[for="red"].caja-color::before {
     background-color: red;
 }
 
-label[for="blue"].color_box::before {
+label[for="blue"].caja-color::before {
     background-color: blue;
 }
 
-label[for="green"].color_box::before {
+label[for="green"].caja-color::before {
     background-color: green;
 }
 
-label[for="grey"].color_box::before {
+label[for="grey"].caja-color::before {
     background-color: grey;
 }
 
-.location-option::before,
-.background-option::before {
+.opcion-ubicacion::before,
+.opcion-fondo::before {
     content: '';
-    /* Necesario */
     display: block;
-    width: 2.5em;
-    /* Tamaño del cuadrado */
-    height: 2.5em;
+    width: 2em;
+    height: 2em;
     border-radius: 0.3em;
-    border: 0.1em solid #ccc;
-    /* Borde base para el cuadrado */
+    border: 1px solid #ccc;
     margin-bottom: 0.3em;
-    /* Espacio entre el cuadrado y el radio */
-    box-sizing: border-box;
 }
 
-
-/* 6. ESTILOS INDIVIDUALES DE UBICACIÓN (ÍCONOS) */
-/* Los bordes se aplican al pseudo-elemento del label */
 label[for="ubicacion_inferior_izquierda"]::before {
-    border-bottom: 5px solid black;
-    border-left: 5px solid black;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
+    border-bottom: 4px solid black;
+    border-left: 4px solid black;
 }
 
 label[for="ubicacion_inferior_derecha"]::before {
-    border-bottom: 5px solid black;
-    border-right: 5px solid black;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
+    border-bottom: 4px solid black;
+    border-right: 4px solid black;
 }
 
 label[for="ubicacion_superior_derecha"]::before {
-    border-top: 5px solid black;
-    border-right: 5px solid black;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
+    border-top: 4px solid black;
+    border-right: 4px solid black;
 }
 
 label[for="ubicacion_superior_izquierda"]::before {
-    border-top: 5px solid black;
-    border-left: 5px solid black;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
+    border-top: 4px solid black;
+    border-left: 4px solid black;
 }
 
-
-
-
-/* 7. ESTILOS INDIVIDUALES DE FONDO */
-/* Aplicamos los colores de fondo a los pseudo-elementos */
 label[for="fondo1"]::before {
-    background-color: #888888;
+    background-color: goldenrod;
 }
 
 label[for="fondo2"]::before {
-    background-color: #555555;
+    background-color: black;
 }
 
 label[for="fondo3"]::before {
-    background-color: #AAAAAA;
+    background-color: green;
 }
 
 label[for="fondo4"]::before {
-    background-color: #222222;
+    background-color: red;
 }
 
 label[for="fondo5"]::before {
-    background-color: #CCCCCC;
+    background-color: cyan;
 }
 
-/* ========================================================== */
+.dialogo {
+    margin: auto;
+    border: none;
+    padding: 0;
+    border-radius: 0.625em;
+    box-shadow: 0 0.3125em 0.9375em rgba(0, 0, 0, 0.5);
+    max-width: 25em;
+    background-color: #f5fbef;
+}
 
-/* Mantén el resto de tu CSS (header, main, footer, media queries, etc.) como está. */
+.dialogo-contenido {
+    background-color: #ffffff;
+    padding: 1.875em;
+    border-radius: 0.625em;
+    text-align: center;
+}
 
-@media screen and (max-width: 1000px) {
+.dialogo h3 {
+    margin-top: 0;
+    color: #172A3A;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.dialogo-botones {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1em;
+}
+
+.dialogo-boton {
+    padding: 0.8125em 1.375em;
+    font-size: 1em;
+    font-weight: normal;
+    border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+}
+
+.dialogo::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dialogo-aceptar {
+    background-color: #84c318;
+    color: white;
+}
+
+.dialogo-cancelar {
+    background-color: #ccc;
+    color: #333;
+}
+
+@media screen and (max-width: 65.625em) {
+
     .contenedor_principal {
-        max-width: 100%;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        gap: 2em;
+        width: 80%;
+        font-size: 1.5625em;
+    }
+
+    .tarjeta_contenedor {
+        width: 50%;
+        max-width: 90%;
+        position: static;
+    }
+
+    .vista-previa-tarjeta {
         width: 100%;
-    }
-
-    .foto {
-        max-width: 100%;
-        width: 19em;
         height: auto;
-    }
-
-    label {
-        text-align: center;
-    }
-
-    ::placeholder {
-        text-align: center;
-    }
-
-    .confirm {
-        justify-content: center;
-    }
-
-    .principal_container {
-        padding: 0;
+        min-height: 15em;
+        padding: 1.5em;
     }
 
     .form_dates {
-        margin: auto 2em 2em;
-    }
-
-    .photo_principal {
-        width: 70%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .photo {
-        border-radius: 5%;
-        width: 100%;
-        height: auto;
-    }
-
-    .price {
-        top: 5%;
-        right: 10%;
-    }
-}
-
-@media screen and (max-width: 500px) {
-
-    .contenedor_principal {
-        max-width: 100%;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .foto {
+        width: 80%;
         max-width: 90%;
-        width: 18em;
-        height: auto;
-        justify-content: center;
-    }
-
-    .input_nombre {
-        width: 90%;
-    }
-
-    select {
-        width: 100%;
-    }
-
-    .photo_principal {
-        width: 85%;
     }
 
     .button_contaniner {
+        justify-content: center;
         flex-direction: column;
-        gap: 1em;
+        gap: 2em;
     }
 
+    h4 {
+        text-align: center;
+    }
+}
 
-    label.color_box,
-    label.location-option,
-    label.background-option {
-        flex-direction: column;
-        align-items: center;
+@media screen and (max-width: 31.25em) {
+
+    .contenedor_principal {
+        font-size: 1.0625em;
+        gap: 1.5em;
+    }
+
+    .tarjeta_contenedor {
+        width: 50%;
+        position: static;
+    }
+
+    .form_dates {
+        padding: 1em;
+    }
+
+    .caja-color::before,
+    .opcion-ubicacion::before,
+    .opcion-fondo::before {
+        width: 1.5em;
+        height: 1.5em;
     }
 }
