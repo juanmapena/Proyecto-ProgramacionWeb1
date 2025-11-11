@@ -64,16 +64,16 @@ const cursos = [
     },
     {
         id: 4,
-        titulo: "HTML & CSS Esenciales",
+        titulo: "HTML & CSS",
         idNombre: "html-css-inicial",
-        docentes: [1],
+        docentes: [5],
         detalle: "Aprende los fundamentos de la estructura (HTML) y el diseño (CSS) de cualquier página web moderna.",
         requisitos: "Ninguno, ideal para empezar desde cero.",
         duracionSemanas: 3,
         nivel: "Inicial",
         precio: 49.99,
-        urlLogo: "/assets/logos/html_css.png",
-        urlImagenPrincipal: "/assets/imagenes/html_css_main.jpg",
+        urlLogo: "../assets/html-css-pngg.png",
+        urlImagenPrincipal: "../assets/html-css-pngg.png",
         contenido: [
             {
                 unidad: 1,
@@ -89,16 +89,16 @@ const cursos = [
     },
     {
         id: 5,
-        titulo: "React: Gestión de Estado y Rendimiento",
+        titulo: "React",
         idNombre: "react-avanzado",
-        docentes: [1],
+        docentes: [6],
         detalle: "Domina los Hooks, el estado global con Redux/Context y la optimización de rendimiento en aplicaciones de React escalables.",
         requisitos: "Conocimiento intermedio de JavaScript y React.",
         duracionSemanas: 8,
         nivel: "Avanzado",
         precio: 199.99,
-        urlLogo: "/assets/logos/react_logo.png",
-        urlImagenPrincipal: "/assets/imagenes/react_main.jpg",
+        urlLogo: "../assets/react.png",
+        urlImagenPrincipal: "../assets/react.png",
         contenido: [
             {
                 unidad: 1,
@@ -114,7 +114,7 @@ const cursos = [
     },
     {
         id: 6,
-        titulo: "C++ Esencial y POO",
+        titulo: "C++",
         idNombre: "cpp-intermedio",
         docentes: [2],
         detalle: "Aprende los fundamentos de C++, manejo de memoria básico y la implementación de Programación Orientada a Objetos.",
@@ -122,8 +122,8 @@ const cursos = [
         duracionSemanas: 9,
         nivel: "Intermedio",
         precio: 150.00,
-        urlLogo: "/assets/logos/cpp_logo.png",
-        urlImagenPrincipal: "/assets/imagenes/cpp_main.jpg",
+        urlLogo: "../assets/c+.png",
+        urlImagenPrincipal: "../assets/c+.png",
         contenido: [
             {
                 unidad: 1,
@@ -149,13 +149,13 @@ const docentes = [
         urlImagen: "../assets/profesor_div.jpg" 
     },
     {
-        id: 2,
-        nombreCompleto: "Roberto Gómez",
-        calificacion: 4,
-        detalle: "Ingeniero de software con profundo conocimiento en lenguajes de bajo nivel como C++ y en sistemas operativos.",
-        trayectoria: "Trabajó en la industria de videojuegos y tiene experiencia en optimización de código y algoritmos complejos.",
-        urlImagen: "/assets/docentes/roberto_gomez.jpg"
-    },
+    id: 2,
+    nombreCompleto: "Ariel Pereira",
+    calificacion: 4,
+    detalle: "Ingeniero de software con más de 10 años de experiencia en programación de sistemas y desarrollo con C++. Especialista en optimización de código, estructuras de datos, manejo de memoria y arquitectura de software. Combina la enseñanza con proyectos técnicos en entornos de alto rendimiento.",
+    trayectoria: "Ariel inició su carrera en la industria de los videojuegos, donde se especializó en el uso de C++ para el desarrollo de motores gráficos y algoritmos de física. Más tarde trabajó en empresas tecnológicas dedicadas a la ingeniería de software y sistemas embebidos, liderando equipos de desarrollo en proyectos de tiempo real y simulación. Actualmente, se dedica a la docencia y mentoría de estudiantes interesados en la programación de bajo nivel, fomentando el pensamiento lógico, la eficiencia y las buenas prácticas de programación en C++.",
+    urlImagen: "../assets/profesor-c++.jpg"
+},
     {
         id: 3,
         nombreCompleto: "Tomás Urquiza",
@@ -172,22 +172,22 @@ const docentes = [
         trayectoria: "Inició su carrera como desarrollador backend en una startup de tecnología educativa, donde descubrió su pasión por Python. Más tarde, se desempeñó como ingeniero de software en empresas del sector financiero, utilizando Python para automatizar procesos y analizar grandes volúmenes de datos. Paralelamente, comenzó a dictar cursos en universidades y plataformas de educación online, donde ha formado a más de 1.000 estudiantes. Actualmente, se dedica a la enseñanza a tiempo completo y al desarrollo de proyectos freelance en análisis de datos, machine learning y automatización con Python.",
         urlImagen: "../assets/profesor_python_nuevo.jpg"
     },
-    {
-        id: 5,
-        nombreCompleto: "Lucía Fernández",
-        calificacion: 5,
-        detalle: "Especialista en desarrollo frontend con más de 8 años de experiencia. Experta en tecnologías web y performance.",
-        trayectoria: "Lideró el equipo de frontend en una startup de tecnología educativa y ha dictado más de 50 bootcamps.",
-        urlImagen: "/assets/docentes/lucia_fernandez.jpg"
-    },
-    {
-        id: 6,
-        nombreCompleto: "Roberto Gómez",
-        calificacion: 4,
-        detalle: "Ingeniero de software con profundo conocimiento en lenguajes de bajo nivel como C++ y en sistemas operativos.",
-        trayectoria: "Trabajó en la industria de videojuegos y tiene experiencia en optimización de código y algoritmos complejos.",
-        urlImagen: "/assets/docentes/roberto_gomez.jpg"
-    }
+{
+    id: 5,
+    nombreCompleto: "Lucía Fernández",
+    calificacion: 5,
+    detalle: "Desarrolladora frontend con más de 8 años de experiencia creando interfaces atractivas, accesibles y optimizadas. Especialista en HTML5, CSS3 y metodologías modernas de diseño responsivo, combina la estética con la funcionalidad para lograr experiencias web de alto impacto.",
+    trayectoria: "Lucía inició su carrera en agencias de diseño digital, donde trabajó en la maquetación y optimización de sitios para marcas reconocidas. Luego lideró el equipo frontend de una startup de tecnología educativa, donde implementó buenas prácticas de accesibilidad y performance web. Además, ha dictado más de 50 bootcamps y talleres de HTML, CSS y diseño responsivo, formando a nuevos desarrolladores en fundamentos sólidos del desarrollo web.",
+    urlImagen: "../assets/profesora-html.jpg"
+},
+{
+    id: 6,
+    nombreCompleto: "Juan Gómez",
+    calificacion: 5,
+    detalle: "Ingeniero de software especializado en desarrollo frontend con React, con más de 6 años de experiencia en la creación de aplicaciones SPA escalables y de alto rendimiento. Experto en el uso de Hooks, Context API, Redux y buenas prácticas de arquitectura en React.",
+    trayectoria: "Comenzó su carrera como desarrollador web construyendo interfaces interactivas con JavaScript y React. Participó en proyectos internacionales enfocados en la optimización del rendimiento y la experiencia de usuario. Actualmente trabaja como desarrollador senior en una empresa de software, donde lidera el desarrollo de aplicaciones en React, capacita a equipos nuevos en el uso de librerías modernas y dicta cursos sobre React y JavaScript avanzado.",
+    urlImagen: "../assets/profesor-react.jpg"
+},
 ];
 
 export function obtenerDocentePorId(id) {
@@ -219,35 +219,13 @@ export function getNombreDocenteDeCurso(cursoId) {
 
 // FUNCIONES DEL localStorage --------------------------------------------
 
-export function getUsuarios() {
+function getUsuarios() {
     const usuariosJSON = localStorage.getItem('usuarios');
     if (usuariosJSON) {
         return JSON.parse(usuariosJSON);
     } else {
         return [];
     }
-}
-
-export function existeUsuario(nombreDeUsuario, email) {
-    const listaUsuarios = getUsuarios();
-    let existeUsuario = false;
-
-    for (let i = 0; i < listaUsuarios.length; i++) {
-        const usuarioActual = listaUsuarios[i]; 
-
-        if ( usuarioActual.nombreUsuario === nombreDeUsuario || usuarioActual.email === email ) {
-            existeUsuario = true;
-            break;
-        }
-    }
-
-    return existeUsuario;
-}
-
-export function guardarNuevoUsuario(nuevoUsuario){
-    let nuevaListaDeUsuarios = getUsuarios();
-    nuevaListaDeUsuarios.push(nuevoUsuario);
-    guardarUsuarios(nuevaListaDeUsuarios);
 }
 
 export function guardarUsuarios(listaUsuarios) {
@@ -258,25 +236,8 @@ export function getUsuarioLogueado() {
     return localStorage.getItem('usuarioLogueado');
 }
 
-export function getDatosDeUsuarioLogueado(){
-    return encontrarUsuario(getUsuarioLogueado());
-}
-
-export function getCursosDeUsuario(nombreDeUsuario){
-    let usuario = encontrarUsuario(nombreDeUsuario);
-
-    return usuario.cursosComprados;
-}
-
-export function encontrarUsuario(usuarioIngresado){
-    const listaUsuarios = getUsuarios();
-    const usuarioEncontrado = listaUsuarios.find(usuario => usuario.nombreUsuario === usuarioIngresado);
-
-    return usuarioEncontrado;
-}
-
-export function setUsuarioLogueado(nombreDeUsuario) {
-    localStorage.setItem('usuarioLogueado', nombreDeUsuario);
+export function setUsuarioLogueado(username) {
+    localStorage.setItem('usuarioLogueado', username);
 }
 
 export function removerUsuarioLogueado() {

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cursos</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/detalle-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
+            rel="stylesheet">
+        <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
+    <body>
+<header class="header">
+        <div class="header_div">
+            <a href="../index.html">
+                <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
+            </a>
+        </div>
+        <nav class="header_nav">
+            <ul class="header_nav_ul">
+                <li>
+                    <a class="header_nav_ul_li_a" href="./pages/cursos.html">Cursos</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./pages/login.html">Perfil</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./pages/login.html">Calendario</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./pages/login.html">Gifts</a>
+                </li>
+                <li>
+                    <a class="header_nav_ul_li_a" href="./pages/contacto.html">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="div_button">
+            <form class="form_busqueda" action="./detalle-general.html" autocomplete="off">
+                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+            </form>
+
+            <a id="ancla_cerrarsesion" href="./pages/login.html">
+                <button class="button">Iniciar sesión</button>
+            </a>
+            <a class="ancla_carrito" href="./pages/login.html">
+                <i class="fa-solid fa-cart-shopping"></i> 
+            </a>
+            
+        </div>
+    </header>
+
+<main id="main_detalle">
+
+  <section class="section_curso">
+    <article>
+      <img id="curso-imagen" class="section_img" src="" alt="Imagen del curso">
+    </article>
+
+    <article class="article_descripcion">
+      <h1 id="curso-titulo" class="article_titulo"></h1>
+      <p><strong>Valor curso:</strong> $<span id="curso-precio"></span></p>
+      <p><strong>Nivel:</strong> <span id="curso-nivel"></span></p>
+      <p><strong>Tiempo de dedicación necesario:</strong> <span id="curso-duracion"></span> semanas</p>
+      <p><strong>Descripción del curso:</strong> <span id="curso-detalle"></span></p>
+      <p><strong>Requisitos previos:</strong> <span id="curso-requisitos"></span></p>
+      <a class="button_inscripcion" href="../pages/inscripcion.html">Inscribirse</a>
+    </article>
+  </section>
+
+  <section class="section_contenidos">
+    <h1 class="h1_contenidos">CONTENIDOS POR CLASE</h1>
+    <div id="contenidos-lista"></div>
+  </section>
+
+  <section>
+    <h1 class="h1_contenidos">DOCENTE</h1>
+  </section>
+
+  <section class="section_profesor">
+    <article class="article_contenedor_foto">
+      <img id="docente-imagen" class="imagen_profesor" src="" alt="Docente">
+    </article>
+
+    <article class="article_descripcion_profesor">
+      <h2 id="docente-nombre"></h2>
+      <p id="docente-calificacion"></p>
+      <p id="docente-detalle"></p>
+      <h3>Trayectoria</h3>
+      <p id="docente-trayectoria"></p>
+    </article>
+  </section>
+
+  <section>
+    <h1 class="h1_contenidos">Otros Cursos</h1>
+  </section>
+
+  <section id="otros-cursos" class="card-container_detalle">
+    
+  </section>
+
+</main>
+
+
+        
+<footer>
+            <section class="about_us">
+                <article>
+                    <p>Emanuel Ruiz Díaz (40.380.499) </p>
+                    <p>Juan Manuel Pena (45.495.738)
+                    <p>
+                    <p>Santiago Javier Falconi (44.099.057)
+                    <p>
+                    <p>Luna Melanie Daiana (41.713.955)
+                    <p>
+                    <p> Alan Cahuana Rodríguez (37.996.385)
+                    <p>
+                </article>
+                  <article>
+                <a class="ancla" href="https://x.com/?lang=es" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a class="ancla" href="https://www.instagram.com/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="ancla" href="https://www.youtube.com/" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a class="ancla" href="https://discord.com/" target="_blank">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </article>
+                <article>
+                    <h4>Copyright © <h4>
+                            <p>Todos los derechos están reservados
+                            <p>
+                </article>
+            </section>
+        </footer>
+
+        <dialog id="exito-modal" class="modal-dialog">
+      <div class="modal-content">
+        <h3 class="modal-title">No se encontró ningun curso con ese nombre</h3>
+        <p class="modal-body">
+          <strong>
+          Presiona Aceptar para poder buscar nuevamente
+        </p>
+        <div class="modal-actions">
+          <button id="modal-exito-aceptar" class="button-modal aceptar">Aceptar</button>
+        </div>
+      </div>
+    </dialog>
+
+        <script type="module" src="../js/script.js"></script>
+            </body>
+</html>

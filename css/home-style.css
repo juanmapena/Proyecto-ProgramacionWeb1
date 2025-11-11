@@ -1,7 +1,10 @@
+html, body { overflow-x: hidden; }
+
+
 .title_section {
   display: flex;
   justify-content: space-between;
-  background-image: url(../Assets/heroImage.jpg);
+  background-image: url(../assets/heroImage.jpg);
   background-size: cover;
   background-position: top;
   padding: 0;
@@ -13,12 +16,13 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;  
+  justify-content: center;
   color: #172A3A;
-  h1{
-    text-align: start;
-    font-size: 3em;
-  }
+}
+
+.principal_title h1 {
+  text-align: start;
+  font-size: 3em;
 }
 
 .title_section h3 {
@@ -38,217 +42,162 @@
   margin-bottom: 5em;
 }
 
-.title{
-      font-size: 1.5em;
-      text-align: center;
-      color: #172A3A;
-      margin-top: 2em;
-      margin-bottom: 2em;
-      text-align: center;
-      padding-bottom: 1em;
-      padding-top: 1em;
-  }
+.title {
+  font-size: 1.5em;
+  text-align: center;
+  color: #172A3A;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
 
-
-.steps{
+.steps {
   display: flex;
   flex-direction: row;
   justify-content: center;
-
-  div {
-    width: 15%;
-    padding: 3em 1em;
-    background-color: #172A3A;
-    margin: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    border-top: 4px solid #4caf50;
-    transition: transform 0.3s ease;
-    background: linear-gradient(to bottom, #0b2239, #123b5c);
-
-    h4{
-      text-align: center;
-      font-size: 1.5em;
-      color: #F5FBEF;
-    }
-
-    p{
-      margin-top: 1em;
-      text-align: center;
-      font-size: 1em;
-    }
-  }
-}
-.steps div:hover {
-  transform: scale(1.05);
 }
 
-h1 {
+.steps div {
+  width: 15%;
+  min-width: 260px;
+  padding: 3em 1em;
+  background-color: #172A3A;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  color: white;
+  border-top: 4px solid #4caf50;
+  transition: transform 0.3s ease;
+  background: linear-gradient(to bottom, #0b2239, #123b5c);
+}
+
+.steps div h4 {
   text-align: center;
+  font-size: 1.5em;
+  color: #F5FBEF;
+}
+
+.steps div p { margin-top: 1em; text-align: center; font-size: 1em; }
+.steps div:hover { transform: scale(1.05); }
+
+
+h1 { text-align: center; color: #172A3A; }
+
+.courses_section { display: flex; flex-direction: column; margin-bottom: 3em; }
+.courses_title { color: #172A3A; font-size: 1.5em; text-align: center; margin-bottom: 1em; }
+
+
+.cursos-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  user-select: none;
+  padding: 0 56px; 
+  box-sizing: border-box;
+}
+
+.cursos-ventana { overflow: hidden; width: 100%; }
+.cursos-lista {
+  display: flex;
+  flex-wrap: nowrap;   
+  gap: 24px;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+
+
+.curso-card {
+  flex: 0 0 calc((100% - 48px) / 3); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+}
+.curso-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+}
+.curso-card span {
+  margin-top: .75rem;
+  font-weight: 700;
   color: #172A3A;
 }
 
-.courses_section {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 3em;
+.cursos-boton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #172A3A;
+  color: #fff;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.9;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  transition: all 0.25s ease;
 }
-.courses_title{
-    color: #172A3A;
-    font-size: 1.5em;
-    text-align: center;
-}
+.cursos-boton:hover { opacity: 1; background: #11324d; transform: translateY(-50%) scale(1.1); }
+.cursos-boton.prev { left: 10px; }
+.cursos-boton.next { right: 10px; }
 
-.details{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-
-  div{
-    margin-top: 2em;
-    width: 15%;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-}
-.imagenes_cursos {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 10px;
-  padding: 1rem;
-  background: white;
-}
-.carrusel-logos {
-  overflow: hidden;
-  width: 100%;
-  padding: 20px 0;
-  margin-bottom: 3em;
-}
-
-.carrusel-title{
-  color:#172A3A ;
-  font-size: 1.5em;
-  text-align: center;
-  margin-bottom: 2em;
-}
-.logos {
+.empresas { width: 100%; margin: 0 auto 3em; padding: 20px 0; }
+.empresas h2 { color: #172A3A; font-size: 1.5em; text-align: center; margin-bottom: 1.5rem; }
+.empresas-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 80px;
-  animation: mover 15s linear infinite;
+  flex-wrap: wrap;
+}
+.empresas-grid img {
+  width: 180px;
+  height: 90px;
+  object-fit: contain;
+  filter: brightness(.85);
 }
 
-.logos img {
-  height: 6em;
-  width: 12em;
-  filter: brightness(0.8);
-  transition: filter 0.3s;
+
+@media (max-width: 1200px) {
+  .steps { flex-wrap: wrap; gap: 16px; }
+  .steps div { width: 28%; }
 }
 
 
-@keyframes mover {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
+@media (max-width: 900px) {
+  .curso-card { flex-basis: calc((100% - 24px) / 2); } /* gap=24 => 1 gap */
 }
 
-@media screen and (max-width: 1400px) {
-  main {
-    .steps_section .steps{
-      div{
-        width: 20%;
-      }
-    }
-  }
+
+@media (max-width: 600px) {
+  .cursos-slider { padding: 0 40px; }
+  .curso-card { flex-basis: 100%; }
 }
 
 @media screen and (max-width: 1000px) {
-  main {
-    .steps_section .steps{
-      div{
-        width: 25%;
-      }
-    }
-
-    .courses_section .details{
-      div{
-        width: 15%;
-      }
-    }
-  }
+  .steps div { width: 25%; }
 }
 
 @media screen and (max-width: 700px) {
-  main {
-    h2{
-      font-size: 1.25em;
-    }
-    .steps_section .title{
-      width: 75%;
-      margin: 2em auto 0;
-    }
-    .steps_section .steps{
-      flex-direction: column;
-      div{
-        width: 65%;
-        margin: 1em auto;
-      }
-    }
-
-    .courses_section .details{
-      flex-direction: column;
-      div{
-        width: 75%;
-        margin: 1em auto;
-      }
-    }
-
-    .courses_section .courses_title{
-      width: 75%;
-      margin: 0 auto 1em;
-    }
-
-    .carrusel-logos {
-      margin-bottom: 0;
-      padding: 0;
-      .carrusel-title{
-        width: 75%;
-        margin: 1em auto;
-      }
-
-      .logos {
-        gap: 40px;
-        margin-bottom: 2em;
-        img{
-          align-self: center;
-          width: 20%;
-          height: 100%;
-        }
-      }
-    }
-
-    .principal_title h3 {
-      width: 75%;
-    }
-  }
+  .steps { flex-direction: column; }
+  .steps div { width: 75%; margin: 1em auto; }
+  .principal_title h3 { width: 75%; }
 }
 
-
 @media screen and (max-width: 415px) {
-
-
-  .section_home {
-
-    text-align: center;
-    font-size: 0.85em;
-  }
+  .section_home { text-align: center; font-size: 0.85em; }
 }
