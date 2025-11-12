@@ -4,7 +4,7 @@
 import { ERRORES, cambiarTextContent, redirigir } from "./utilities.js";
 import { encontrarUsuario, setUsuarioLogueado } from "./bbdd.js";
 
-const RUTA_HOME = './home.html';
+const RUTA_HOME = '../index.html';
 
 const loginForm = document.getElementById('login-form');
 const inputUsuario = document.getElementById('name');
