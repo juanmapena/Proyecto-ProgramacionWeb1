@@ -7,30 +7,25 @@ const subtitulo = document.getElementById('welcome-subtitle');
 const tagline = document.getElementById('welcome-tagline');
 const coursesSection = document.getElementById('steps_section');
 
-function personalizarBienvenida() {
-    const nombreUsuario = getUsuarioLogueado();
-    if (nombreUsuario) {
-        // Opción Logueado
-        subtitulo.textContent = `¡Bienvenido/a de vuelta!`;
-        titulo.textContent = `${nombreUsuario}`;
-        tagline.textContent = `¡Qué bueno volver a verte! ¿Qué vas a aprender hoy?`;
-        
-        const avatarBasePath = "./assets/"
+function personalizarBienvenida(nombreUsuario) {
+    subtitulo.textContent = `¡Bienvenido/a de vuelta!`;
+    titulo.textContent = `${nombreUsuario}`;
+    tagline.textContent = `¡Qué bueno volver a verte! ¿Qué vas a aprender hoy?`;
+    
+    const avatarBasePath = "./assets/"
 
-        let usuarioActual = getDatosDeUsuarioLogueado();
-        let avatarImgRuta = avatarBasePath + "avatar" + usuarioActual.avatar +".png";
+    let usuarioActual = getDatosDeUsuarioLogueado();
+    let avatarImgRuta = avatarBasePath + "avatar" + usuarioActual.avatar +".png";
 
-        let avatarImg = document.createElement('img');
-        avatarImg.src = avatarImgRuta;
-        avatarImg.alt = "Avatar del usuario";
-        avatarImg.id = "welcome-avatar";
+    let avatarImg = document.createElement('img');
+    avatarImg.src = avatarImgRuta;
+    avatarImg.alt = "Avatar del usuario";
+    avatarImg.id = "welcome-avatar";
 
-        tituloContainer.insertBefore(avatarImg, titulo);
-    } 
-    // Si no está logueado, el contenido mantiene el texto por defecto del HTML
+    tituloContainer.insertBefore(avatarImg, titulo);
 }
 
-function inicializarMisCursos(){
+function inicializarMisCursos(nombreDeUsuario){
     coursesSection.innerHTML = `
         <section id="courses-list" class="courses-list">
             <article>
@@ -41,13 +36,18 @@ function inicializarMisCursos(){
         </section>
     `;
 
-    
     let courses_container = document.querySelector("section.courses-list article.images-container");
 
-    let nombreDeUsuarioActual = getUsuarioLogueado();
-    let cursosDeUsuario = getCursosDeUsuario(nombreDeUsuarioActual);
+    let cursosDeUsuario = getCursosDeUsuario(nombreDeUsuario);
+    const cursosSinGiftcard = cursosDeUsuario.filter((curso) => {return curso.id < 7;});
 
-    if ( !cursosDeUsuario[0] ) {
+    if ( !cursosSinGiftcard || !cursosSinGiftcard[0] ) {
+        let nuevoParrafo = document.createElement("h2");
+        cambiarTextContent(nuevoParrafo, "¡Todavía no te inscribiste a ningún curso!");
+        nuevoParrafo.id = "article-cursos-vacio";
+        
+        let articleCursos = document.querySelector("section#courses-list article");
+        articleCursos.appendChild(nuevoParrafo);
         return;
     }
     
@@ -85,13 +85,14 @@ function inicializarMisCursos(){
     });
 }
 
-
-// ----------------------------------------------------
-// 4. Función de Inicialización
-// ----------------------------------------------------
 function inicializarHome() {
-    personalizarBienvenida();
-    inicializarMisCursos();
+    const nombreDeUsuario = getUsuarioLogueado();
+
+    if ( !getUsuarioLogueado() )
+        return;
+
+    personalizarBienvenida(nombreDeUsuario);
+    inicializarMisCursos(nombreDeUsuario);
 }
 
 inicializarHome();

@@ -192,7 +192,7 @@ h1 { text-align: center; color: #172A3A; }
 
 .images-container{
     display: grid;
-    width: 80%;
+    width: 70%;
     margin: auto;
     margin-top: 1em;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -236,6 +236,14 @@ h1 { text-align: center; color: #172A3A; }
     padding: 40px;
     color: #999;
     font-style: italic;
+}
+
+#article-cursos-vacio {
+  display: flex;
+  margin: auto;
+  width: fit-content;
+  margin-top: 2em;
+  color: #172A3A;
 }
 
 @media (max-width: 1200px) {

@@ -278,6 +278,9 @@ export function getDatosDeUsuarioLogueado() {
 
 export function getCursosDeUsuario(nombreDeUsuario) {
     let usuario = encontrarUsuario(nombreDeUsuario);
+    
+    if ( !usuario )
+        return;
 
     return usuario.cursosComprados;
 }
