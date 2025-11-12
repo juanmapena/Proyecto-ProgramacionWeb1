@@ -24,7 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function generarOpcionesCursos() {
-        const cursosDisponibles = obtenerTodosLosCursos();
+
+        const cursosSinFiltrar = obtenerTodosLosCursos();
+
+        const cursosDisponibles = cursosSinFiltrar.filter((curso) => {return curso.id < 7;});
+        
         let opcionesHTML = "";
 
         cursosDisponibles.forEach(curso => {

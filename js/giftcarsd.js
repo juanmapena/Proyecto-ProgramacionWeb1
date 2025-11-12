@@ -52,6 +52,18 @@ export class PersonalizadorTarjetaRegalo {
         this.URL_DESTINO_CARRITO = './carrito.html'; 
         // -------------------------
 
+        
+        const nombreUsuario = getUsuarioLogueado();
+        
+
+        if (!nombreUsuario) {
+            
+            if (this.dialogoLoginRequerido && typeof this.dialogoLoginRequerido.showModal === 'function') {
+                this.dialogoLoginRequerido.showModal();
+            } 
+
+        }
+        
         this.inicializarEscuchadores();
         this.inicializarEstadoTarjeta();
     }

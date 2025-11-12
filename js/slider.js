@@ -25,7 +25,10 @@ export class CursosSlider {
     };
 
     // --- poblar dinámicamente con TODOS los cursos de la bbdd ---
-    const cursos = obtenerTodosLosCursos();
+    const cursosSinFiltrar = obtenerTodosLosCursos();
+
+    const cursos = cursosSinFiltrar.filter((curso) => {return curso.id < 7;});
+
     lista.innerHTML = cursos.map(c => `
       <a class="curso-card" href="${basePages}/detalle-general.html?name=${c.idNombre}">
         <img src="${resolveAsset(c.urlLogo)}" alt="${c.titulo}">
