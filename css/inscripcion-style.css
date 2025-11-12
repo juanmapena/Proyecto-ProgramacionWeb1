@@ -229,6 +229,21 @@ main {
     margin-top: 1.25em;
 }
 
+#dialog-login-requerido-cuenta {
+    display: none;
+    margin-top: 20%;
+}
+
+#dialogo-cuenta-login {
+    background-color: #84c318;
+    font-size: 1em;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+}
+
 #cancelar {
     background-color: #172A3A;
     padding: 0.625em 1.25em;

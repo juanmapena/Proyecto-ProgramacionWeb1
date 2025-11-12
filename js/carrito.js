@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <img src="${item.imagen}" alt="Logo Curso">
                         <p>${item.nombre}</p>
                         <p>x ${item.cantidad}</p>
-                        <p>$${item.precio} 
+                        <p>$${item.precio.toFixed(2)} 
                            <button class="button_delete" type="button" data-index="${index}">&#x2212;</button>
                         </p>
                     </div>

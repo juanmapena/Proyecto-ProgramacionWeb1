@@ -56,6 +56,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modal.classList.add("ocultar");
 
+    const DIALOG_LOGIN_CUENTA = document.getElementById("dialog-login-requerido-cuenta");
+    const BTN_IR_LOGIN_CUENTA = document.getElementById("dialogo-cuenta-login");
+
+    DIALOG_LOGIN_CUENTA.classList.add("ocultar");
+
+    function verificarSesion() {
+        const usuarioLogueado = getUsuarioLogueado();
+
+        if (!usuarioLogueado) {
+            DIALOG_LOGIN_CUENTA.classList.remove("ocultar")
+            DIALOG_LOGIN_CUENTA.showModal();
+            DIALOG_LOGIN_CUENTA.style.display = 'block';
+            BTN_IR_LOGIN_CUENTA.onclick = () => {
+                DIALOG_LOGIN_CUENTA.classList.add("ocultar");
+                DIALOG_LOGIN_CUENTA.close();
+
+                window.location.href = './login.html';
+            }
+            return false;
+        }
+
+        return true;
+    }
+
+    verificarSesion();
+
     let tipo = ""; //esto se va a encargar de identificar que tipo de form mostrar
     let total = 0;
     const adicionalEmpresa = 20; //al ser form empresarial, se le suma costo fijo
@@ -171,6 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     botonAgregar.addEventListener("click", () => {
+        if (tipo !== "personal") {
+            tipo = "empresarial";
+        }
         crearCampoEmpresarial(false); //como el agregar siempre se va a usar cuando necesitemos sumar mas campos, previamente debe existir una persona primero, por ello se pone esPrimeraPersona=false
         //entonces cuando se quieran eliminar los campos creados con el agregar, se eliminaran y no se limpiar los valores que contengan
     });
@@ -285,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const nombreDelCurso = selectedOption.value;
                 const cursoEncontrado = cursosDisponibles.find(curso => curso.titulo === nombreDelCurso);
-                const idDelCurso= cursoEncontrado ? cursoEncontrado.id : 1;
+                const idDelCurso = cursoEncontrado ? cursoEncontrado.id : 1;
 
 
                 const precioBase = cursoEncontrado ? cursoEncontrado.precio : 0;
@@ -313,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return itemsCarrito;
     }
 
-  
+
 
     cancelar.addEventListener("click", () => {
         modal.classList.add("ocultar");
@@ -347,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         modal.classList.add("ocultar");
         modal.close();
-        
+
 
         window.location.href = './carrito.html';
     });
