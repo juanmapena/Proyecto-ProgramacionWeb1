@@ -5,7 +5,7 @@ import {Detalle} from './detalle.js'
 import {CursosSlider} from './slider.js'
 import {Busqueda} from './busqueda.js'
 import { BotonSesionHeader } from "./boton-sesion-header.js";
-
+import { Calendario } from "./calendario.js";
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const slider = new CursosSlider();
     const busqueda = new Busqueda();
     const botonSesionHeader = new BotonSesionHeader();
+    const calendario = new Calendario();
 
     busqueda.render();
     detalle.render();
@@ -23,4 +24,5 @@ document.addEventListener('DOMContentLoaded', function () {
     appContacto.render();
     appPago.render();
     botonSesionHeader.render();
+    calendario.render();
 });
