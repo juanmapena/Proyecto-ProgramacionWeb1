@@ -146,6 +146,9 @@ export class FormularioContacto {
     }
 
     render() {
+
+        const mainC = document.getElementById("main-contacto");
+        if (!mainC) return;
         
         if (this.areaConsulta && this.contadorCaracteres) {
             this.actualizarContador();
