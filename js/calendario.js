@@ -6,7 +6,7 @@ export class Calendario {
   }
 
   render() {
-    console.log("empezo")
+    
     if (!this.calendarioContainer) return;
 	
     const cursos = obtenerTodosLosCursos();
@@ -46,13 +46,12 @@ export class Calendario {
 
     title.textContent = curso.titulo;
     nivel.textContent = curso.nivel;
-    duracion.textContent = curso.duracion;
+    duracion.textContent = curso.duracionSemanas;
 
     dialog.showModal();
 
     detalleBtn.onclick = () => {
-      window.location.href = `../index.html`;
-      //window.location.href = `./detalle-generar.html?name=${curso.idNombre}`;
+      window.location.href = `./detalle-general.html?name=${curso.idNombre}`;
     };
 
     cerrarBtn.onclick = () => dialog.close();
