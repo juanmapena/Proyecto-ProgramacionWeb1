@@ -4,7 +4,8 @@ import {
     validarPorRegExp, 
     cambiarTextContent, 
     vaciarTextContent,
-    mostrarElementoBlock
+    mostrarElementoBlock,
+    redirigir
 } from "./utilities.js";
 
 import {
@@ -23,6 +24,7 @@ const DELETE_ACCOUNT_MODAL = document.getElementById("delete-account-modal");
 const DELETE_ACCOUNT_MODAL_BTN_YES = document.getElementById("delete-account-modal-yes");
 const DELETE_ACCOUNT_MODAL_BTN_NO = document.getElementById("delete-account-modal-no");
 const ALL_MAIN_SECTIONS = document.querySelectorAll("main section");
+const MAIN_CUENTA = document.querySelector("main#main-cuenta");
 const COURSES_CONTAINER = document.querySelector("section.courses-list article.images-container")
 const MSJ_DINAMICO = document.getElementById("mensaje-dinamico");
 
@@ -40,6 +42,30 @@ const nombreUsuarioEnModal = document.getElementById("delete-modal-account-usern
 const GUARDAR_DATOS_MODAL = document.getElementById("save-data-modal");
 const BOTON_DATOS_GUARDADOS = document.getElementById("save-data-confirm");
 
+const DIALOG_LOGIN_CUENTA = document.getElementById("dialog-login-requerido-cuenta");
+const BTN_IR_LOGIN_CUENTA = document.getElementById("dialogo-cuenta-login");
+
+function verificarSesion() {
+    const usuarioLogueado = getUsuarioLogueado();
+
+    if (!usuarioLogueado) {
+        DIALOG_LOGIN_CUENTA.showModal();
+        DIALOG_LOGIN_CUENTA.style.display = 'block';
+        BTN_IR_LOGIN_CUENTA.onclick = () => {
+        DIALOG_LOGIN_CUENTA.close();
+
+        window.location.href = './login.html';
+        }
+        return false;
+    }
+
+    MAIN_CUENTA.style.visibility = 'visible';
+    
+    return true; 
+}
+
+verificarSesion(); 
+
 function inicializarAvatar(){
     let idAvatar = getAvatarDelUsuarioLogueado();
     const avatarBasePath = "../Assets/"
@@ -56,10 +82,20 @@ function cargarCursos(){
     
     vaciarTextContent(COURSES_CONTAINER);
 
-    cursosDeUsuario.forEach((cursoId) => {
+    let idCursosAgregados = [];
+
+    cursosDeUsuario.forEach((curso) => {
+        let cursoId = curso.id;
+        
+        if(cursoId > 6 || idCursosAgregados.includes(cursoId)) {
+            return;
+        }
+
+        idCursosAgregados.push(cursoId);
+
         let cursoActual = obtenerCursoPorId(cursoId);
         
-        let cursoUrl = "../pages/detalle-general?name=" + cursoActual.idNombre;
+        let cursoUrl = "../pages/detalle-general.html?name=" + cursoActual.idNombre;
 
         let nuevoAnchor = document.createElement("a");
         nuevoAnchor.href = cursoUrl;
@@ -271,10 +307,3 @@ DELETE_ACCOUNT_BTN.addEventListener('click', mostrarModalDeEliminarCuenta);
 DELETE_ACCOUNT_MODAL_BTN_YES.addEventListener('click', eliminarCuenta);
 DELETE_ACCOUNT_MODAL_BTN_NO.addEventListener('click', esconderModalDeEliminarCuenta);
 BOTON_DATOS_GUARDADOS.addEventListener('click', esconderModalDatoGuardados);
-
-/*Cosas que debo agregar:
-LISTO    1. Borrar cuenta (Modal con confirmación)
-LISTO    2. Guardado de modificacion de datos (+validaciones)
-         3. Array de cursos 
-NTH      4. Posibilidades de avatares? Para acotar la modificacion de la imagen
-*/

@@ -95,6 +95,8 @@ main{
 
                     input {
                         visibility: hidden;
+                        margin: 0;
+                        height: 0;
                     }
                 }
             }
@@ -168,11 +170,29 @@ main{
 @media screen and (max-width: 800px) {
     .section-form {
         width: 75%;
+
+        p {
+            font-size: 1.2em;
+        }
     }
     
     .back-button{
         a .only-desktop {
             display: none;
+        }
+    }
+
+    .avatar-selector {
+        h3 {
+            font-size: 2em !important;
+        }
+
+        .avatar-options {
+            flex-wrap: wrap;
+
+            label.avatar-label {
+                width: 45% !important;
+            }
         }
     }
 }

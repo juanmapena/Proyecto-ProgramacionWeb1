@@ -68,7 +68,7 @@
   </a>
 </div>
     </header>
-    <main>
+    <main id="main-cuenta">
         <section class="profile-data">
             <article>
                 <h1>Mi Perfil</h1>
@@ -112,7 +112,7 @@
                 <button type="submit">Guardar</button>
             </form>
         </section>
-        <section class="courses-list">
+        <section id="courses-list" class="courses-list">
             <article>
                 <h1>Mis cursos</h1>
             </article>
@@ -138,6 +138,19 @@
                 </div>
             </div>
         </dialog>
+
+
+        <dialog id="dialog-login-requerido-cuenta" class="modal-dialog">
+            <div class="dialogo-contenido modal-content">
+                <h3 class="modal-title">Necesitas iniciar sesión para ver tu perfil y configuración de cuenta.</h3>
+                <div class="dialogo-botones modal-actions">
+                    <button class="dialogo-boton dialogo-aceptar" id="dialogo-cuenta-login">Ir a Iniciar Sesión</button>
+                </div>
+            </div>
+        </dialog>
+
+<script type="module" src="../js/cuenta.js"></script>
+</body>
     </main>
     <footer>
         <section class="about_us">
