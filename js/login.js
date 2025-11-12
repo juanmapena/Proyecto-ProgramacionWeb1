@@ -26,6 +26,7 @@ function controlLogin(event) {
         mostrarError();
         return;
     }
+    
 
     let contraseniaEncontrada = inputContrasenia.value;
     

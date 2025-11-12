@@ -18,7 +18,7 @@
 <body>
     <header class="header">
         <div class="header_div">
-            <a href="./home.html">
+            <a href="../index.html">
                 <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
             </a>
         </div>
@@ -53,24 +53,20 @@
         </nav>
 
 
-        <div class="div_button">
+  <div class="div_button">
+  <form class="form_busqueda" action="./detalle-general.html?name=" autocomplete="off">
+    <input class="input_busqueda" type="text" id="search" name="search" placeholder="Buscar...">
+  </form>
 
-            <form class="form_busqueda" action="./cursos.html" autocomplete="off">
-                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
-            </form>
+  <a id="enlace-boton-sesion" href="./login.html">
+    <button id="boton-sesion" class="button">Iniciar sesión</button>
+  </a>
 
-
-            <a id="ancla_cerrarsesion" href="../index.html">
-                <button class="button">Cerrar sesión</button>
-            </a>
-
-            <a class="ancla_carrito" href="./carrito.html">
-
-                <i class="fa-solid fa-cart-shopping"></i> 
-
-            </a>
-            
-        </div>
+  <a class="ancla_carrito" href="./carrito.html" aria-label="Carrito">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="cart-count" class="contador-style" aria-live="polite"></span>
+  </a>
+</div>
     </header>
     <main>
         <section class="profile-data">
@@ -187,5 +183,6 @@
         </div>
     </div>
     <script type="module" src="../js/cuenta.js"></script>
+    <script type="module" src="../js/script.js"></script>
 </body>
 </html>
