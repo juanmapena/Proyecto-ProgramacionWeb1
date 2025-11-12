@@ -1,10 +1,10 @@
 export const REGEXP = {
-    EMAIL : /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-    SOLO_LETRAS_Y_ESPACIOS : /^[a-zA-Z\sáéíóúÁÉÍÓÚñÑ]+$/,
-    USUARIO : /^[a-zA-Z0-9]+$/,
-    MINIMO_UNA_MAYUS : /[A-Z]/,
-    MINIMO_UNA_MINUS : /[a-z]/,
-    MINIMO_UN_NUMERO : /[0-9]/
+    EMAIL: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+    SOLO_LETRAS_Y_ESPACIOS: /^[a-zA-Z\sáéíóúÁÉÍÓÚñÑ]+$/,
+    USUARIO: /^[a-zA-Z0-9]+$/,
+    MINIMO_UNA_MAYUS: /[A-Z]/,
+    MINIMO_UNA_MINUS: /[a-z]/,
+    MINIMO_UN_NUMERO: /[0-9]/
 }
 
 export const COLORES_CSS = {
@@ -41,10 +41,37 @@ export const ERRORES = {
         CONTRASENIAS_NUEVAS_NO_IGUALES: "Debe repetir la misma contraseña en ambos campos.",
         NUEVA_IGUAL_A_ACTUAL: "La nueva contraseña es igual a la actual",
         ERROR_INESPERADO: "Error inesperado. Intente nuevamente en unos minutos..."
+    },
+    PAGO: {
+        TARJETA_LONGITUD: "El número de la tarjeta debe tener 16 dígitos, complétalo.",
+        CODIGO_LONGITUD: "El código de seguridad debe tener 3 dígitos, complétalo.",
+        DNI_LONGITUD: "El DNI debe tener 7 u 8 dígitos, complétalo.",
+        VALIDACION_CAMPOS: "Por favor, revisa todos los campos marcados en rojo.",
+        ERROR_INESPERADO: "Error inesperado. Intente nuevamente en unos minutos..."
     }
 }
 
-export function cambiarColorDeFuente(elemento, color){
+
+export function mostrarErrorPago(mensaje, elementoMensaje) {
+    if (elementoMensaje) {
+        cambiarTextContent(elementoMensaje, mensaje); 
+        
+        // 🛑 QUITAMOS LOS ESTILOS INLINE DE JS Y SOLO AGREGAMOS LA CLASE
+        elementoMensaje.classList.add('mensaje-alerta'); 
+        
+    } else {
+        console.error("No se encontró el elemento para mostrar el error de pago.");
+    }
+}
+
+export function vaciarTextContent(elemento){
+    elemento.textContent = '';
+    
+    // Y aseguramos que la clase se quite al limpiar:
+    elemento.classList.remove('mensaje-alerta'); 
+}
+
+export function cambiarColorDeFuente(elemento, color) {
     elemento.style.color = color;
 }
 
@@ -52,26 +79,22 @@ export function validarPorRegExp(string, regExp) {
     return regExp.test(string);
 }
 
-export function cambiarTextContent(elemento, texto){
+export function cambiarTextContent(elemento, texto) {
     elemento.textContent = texto;
 }
 
-export function vaciarTextContent(elemento){
-    elemento.textContent = '';
-}
-
-export function redirigir(ruta){
+export function redirigir(ruta) {
     window.location.href = ruta;
 }
 
-export function mostrarElementoBlock(elemento){
+export function mostrarElementoBlock(elemento) {
     elemento.style.display = "block";
 }
 
-export function mostrarElementoFlex(elemento){
+export function mostrarElementoFlex(elemento) {
     elemento.style.display = "flex";
 }
 
-export function esconderElemento(elemento){
+export function esconderElemento(elemento) {
     elemento.style.display = "none";
 }

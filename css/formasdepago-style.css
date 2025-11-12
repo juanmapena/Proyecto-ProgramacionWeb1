@@ -163,6 +163,20 @@ select {
     margin-bottom: 0;
     display: block; 
 }
+
+#error-pago-mensaje {
+    text-align: center; 
+    margin: 1em 0; 
+    min-height: 1.5em; /* Reserva espacio para el mensaje */
+}
+
+/* Clase de alerta que JavaScript añadirá */
+.mensaje-alerta {
+    color: red; /* ✅ Color rojo */
+    font-weight: normal; /* ✅ Grosor de letra normal */
+    font-size: 1.1em;
+}
+
 @media screen and (max-width: 1100px) {
 
     h2 {
