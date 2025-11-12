@@ -1,3 +1,5 @@
+import { getUsuarios, guardarUsuarios, getUsuarioLogueado, encontrarUsuario } from "./bbdd.js";
+
 const obtenerElemento = id => document.getElementById(id);
 
 export class SimuladorPago {
@@ -32,9 +34,9 @@ export class SimuladorPago {
     }
 
     validarNombre() {
-        const nombreUsuario = this.inputNombre.value.trim(); 
+        const nombreUsuario = this.inputNombre.value.trim();
         if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombreUsuario)) {
-            return false; 
+            return false;
         }
         return true;
     }
@@ -73,7 +75,7 @@ export class SimuladorPago {
         if (!this.inputCodigoSeguridad) return;
         this.inputCodigoSeguridad.value = this.inputCodigoSeguridad.value.replace(/\D/g, '').substring(0, 3);
     }
-    
+
     formatearNombre() {
         this.inputNombre.value = this.inputNombre.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '');
     }
@@ -92,6 +94,7 @@ export class SimuladorPago {
         this.inputDNI.value = formateado + valor;
     }
 
+
     manejarPagarClick(event) {
         event.preventDefault();
 
@@ -102,16 +105,59 @@ export class SimuladorPago {
         }
     }
 
+  ejecutarTransaccion() {
+    const nombreUsuario = getUsuarioLogueado(); 
+    let listaUsuarios = getUsuarios();
+    
+    
+    if (!nombreUsuario) {
+        console.error("ERROR: No hay usuario logueado. Redireccionar al login o mostrar alerta.");
+        return; 
+    }
+
+    const indiceUsuario = listaUsuarios.findIndex(u => u.nombreUsuario === nombreUsuario);
+
+    if (indiceUsuario !== -1) {
+        let usuario = listaUsuarios[indiceUsuario];
+        
+       
+        console.log(`--- INICIO DE TRANSACCIÓN PARA: ${nombreUsuario} ---`);
+        console.log(`Cursos en Carrito ANTES:`, usuario.carrito);
+        console.log(`Cursos Comprados ANTES:`, usuario.cursosComprados);
+        
+        const itemsTransferidos = usuario.carrito.length;
+
+        if (!usuario.cursosComprados) {
+            usuario.cursosComprados = [];
+        }
+        
+        usuario.cursosComprados.push(...usuario.carrito);
+        
+        usuario.carrito = [];
+
+        guardarUsuarios(listaUsuarios);
+
+        console.log(`-----------------------------------------------`);
+        console.log(`¡TRANSACCIÓN EXITOSA! ${itemsTransferidos} artículos transferidos.`);
+        console.log(`Cursos en Carrito DESPUÉS:`, usuario.carrito);
+        console.log(`Cursos Comprados DESPUÉS:`, usuario.cursosComprados);
+        console.log(`--- FIN DE TRANSACCIÓN ---`);
+        
+    } else {
+        console.error(`ERROR: El usuario logueado "${nombreUsuario}" no fue encontrado en la lista de usuarios.`);
+    }
+}
+
     render() {
         if (this.inputTarjeta) {
             this.inputTarjeta.addEventListener('input', () => this.formatearTarjeta());
         }
-        
+
         if (this.inputCodigoSeguridad) {
             this.inputCodigoSeguridad.addEventListener('input', () => this.formatearCodigo());
             this.inputCodigoSeguridad.addEventListener('blur', () => this.formatearCodigo());
         }
-        
+
         if (this.inputNombre) {
             this.inputNombre.addEventListener('input', () => this.formatearNombre());
         }
@@ -140,6 +186,9 @@ export class SimuladorPago {
         if (this.botonConfirmarPago) {
             this.botonConfirmarPago.addEventListener('click', (e) => {
                 e.preventDefault();
+                
+                this.ejecutarTransaccion();
+                
                 this.dialogoConfirmar.close();
                 this.dialogoExito.showModal();
             });
@@ -148,7 +197,6 @@ export class SimuladorPago {
         if (this.botonIrAHome) {
             this.botonIrAHome.addEventListener('click', () => {
                 this.dialogoExito.close();
-                this.formulario.submit();
             });
         }
     }
