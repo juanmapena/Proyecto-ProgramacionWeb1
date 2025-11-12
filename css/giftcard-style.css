@@ -358,27 +358,42 @@ label[for="fondo5"]::before {
     color: #333;
 }
 
-@media screen and (max-width: 65.625em) {
+
+#dialogo-cuenta-login {
+    background-color: #84c318; 
+    color: white;
+}
+
+#dialogo-alerta-cerrar {
+    background-color: #ccc; 
+    color: #333;
+}
+
+@media screen and (max-width: 1070px) {
 
     .contenedor_principal {
         flex-direction: column;
         align-items: center;
         gap: 2em;
-        width: 80%;
+        width: 100%;
         font-size: 1.5625em;
     }
 
     .tarjeta_contenedor {
-        width: 50%;
-        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         position: static;
     }
+    
+    .tarjeta-contenido {
+        font-size: 1em;
+    }
+
 
     .vista-previa-tarjeta {
-        width: 100%;
-        height: auto;
-        min-height: 15em;
-        padding: 1.5em;
+        width: 95%;
+        height: 12em;
     }
 
     .form_dates {
@@ -397,26 +412,82 @@ label[for="fondo5"]::before {
     }
 }
 
-@media screen and (max-width: 31.25em) {
+
+@media screen and (max-width: 580px) {
+    
+     .titulo-gift {
+        font-size: 1em;
+    }
+
+     .tarjeta-contenido {
+        font-size: 0.5em;
+    }
+
 
     .contenedor_principal {
-        font-size: 1.0625em;
-        gap: 1.5em;
+        font-size: 1.5em;
+        gap: 1.5em; 
     }
 
     .tarjeta_contenedor {
-        width: 50%;
+        width: 90%; 
+        margin-left: auto;
+        margin-right: auto;
         position: static;
+    }
+
+    
+    .vista-previa-tarjeta {
+ 
+        width: 100%; 
+        height: 9em; 
+    }
+
+    .monto-vista-previa {
+        font-size: 0.9em;
     }
 
     .form_dates {
         padding: 1em;
     }
-
+    
     .caja-color::before,
     .opcion-ubicacion::before,
     .opcion-fondo::before {
         width: 1.5em;
         height: 1.5em;
     }
+
+    @media screen and (max-width: 460px) {
+        .titulo-gift {
+            display: none;
+        }
+
+    
+    .vista-previa-tarjeta {
+        height: 8em;
+    }
+      .monto-vista-previa {
+         font-size: 0.7em;
+    }
+
+    .dialogo {
+        width: 80%;
+    }
+    }
+
+     @media screen and (max-width: 390px) {
+        .titulo-gift {
+            display: none;
+        }
+
+          .vista-previa-tarjeta {
+        height: 7.5em;
+    }
+      .monto-vista-previa {
+         font-size: 0.6em;
+    }
+    }
+
+
 }

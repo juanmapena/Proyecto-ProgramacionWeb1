@@ -86,12 +86,12 @@
             </article>
 
             <article class="form_dates">
-                <h2>Personalización de Gift Card</h2>
+                <h2 class="titulo-gift">Personalización de Gift Card</h2>
                 <form action="./giftcard-confirmacion.html" method="get" autocomplete="off">
 
                     <h4>Nombre Destinatario:</h4>
                     <input class="input_name" type="text" name="nombre" id="input-nombre-destinatario"
-                        placeholder="Nombre del destinatario:" required>
+                        placeholder="Nombre:" required>
 
 
                     <h4>Seleccione el color del nombre del destinatario:</h4>
@@ -253,6 +253,16 @@
             <div class="dialogo-botones">
                 <button class="dialogo-boton dialogo-aceptar" id="dialogo-confirmar-si">Sí, confirmar</button>
                 <button class="dialogo-boton dialogo-cancelar" id="dialogo-cancelar-no">No, cancelar</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-login-requerido-cuenta" class="dialogo">
+        <div class="dialogo-contenido">
+            <h3>Necesitas iniciar sesión para añadir la Gift Card.</h3>
+            <div class="dialogo-botones">
+                <button class="dialogo-boton dialogo-aceptar" id="dialogo-cuenta-login">Ir a Iniciar Sesión</button>
+                <button class="dialogo-boton dialogo-cancelar" id="dialogo-alerta-cerrar">Cerrar</button>
             </div>
         </div>
     </dialog>

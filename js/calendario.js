@@ -6,6 +6,11 @@ export class Calendario {
   }
 
   render() {
+
+    const mainCalen = document.getElementById("main-calendario");
+    if (!mainCalen) return;
+
+    
     
     if (!this.calendarioContainer) return;
 	

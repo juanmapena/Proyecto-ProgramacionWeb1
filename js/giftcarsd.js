@@ -2,7 +2,6 @@ import { getUsuarioLogueado, encontrarUsuario, getUsuarios, guardarUsuarios, obt
 
 export class PersonalizadorTarjetaRegalo {
 
-
     constructor() {
 
         this.tarjetaVistaPrevia = document.getElementById('vista-previa-tarjeta');
@@ -43,7 +42,15 @@ export class PersonalizadorTarjetaRegalo {
         this.dialogoBotonNo = document.getElementById('dialogo-cancelar-no');
         this.dialogoBotonSi = document.getElementById('dialogo-confirmar-si');
 
-        this.URL_DESTINO_CARRITO = './carrito.html';
+        
+        this.dialogoLoginRequerido = document.getElementById('dialog-login-requerido-cuenta');
+        this.botonLoginDialogo = document.getElementById('dialogo-cuenta-login');
+        this.botonCerrarAlerta = document.getElementById('dialogo-alerta-cerrar'); 
+
+       
+        this.URL_DESTINO_INDEX= '../index.html'; 
+        this.URL_DESTINO_CARRITO = './carrito.html'; 
+        // -------------------------
 
         this.inicializarEscuchadores();
         this.inicializarEstadoTarjeta();
@@ -109,7 +116,8 @@ export class PersonalizadorTarjetaRegalo {
 
         if (this.botonCancelar) {
             this.botonCancelar.addEventListener('click', () => {
-                window.location.href = this.URL_DESTINO_CARRITO;
+                
+                window.location.href = this.URL_DESTINO_INDEX;
             });
         }
 
@@ -150,6 +158,19 @@ export class PersonalizadorTarjetaRegalo {
                 this.dialogConfirmacion.close();
             });
         }
+
+        if (this.botonLoginDialogo && this.dialogoLoginRequerido) {
+            this.botonLoginDialogo.addEventListener('click', () => {
+                this.dialogoLoginRequerido.close();
+                window.location.href = './login.html';
+            });
+        }
+
+        if (this.botonCerrarAlerta && this.dialogoLoginRequerido) {
+            this.botonCerrarAlerta.addEventListener('click', () => {
+                this.dialogoLoginRequerido.close();
+            });
+        }
     }
 
     agregarGiftCardAlCarrito() {
@@ -158,7 +179,13 @@ export class PersonalizadorTarjetaRegalo {
 
         if (!nombreUsuario) {
             console.error("ERROR: No hay usuario logueado para añadir la Gift Card.");
-            alert("Debes iniciar sesión para añadir la Gift Card al carrito.");
+            
+            if (this.dialogoLoginRequerido && typeof this.dialogoLoginRequerido.showModal === 'function') {
+                this.dialogoLoginRequerido.showModal();
+            } else {
+                alert("Debes iniciar sesión para añadir la Gift Card al carrito.");
+            }
+
             return false;
         }
 
