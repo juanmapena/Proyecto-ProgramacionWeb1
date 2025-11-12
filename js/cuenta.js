@@ -4,8 +4,7 @@ import {
     validarPorRegExp, 
     cambiarTextContent, 
     vaciarTextContent,
-    mostrarElementoBlock,
-    redirigir
+    mostrarElementoBlock
 } from "./utilities.js";
 
 import {

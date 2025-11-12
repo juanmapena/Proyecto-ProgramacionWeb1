@@ -171,6 +171,72 @@ h1 { text-align: center; color: #172A3A; }
   filter: brightness(.85);
 }
 
+#welcome-title-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5em;
+  width: 100%;
+}
+
+#welcome-avatar {
+  width: 60px;
+  margin-right: 1em;
+}
+
+.courses-list{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 3em;
+}
+
+.images-container{
+    display: grid;
+    width: 80%;
+    margin: auto;
+    margin-top: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    flex-direction: row;
+    a{
+        display: flex; /* Usamos Flexbox dentro de cada celda para alinear contenido */
+        flex-direction: column;
+        align-items: center; /* Centrar la imagen y el texto horizontalmente */
+        text-decoration: none; /* Quitar el subrayado */
+        color: #333;
+        transition: transform 0.2s;
+        text-align: center;
+        text-decoration: none;
+        object-fit: cover;
+
+        img{
+            width: 100%;
+            height: 12em;
+            border-radius: 20px;
+            margin-top: 1em;
+            object-fit: cover;
+        }
+
+        p{
+            font-size: 1.5em;
+            margin-top: 0.25em;
+            color: #172A3A;
+        }
+    }
+
+    a:hover {
+        transform: translateY(-5px);
+    }
+}
+.images-container:empty:before {
+    content: "Todavía no tienes cursos...";
+    /* Necesitas que este texto ocupe todo el ancho para que se vea centrado */
+    grid-column: 1 / -1; 
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-style: italic;
+}
 
 @media (max-width: 1200px) {
   .steps { flex-wrap: wrap; gap: 16px; }
