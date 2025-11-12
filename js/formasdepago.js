@@ -103,8 +103,6 @@ export class SimuladorPago {
         
         if (this.mensajeError) vaciarTextContent(this.mensajeError);
 
-        let validacionExitosa = true;
-
         if (!this.validarTarjeta()) {
             mostrarErrorPago(ERRORES.PAGO.TARJETA_LONGITUD, this.mensajeError);
             this.formulario.reportValidity(); 
@@ -202,12 +200,29 @@ export class SimuladorPago {
                 this.dialogoCancelar.showModal();
             });
         }
-
+      
         if (this.botonConfirmarCancelacion) {
-            this.botonConfirmarCancelacion.addEventListener('click', () => {
+            this.botonConfirmarCancelacion.addEventListener('click', (e) => {
+               
+                e.preventDefault(); 
+                
+                this.dialogoCancelar.close(); 
                 window.location.href = './carrito.html';
             });
         }
+        
+       
+        const botonNoVolverModal = this.dialogoCancelar.querySelector('.cancel');
+
+        if (botonNoVolverModal) {
+            botonNoVolverModal.addEventListener('click', (e) => {
+
+                e.preventDefault(); 
+                
+                this.dialogoCancelar.close();
+            });
+        }
+
 
         if (this.botonConfirmarPago) {
             this.botonConfirmarPago.addEventListener('click', (e) => {
