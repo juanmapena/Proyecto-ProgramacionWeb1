@@ -39,19 +39,19 @@
                 </li>
             </ul>
         </nav>
-        <div class="div_button">
-            <form class="form_busqueda" action="./detalle-general.html" autocomplete="off">
-                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
-            </form>
+    <div class="div_button">
+  <form class="form_busqueda" action="./pages/detalle-general.html?name=" autocomplete="off">
+    <input class="input_busqueda" type="text" id="search" name="search" placeholder="Buscar...">
+  </form>
 
-            <a id="ancla_cerrarsesion" href="./pages/login.html">
-                <button class="button">Iniciar sesión</button>
-            </a>
-            <a class="ancla_carrito" href="./pages/login.html">
-                <i class="fa-solid fa-cart-shopping"></i> 
-            </a>
-            
-        </div>
+  <a id="enlace-boton-sesion" href="./pages/login.html">
+    <button id="boton-sesion" class="button">Iniciar sesión</button>
+  </a>
+<a class="ancla_carrito" href="./pages/carrito.html" aria-label="Carrito">
+  <i class="fa-solid fa-cart-shopping"></i>
+  <span id="cart-count" class="contador-style" aria-live="polite"></span>
+</a>
+</div>
     </header>
 
 <main id="main_detalle">
