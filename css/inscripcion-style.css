@@ -246,7 +246,7 @@ main {
     display: none !important;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1305px) {
     .persona-style {
         flex-direction: column;
         max-width: 100%;

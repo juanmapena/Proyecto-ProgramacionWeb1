@@ -1,4 +1,4 @@
-import { getUsuarioLogueado, guardarUsuarios, getUsuarios, obtenerContadorDelCarrito, obtenerTodosLosCursos } from './bbdd.js';
+import { getUsuarioLogueado, guardarUsuarios, getUsuarios, obtenerContadorDelCarrito, obtenerTodosLosCursos, encontrarUsuario } from './bbdd.js';
 import { mostrarElementoFlex, cambiarTextContent } from './utilities.js';
 
 function actualizarContadorCarrito() {
@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </li>`;
             })
 
-            resumenHTML += `<li><strong>Total a Pagar: $${total}</strong></li>`
+            resumenHTML += `<li><strong>Total a Pagar: $${total.toFixed(2)}</strong></li>`
             resumenHTML += `</ul>`;
         }
 
@@ -285,6 +285,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const nombreDelCurso = selectedOption.value;
                 const cursoEncontrado = cursosDisponibles.find(curso => curso.titulo === nombreDelCurso);
+                const idDelCurso= cursoEncontrado ? cursoEncontrado.id : 1;
+
 
                 const precioBase = cursoEncontrado ? cursoEncontrado.precio : 0;
                 const urlLogo = cursoEncontrado ? cursoEncontrado.urlLogo : '../assets/default_logo.jpg';
@@ -298,6 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 itemsCarrito.push({
+                    id: idDelCurso,
                     nombre: detalle,
                     precio: costoFinalDelItem,
                     cantidad: 1,

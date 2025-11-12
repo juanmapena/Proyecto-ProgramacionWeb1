@@ -1,5 +1,5 @@
 import { getUsuarios, guardarUsuarios, getUsuarioLogueado, encontrarUsuario } from "./bbdd.js";
-import { ERRORES, mostrarErrorPago, vaciarTextContent } from './utilities.js'; 
+import { ERRORES, mostrarErrorPago, vaciarTextContent } from './utilities.js';
 
 const obtenerElemento = id => document.getElementById(id);
 
@@ -23,8 +23,8 @@ export class SimuladorPago {
         this.botonConfirmarPago = obtenerElemento('confirm-payment');
         this.botonConfirmarCancelacion = obtenerElemento('confirm-cancel');
         this.botonIrAHome = obtenerElemento('go-home');
-        
-        this.mensajeError = obtenerElemento('error-pago-mensaje'); 
+
+        this.mensajeError = obtenerElemento('error-pago-mensaje');
     }
 
     validarTarjeta() {
@@ -100,12 +100,12 @@ export class SimuladorPago {
 
     manejarPagarClick(event) {
         event.preventDefault();
-        
+
         if (this.mensajeError) vaciarTextContent(this.mensajeError);
 
         if (!this.validarTarjeta()) {
             mostrarErrorPago(ERRORES.PAGO.TARJETA_LONGITUD, this.mensajeError);
-            this.formulario.reportValidity(); 
+            this.formulario.reportValidity();
             return;
         }
 
@@ -120,7 +120,7 @@ export class SimuladorPago {
             this.formulario.reportValidity();
             return;
         }
-        
+
         if (this.validarTodo()) {
             this.dialogoConfirmar.showModal();
         } else {
@@ -130,33 +130,33 @@ export class SimuladorPago {
     }
 
     ejecutarTransaccion() {
-        const nombreUsuario = getUsuarioLogueado(); 
+        const nombreUsuario = getUsuarioLogueado();
         let listaUsuarios = getUsuarios();
-        
-        
+
+
         if (!nombreUsuario) {
             console.error("ERROR: No hay usuario logueado. Redireccionar al login o mostrar alerta.");
-            return; 
+            return;
         }
 
         const indiceUsuario = listaUsuarios.findIndex(u => u.nombreUsuario === nombreUsuario);
 
         if (indiceUsuario !== -1) {
             let usuario = listaUsuarios[indiceUsuario];
-            
-            
+
+
             console.log(`--- INICIO DE TRANSACCIÓN PARA: ${nombreUsuario} ---`);
             console.log(`Cursos en Carrito ANTES:`, usuario.carrito);
             console.log(`Cursos Comprados ANTES:`, usuario.cursosComprados);
-            
+
             const itemsTransferidos = usuario.carrito.length;
 
             if (!usuario.cursosComprados) {
                 usuario.cursosComprados = [];
             }
-            
+
             usuario.cursosComprados.push(...usuario.carrito);
-            
+
             usuario.carrito = [];
 
             guardarUsuarios(listaUsuarios);
@@ -166,13 +166,16 @@ export class SimuladorPago {
             console.log(`Cursos en Carrito DESPUÉS:`, usuario.carrito);
             console.log(`Cursos Comprados DESPUÉS:`, usuario.cursosComprados);
             console.log(`--- FIN DE TRANSACCIÓN ---`);
-            
+
         } else {
             console.error(`ERROR: El usuario logueado "${nombreUsuario}" no fue encontrado en la lista de usuarios.`);
         }
     }
 
     render() {
+        const main = document.getElementById("main-forma-pago");
+        if (!main) return;
+
         if (this.inputTarjeta) {
             this.inputTarjeta.addEventListener('input', () => this.formatearTarjeta());
         }
@@ -200,25 +203,25 @@ export class SimuladorPago {
                 this.dialogoCancelar.showModal();
             });
         }
-      
+
         if (this.botonConfirmarCancelacion) {
             this.botonConfirmarCancelacion.addEventListener('click', (e) => {
-               
-                e.preventDefault(); 
-                
-                this.dialogoCancelar.close(); 
+
+                e.preventDefault();
+
+                this.dialogoCancelar.close();
                 window.location.href = './carrito.html';
             });
         }
-        
-       
+
+
         const botonNoVolverModal = this.dialogoCancelar.querySelector('.cancel');
 
         if (botonNoVolverModal) {
             botonNoVolverModal.addEventListener('click', (e) => {
 
-                e.preventDefault(); 
-                
+                e.preventDefault();
+
                 this.dialogoCancelar.close();
             });
         }
@@ -227,9 +230,9 @@ export class SimuladorPago {
         if (this.botonConfirmarPago) {
             this.botonConfirmarPago.addEventListener('click', (e) => {
                 e.preventDefault();
-                
+
                 this.ejecutarTransaccion();
-                
+
                 this.dialogoConfirmar.close();
                 this.dialogoExito.showModal();
             });
@@ -238,7 +241,7 @@ export class SimuladorPago {
         if (this.botonIrAHome) {
             this.botonIrAHome.addEventListener('click', () => {
                 this.dialogoExito.close();
-                window.location.href = '../index.html'; 
+                window.location.href = '../index.html';
             });
         }
     }

@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             productosContainer.innerHTML += productoHTML;
         });
 
-        totalMostrar.textContent = `$${nuevoTotal}`;
+        totalMostrar.textContent = `$${nuevoTotal.toFixed(2)}`;
 
         localStorage.setItem('totalCarrito', nuevoTotal);
 

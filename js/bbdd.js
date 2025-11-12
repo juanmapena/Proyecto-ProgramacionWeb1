@@ -147,8 +147,8 @@ const cursos = [
         duracionSemanas: 0,
         nivel: "Personalizado",
         precio: 0.00, 
-        urlLogo: "../assets/giftcard_logo.png",
-        urlImagenPrincipal: "../assets/giftcard_main.jpg",
+        urlLogo: "../assets/giftcard.png",
+        urlImagenPrincipal: "../assets/giftcard.png",
         contenido: []
     }
 ];

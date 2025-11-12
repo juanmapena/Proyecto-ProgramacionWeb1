@@ -1,4 +1,4 @@
-import { getUsuarioLogueado, encontrarUsuario, getUsuarios, guardarUsuarios, obtenerCursoPorId } from "./bbdd.js"; 
+import { getUsuarioLogueado, encontrarUsuario, getUsuarios, guardarUsuarios, obtenerCursoPorId } from "./bbdd.js";
 
 export class PersonalizadorTarjetaRegalo {
 
@@ -135,12 +135,12 @@ export class PersonalizadorTarjetaRegalo {
 
         if (this.dialogoBotonSi && this.dialogConfirmacion) {
             this.dialogoBotonSi.addEventListener('click', () => {
-                const exito = this.agregarGiftCardAlCarrito(); 
-                
+                const exito = this.agregarGiftCardAlCarrito();
+
                 this.dialogConfirmacion.close();
-                
-                if (exito) { 
-                     window.location.href = this.URL_DESTINO_CARRITO;
+
+                if (exito) {
+                    window.location.href = this.URL_DESTINO_CARRITO;
                 }
             });
         }
@@ -154,54 +154,45 @@ export class PersonalizadorTarjetaRegalo {
 
     agregarGiftCardAlCarrito() {
         const nombreUsuario = getUsuarioLogueado();
-        const monto = parseFloat(this.inputMonto.value); 
-        
+        const monto = parseFloat(this.inputMonto.value);
+
         if (!nombreUsuario) {
             console.error("ERROR: No hay usuario logueado para añadir la Gift Card.");
             alert("Debes iniciar sesión para añadir la Gift Card al carrito.");
             return false;
         }
-        
-        if (isNaN(monto) || monto <= 0) {
-            console.error("ERROR: Monto de Gift Card inválido.");
-            this.formulario.reportValidity(); 
-            return false;
-        }
-
-        const GIFT_CARD_ID = 7; 
-        const giftCardTemplate = obtenerCursoPorId(GIFT_CARD_ID);
-        
-        if (!giftCardTemplate) {
-            console.error(`ERROR: La plantilla de la Gift Card (ID ${GIFT_CARD_ID}) no existe en la BBDD.`);
-            return false;
-        }
 
         const giftCardFinal = {
-            ...giftCardTemplate, 
-            precio: monto, 
-            titulo: `Gift Card p/ ${this.inputNombre.value}`, // Título personalizado
-            detallePersonalizado: `Para: ${this.inputNombre.value}. Monto: $${monto.toFixed(2)}.`
+            id: 7,
+            
+            nombre: `Gift Card Digital: ${this.inputNombre.value}`,
+
+            precio: monto,
+
+            cantidad: 1,
+
+            imagen: "../assets/giftcard.png",
+
+            tipo: 'GiftCard',
+            destinatario: this.inputNombre.value
         };
-        
-       
+
         let listaUsuarios = getUsuarios();
         const indiceUsuario = listaUsuarios.findIndex(u => u.nombreUsuario === nombreUsuario);
 
         if (indiceUsuario !== -1) {
             let usuario = listaUsuarios[indiceUsuario];
-            
+
             if (!usuario.carrito) {
                 usuario.carrito = [];
             }
- 
+
             usuario.carrito.push(giftCardFinal);
-            
-          
             guardarUsuarios(listaUsuarios);
 
             console.log(`✅ Gift Card agregada al carrito de ${nombreUsuario} con monto: $${monto}`);
-            return true; 
-            
+            return true;
+
         } else {
             console.error(`ERROR: El usuario logueado "${nombreUsuario}" no fue encontrado en la lista.`);
             return false;
