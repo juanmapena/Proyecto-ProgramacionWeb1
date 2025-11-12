@@ -23,5 +23,4 @@ document.addEventListener('DOMContentLoaded', function () {
     appContacto.render();
     appPago.render();
     botonSesionHeader.render();
-    appGiftcard.render();
 });
