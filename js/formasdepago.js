@@ -135,7 +135,6 @@ export class SimuladorPago {
 
 
         if (!nombreUsuario) {
-            console.error("ERROR: No hay usuario logueado. Redireccionar al login o mostrar alerta.");
             return;
         }
 
@@ -143,11 +142,6 @@ export class SimuladorPago {
 
         if (indiceUsuario !== -1) {
             let usuario = listaUsuarios[indiceUsuario];
-
-
-            console.log(`--- INICIO DE TRANSACCIÓN PARA: ${nombreUsuario} ---`);
-            console.log(`Cursos en Carrito ANTES:`, usuario.carrito);
-            console.log(`Cursos Comprados ANTES:`, usuario.cursosComprados);
 
             const itemsTransferidos = usuario.carrito.length;
 
@@ -160,15 +154,6 @@ export class SimuladorPago {
             usuario.carrito = [];
 
             guardarUsuarios(listaUsuarios);
-
-            console.log(`-----------------------------------------------`);
-            console.log(`¡TRANSACCIÓN EXITOSA! ${itemsTransferidos} artículos transferidos.`);
-            console.log(`Cursos en Carrito DESPUÉS:`, usuario.carrito);
-            console.log(`Cursos Comprados DESPUÉS:`, usuario.cursosComprados);
-            console.log(`--- FIN DE TRANSACCIÓN ---`);
-
-        } else {
-            console.error(`ERROR: El usuario logueado "${nombreUsuario}" no fue encontrado en la lista de usuarios.`);
         }
     }
 

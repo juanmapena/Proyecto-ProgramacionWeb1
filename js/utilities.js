@@ -55,13 +55,8 @@ export const ERRORES = {
 export function mostrarErrorPago(mensaje, elementoMensaje) {
     if (elementoMensaje) {
         cambiarTextContent(elementoMensaje, mensaje); 
-        
-        // 🛑 QUITAMOS LOS ESTILOS INLINE DE JS Y SOLO AGREGAMOS LA CLASE
         elementoMensaje.classList.add('mensaje-alerta'); 
-        
-    } else {
-        console.error("No se encontró el elemento para mostrar el error de pago.");
-    }
+}
 }
 
 export function vaciarTextContent(elemento){

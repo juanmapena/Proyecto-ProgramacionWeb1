@@ -15,7 +15,6 @@ export class Calendario {
     if (!this.calendarioContainer) return;
 	
     const cursos = obtenerTodosLosCursos();
-    console.log(obtenerTodosLosCursos)
     const fechasCursos = {
       9: cursos.find(c => c.titulo == "Python"),
       17: cursos.find(c => c.titulo == "Java" ),

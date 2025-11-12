@@ -131,8 +131,6 @@ export class PersonalizadorTarjetaRegalo {
                     if (this.dialogConfirmacion && typeof this.dialogConfirmacion.showModal === 'function') {
                         this.dialogConfirmacion.showModal();
                     } else {
-
-                        console.warn('El diálogo de confirmación no se encontró o no es un elemento <dialog>. Redireccionando directamente.');
                         window.location.href = this.URL_DESTINO_CARRITO;
                     }
                 } else {
@@ -178,7 +176,6 @@ export class PersonalizadorTarjetaRegalo {
         const monto = parseFloat(this.inputMonto.value);
 
         if (!nombreUsuario) {
-            console.error("ERROR: No hay usuario logueado para añadir la Gift Card.");
             
             if (this.dialogoLoginRequerido && typeof this.dialogoLoginRequerido.showModal === 'function') {
                 this.dialogoLoginRequerido.showModal();
@@ -216,12 +213,9 @@ export class PersonalizadorTarjetaRegalo {
 
             usuario.carrito.push(giftCardFinal);
             guardarUsuarios(listaUsuarios);
-
-            console.log(`✅ Gift Card agregada al carrito de ${nombreUsuario} con monto: $${monto}`);
             return true;
 
         } else {
-            console.error(`ERROR: El usuario logueado "${nombreUsuario}" no fue encontrado en la lista.`);
             return false;
         }
     }
