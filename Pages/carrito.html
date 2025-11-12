@@ -18,7 +18,7 @@
 <body>
     <header class="header">
         <div class="header_div">
-            <a href="./home.html">
+            <a href="../index.html">
                 <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
             </a>
         </div>
@@ -54,22 +54,18 @@
 
 
         <div class="div_button">
-
-            <form class="form_busqueda" action="./cursos.html" autocomplete="off">
+            <form class="form_busqueda" action="./detalle-general.html?name=" autocomplete="off">
                 <input class="input_busqueda" type="text" id="search" name="search" placeholder="Buscar...">
             </form>
 
-
-            <a id="ancla_cerrarsesion" href="../index.html">
-                <button class="button">Cerrar sesión</button>
+            <a id="enlace-boton-sesion" href="./login.html">
+                <button id="boton-sesion" class="button">Iniciar sesión</button>
             </a>
 
-            <a class="ancla_carrito" href="./carrito.html">
-
+            <a class="ancla_carrito" href="./carrito.html" aria-label="Carrito">
                 <i class="fa-solid fa-cart-shopping"></i>
-
+                <span id="cart-count" class="contador-style" aria-live="polite"></span>
             </a>
-
         </div>
     </header>
 
@@ -104,48 +100,13 @@
             </article>
 
             <article>
-                <div class="products_style">
-                    <img src="../assets/logo_java.jpg" alt="Logo Java">
-
-                    <p>Curso de Java</p>
-
-                    <p>x 1</p>
-
-                    <p>$110 <button class="button_delete" type="button">&#x2212;</button></p>
-
-                </div>
-            </article>
-
-            <article>
-                <div class="products_style">
-                    <img src="../assets/logo_phyton_home.jpg" alt="Logo Phyton">
-
-                    <p>Curso de Phyton</p>
-
-                    <p>x 1</p>
-
-                    <p>$120 <button class="button_delete" type="button">&#x2212;</button></p>
-
-                </div>
-            </article>
-
-            <article>
-                <div class="products_style">
-                    <img src="../assets/logo_javascript_home.jpg" alt="Logo JavaScript">
-
-                    <p>Curso de JavaScript</p>
-
-                    <p>x 1</p>
-
-                    <p>$150 <button class="button_delete" type="button">&#x2212;</button></p>
-
-                </div>
+                <div id="productos-carrito"></div> <!--Aca va a generarse el contenido del carrito dinamicamente-->
             </article>
 
             <article class="total_style">
                 <h4>Total a Pagar: </h4>
 
-                <p>$380</p>
+                <p id="total-mostrar">$0.00</p>
 
             </article>
         </section>
@@ -160,50 +121,51 @@
 
         <section class="button_section">
             <article>
-                <a href="./home.html">
+                <a href="./cursos.html">
                     <button class="button_style__back">
                         Volver
                     </button>
                 </a>
             </article>
         </section>
-
-        <footer>
-            <section class="about_us">
-                <article>
-                    <p>Emanuel Ruiz Díaz (40.380.499) </p>
-                    <p>Juan Manuel Pena (45.495.738)
-                    <p>
-                    <p>Santiago Javier Falconi (44.099.057)
-                    <p>
-                    <p>Luna Melanie Daiana (41.713.955)
-                    <p>
-                    <p> Alan Cahuana Rodríguez (37.996.385)
-                    <p>
-                </article>
-                <article>
-                    <a class="ancla" href="https://x.com/?lang=es" target="_blank">
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
-                    <a class="ancla" href="https://www.instagram.com/" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a class="ancla" href="https://www.youtube.com/" target="_blank">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a class="ancla" href="https://discord.com/" target="_blank">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                </article>
-
-
-                <article>
-                    <h4>Copyright © <h4>
-                            <p>Todos los derechos están reservados
-                            <p>
-                </article>
-            </section>
     </main>
+
+    <footer>
+        <section class="about_us">
+            <article>
+                <p>Emanuel Ruiz Díaz (40.380.499) </p>
+                <p>Juan Manuel Pena (45.495.738)
+                <p>
+                <p>Santiago Javier Falconi (44.099.057)
+                <p>
+                <p>Luna Melanie Daiana (41.713.955)
+                <p>
+                <p> Alan Cahuana Rodríguez (37.996.385)
+                <p>
+            </article>
+            <article>
+                <a class="ancla" href="https://x.com/?lang=es" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a class="ancla" href="https://www.instagram.com/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="ancla" href="https://www.youtube.com/" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a class="ancla" href="https://discord.com/" target="_blank">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </article>
+
+
+            <article>
+                <h4>Copyright © <h4>
+                        <p>Todos los derechos están reservados
+                        <p>
+            </article>
+        </section>
+
     </footer>
 
     <div class="mobile-cart">
@@ -214,6 +176,8 @@
         </div>
     </div>
 
+    <script type="module" src="../js/script.js"></script>
+    <script type="module" src="../js/carrito.js"></script>
 </body>
 
 </html>

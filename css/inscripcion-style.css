@@ -20,6 +20,13 @@ h2 {
 
 body {
     background-color: #f5fbef;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
 }
 
 .section__selector {
@@ -84,7 +91,7 @@ body {
 
     input,
     select {
-        width: 90%;
+        width: 50%;
         margin-bottom: 1.5em;
     }
 }
@@ -147,7 +154,114 @@ body {
     border-radius: 50%;
 }
 
-@media screen and (max-width: 1050px) {
+.header_nav_ul li a.ancla_carrito {
+    position: relative;
+}
+
+.modal-style {
+    background-color: white; 
+    border-radius: 0.625em; 
+    padding: 0 0 1em 0; 
+    max-width: 28.125em; 
+    width: 90%; 
+    
+    box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.15); 
+    border: none;
+    
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+}
+
+.modal-header{
+    background-color: #172A3A;
+    color: white;
+    width: 100%;
+    padding: 1em 0;
+}
+
+.modal-header h3 {
+    color: white; 
+    width: 100%;
+    font-size: 1.8em;
+    font-family: 'Montserrat', sans-serif; 
+    margin-bottom: 0; 
+    font-weight: 700;
+}
+
+.modal-body#resumen {
+    width: 100%;
+    line-height: 1.6;
+    margin-bottom: 1.25em; 
+    padding-top: 1em; 
+}
+
+.modal-body#resumen h4 {
+    font-size: 1.3em;
+    color: #172A3A;
+    margin: 0.625em 0 0.3125em 0; 
+    font-weight: 700;
+}
+
+.modal-body#resumen ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.625em 0; 
+}
+
+.modal-body#resumen li {
+    font-size: 1.2em;
+    padding: 0.125em 0;
+    border: 0.5em ; 
+}
+
+.modal-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.9375em; 
+    margin-top: 1.25em;
+}
+
+#dialog-login-requerido-cuenta {
+    display: none;
+    margin-top: 20%;
+}
+
+#dialogo-cuenta-login {
+    background-color: #84c318;
+    font-size: 1em;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+}
+
+#cancelar {
+    background-color: #172A3A;
+    padding: 0.625em 1.25em;
+    border-radius: 2.5em;
+    cursor: pointer;
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center; 
+}
+
+/* Este ocultar unicamente lo agrego para poder usarlo en js, con esto puedo ocultar el form personal cuando este el empresarial y viceversa*/
+.ocultar{
+    display: none !important;
+}
+
+@media screen and (max-width: 1305px) {
     .persona-style {
         flex-direction: column;
         max-width: 100%;

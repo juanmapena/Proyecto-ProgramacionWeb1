@@ -21,7 +21,7 @@
 
     <header class="header">
         <div class="header_div">
-            <a href="./home.html">
+            <a href="../index.html">
                 <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
             </a>
         </div>
@@ -57,143 +57,149 @@
 
 
         <div class="div_button">
-
-            <form class="form_busqueda" action="./cursos.html" autocomplete="off">
-                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+            <form class="form_busqueda" action="./detalle-general.html?name=" autocomplete="off">
+                <input class="input_busqueda" type="text" id="search" name="search" placeholder="Buscar...">
             </form>
 
-
-            <a id="ancla_cerrarsesion" href="../index.html">
-                <button class="button">Cerrar sesión</button>
+            <a id="enlace-boton-sesion" href="./login.html">
+                <button id="boton-sesion" class="button">Iniciar sesión</button>
             </a>
 
-            <a class="ancla_carrito" href="./carrito.html">
-
+            <a class="ancla_carrito" href="./carrito.html" aria-label="Carrito">
                 <i class="fa-solid fa-cart-shopping"></i>
-
+                <span id="cart-count" class="contador-style" aria-live="polite"></span>
             </a>
-
         </div>
     </header>
 
     <main>
-        <seccion class="principal_container">
-            <article class="photo_principal">
-                <img class="photo" src="https://chaunlegendnails.com/cdn/shop/files/LGND-gft-card.png?v=1732294669"
-                    alt="Foto de la tarjeta"> <span class="price">
-                    $100.000
-                </span>
+        <section class="contenedor_principal">
+            <article class="tarjeta_contenedor">
+                <div id="vista-previa-tarjeta" class="vista-previa-tarjeta">
+                    <span id="monto-vista-previa" class="monto-vista-previa superior-derecha">$0000.-</span>
+                    <div class="tarjeta-contenido">
+                        <p class="tarjeta-texto">GIFT CARD para</p>
+                        <h1 id="nombre-destinatario-vista-previa">Destinatario</h1>
+                    </div>
+                </div>
+                <p class="texto-previsualizacion">VISUALIZACIÓN PREVIA DE TU GIFTCARD</p>
             </article>
 
             <article class="form_dates">
-                <h2>Personalización de Giftcard</h2>
+                <h2 class="titulo-gift">Personalización de Gift Card</h2>
                 <form action="./giftcard-confirmacion.html" method="get" autocomplete="off">
-                    <input class="input_name" type="text" name="name" id="name" placeholder="Nombre del destinatario:"
-                        required>
+
+                    <h4>Nombre Destinatario:</h4>
+                    <input class="input_name" type="text" name="nombre" id="input-nombre-destinatario"
+                        placeholder="Nombre:" required>
 
 
-                    <h4> Seleccione el color de la Gift Card: </h4>
+                    <h4>Seleccione el color del nombre del destinatario:</h4>
 
-                    <label for="golden" class="color_box">
-                        <input type="radio" name="colours" id="golden" value="Dorado" required>
+                    <label for="golden" class="caja-color">
+                        <input type="radio" name="colores" id="golden" value="Dorado" required>
                     </label>
-                    <label for="red" class="color_box">
-                        <input type="radio" name="colours" id="red" value="Rojo" required>
+                    <label for="red" class="caja-color">
+                        <input type="radio" name="colores" id="red" value="Rojo" required>
                     </label>
-                    <label for="blue" class="color_box">
-                        <input type="radio" name="colours" id="blue" value="Azul" required>
+                    <label for="blue" class="caja-color">
+                        <input type="radio" name="colores" id="blue" value="Azul" required>
                     </label>
-                    <label for="green" class="color_box">
-                        <input type="radio" name="colours" id="green" value="Verde" required>
+                    <label for="green" class="caja-color">
+                        <input type="radio" name="colores" id="green" value="Verde" required>
                     </label>
-                    <label for="grey" class="color_box">
-                        <input type="radio" name="colours" id="grey" value="Gris" required>
+                    <label for="grey" class="caja-color">
+                        <input type="radio" name="colores" id="grey" value="Gris" required>
                     </label>
 
 
-                    <h4>Seleccione la fuente:</h4>
+                    <h4>Seleccione el tamaño de fuente:</h4>
 
-                    <label for="20px" class="pixel_box">
+                    <label for="20px" class="caja-pixel">
                         20px:
-                        <input type="radio" name="fountain" id="20px" value="20px" required>
+                        <input type="radio" name="fuente" id="20px" value="20px" required>
                     </label>
-                    <label for="28px" class="pixel_box">
+                    <label for="28px" class="caja-pixel">
                         28px:
-                        <input type="radio" name="fountain" id="28px" value="28px" required>
+                        <input type="radio" name="fuente" id="28px" value="28px" required>
                     </label>
-                    <label for="32px" class="pixel_box">
+                    <label for="32px" class="caja-pixel">
                         32px:
-                        <input type="radio" name="fountain" id="32px" value="32px" required>
+                        <input type="radio" name="fuente" id="32px" value="32px" required>
                     </label>
-                    <label for="48px" class="pixel_box">
+                    <label for="48px" class="caja-pixel">
                         48px:
-                        <input type="radio" name="fountain" id="48px" value="48px" required>
+                        <input type="radio" name="fuente" id="48px" value="48px" required>
                     </label>
-                    <label for="64px" class="pixel_box">
-                        64px:
-                        <input type="radio" name="fountain" id="64px" value="464x" required>
+                    <label for="60px" class="caja-pixel">
+                        60px:
+                        <input type="radio" name="fuente" id="60px" value="60px" required>
                     </label>
 
+                    <h4>Monto $:</h4>
+                    <input class="input_name" type="number" name="monto" id="input-monto" placeholder="$0000.00"
+                        required min="1">
 
                     <h4>Seleccione la ubicación del valor:</h4>
 
-                    <label for="ubicacion_inferior_izquierda" class="location-option">
-                        <input type="radio" name="ubications" id="ubicacion_inferior_izquierda"
+                    <label for="ubicacion_inferior_izquierda" class="opcion-ubicacion">
+                        <input type="radio" name="ubicaciones" id="ubicacion_inferior_izquierda"
                             value="Esquina inferior izquierda" required>
                     </label>
 
-                    <label for="ubicacion_inferior_derecha" class="location-option">
-                        <input type="radio" name="ubications" id="ubicacion_inferior_derecha"
+                    <label for="ubicacion_inferior_derecha" class="opcion-ubicacion">
+                        <input type="radio" name="ubicaciones" id="ubicacion_inferior_derecha"
                             value="Esquina inferior derecha" required>
                     </label>
 
-                    <label for="ubicacion_superior_derecha" class="location-option">
-                        <input type="radio" name="ubications" id="ubicacion_superior_derecha"
+                    <label for="ubicacion_superior_derecha" class="opcion-ubicacion">
+                        <input type="radio" name="ubicaciones" id="ubicacion_superior_derecha"
                             value="Esquina superior derecha" required>
                     </label>
 
-                    <label for="ubicacion_superior_izquierda" class="location-option">
-                        <input type="radio" name="ubications" id="ubicacion_superior_izquierda"
+                    <label for="ubicacion_superior_izquierda" class="opcion-ubicacion">
+                        <input type="radio" name="ubicaciones" id="ubicacion_superior_izquierda"
                             value="Esquina superior izquierda" required>
                     </label>
 
 
                     <h4>Seleccione un fondo:</h4>
 
-                    <label for="fondo1" class="background-option">
-                        <input type="radio" name="background" id="fondo1" value="fondo1" required>
+                    <label for="fondo1" class="opcion-fondo">
+                        <input type="radio" name="fondo" id="fondo1" value="fondo1" required>
                     </label>
 
-                    <label for="fondo2" class="background-option">
-                        <input type="radio" name="background" id="fondo2" value="fondo2" required>
+                    <label for="fondo2" class="opcion-fondo">
+                        <input type="radio" name="fondo" id="fondo2" value="fondo2" required>
                     </label>
 
-                    <label for="fondo3" class="background-option">
-                        <input type="radio" name="background" id="fondo3" value="fondo3" required>
+                    <label for="fondo3" class="opcion-fondo">
+                        <input type="radio" name="fondo" id="fondo3" value="fondo3" required>
                     </label>
 
-                    <label for="fondo4" class="background-option">
-                        <input type="radio" name="background" id="fondo4" value="fondo4" required>
+                    <label for="fondo4" class="opcion-fondo">
+                        <input type="radio" name="fondo" id="fondo4" value="fondo4" required>
                     </label>
 
-                    <label for="fondo5" class="background-option">
-                        <input type="radio" name="background" id="fondo5" value="fondo5" required>
+                    <label for="fondo5" class="opcion-fondo">
+                        <input type="radio" name="fondo" id="fondo5" value="fondo5" required>
                     </label>
 
 
                     <div class="button_contaniner">
-                        <a href="./home.html">
-                            <button class="cancel" type="button"> Cancelar ❌ </button>
-                        </a>
-                        <button class="confirm" type="submit"> Confirmar ✓</button>
+                        <button class="cancel" type="button" id="boton-cancelar"> Cancelar ❌ </button>
+
+                        <button class="confirm" type="button" id="boton-confirmar"> Confirmar ✓</button>
                     </div>
                 </form>
             </article>
+        </section>
+
         </seccion>
+    </main>
 
 
     </main>
-
 
     <footer>
         <section class="about_us">
@@ -208,7 +214,7 @@
                 <p> Alan Cahuana Rodríguez (37.996.385)
                 <p>
             </article>
-             <article>
+            <article>
                 <a class="ancla" href="https://x.com/?lang=es" target="_blank">
                     <i class="fab fa-x-twitter"></i>
                 </a>
@@ -240,8 +246,28 @@
         </div>
     </div>
 
+    <dialog id="dialog-confirmacion" class="dialogo">
+        <div class="dialogo-contenido">
+            <h3>¿Estás seguro de continuar?</h3>
+            <p>Al confirmar, se añadirá la Gift Card personalizada a tu carrito.</p>
+            <div class="dialogo-botones">
+                <button class="dialogo-boton dialogo-aceptar" id="dialogo-confirmar-si">Sí, confirmar</button>
+                <button class="dialogo-boton dialogo-cancelar" id="dialogo-cancelar-no">No, cancelar</button>
+            </div>
+        </div>
+    </dialog>
 
+    <dialog id="dialog-login-requerido-cuenta" class="dialogo">
+        <div class="dialogo-contenido">
+            <h3>Necesitas iniciar sesión para añadir la Gift Card.</h3>
+            <div class="dialogo-botones">
+                <button class="dialogo-boton dialogo-aceptar" id="dialogo-cuenta-login">Ir a Iniciar Sesión</button>
+                <button class="dialogo-boton dialogo-cancelar" id="dialogo-alerta-cerrar">Cerrar</button>
+            </div>
+        </div>
+    </dialog>
 
+    <script type="module" src="../js/script.js"></script>
 
 </body>
 

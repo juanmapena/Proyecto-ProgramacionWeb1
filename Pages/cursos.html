@@ -17,7 +17,7 @@
        
          <header class="header">
         <div class="header_div">
-            <a href="./home.html">
+            <a href="../index.html">
                 <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
             </a>
         </div>
@@ -52,24 +52,20 @@
         </nav>
 
 
-        <div class="div_button">
+   <div class="div_button">
+  <form class="form_busqueda" action="./detalle-general.html?name=" autocomplete="off">
+    <input class="input_busqueda" type="text" id="search" name="search" placeholder="Buscar...">
+  </form>
 
-           <form class="form_busqueda" action="#" autocomplete="off">
-                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
-            </form>
+  <a id="enlace-boton-sesion" href="./login.html">
+    <button id="boton-sesion" class="button">Iniciar sesión</button>
+  </a>
 
-
-            <a id="ancla_cerrarsesion" href="../index.html">
-                <button class="button">Cerrar sesión</button>
-            </a>
-
-            <a class="ancla_carrito" href="./carrito.html">
-
-                <i class="fa-solid fa-cart-shopping"></i> 
-
-            </a>
-            
-        </div>
+  <a class="ancla_carrito" href="./carrito.html" aria-label="Carrito">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="cart-count" class="contador-style" aria-live="polite"></span>
+  </a>
+</div>
     </header>
         <main>
             <div class="titulo-container">
@@ -85,7 +81,7 @@
                         <p><strong>Nivel:</strong>  Inicial</p>
                         <p><strong>Duracion:</strong>  10 semanas</p>
                         <p><strong>Requisitos previos:</strong> Conocimientos básicos de informática.</p>
-                        <a href="./detalle_javascript.html">
+                        <a href="./detalle-general.html?name=curso-js">
                             <button class="button_detalle" type="submit">Ver detalle</button>
                         </a>
                     </div>
@@ -99,7 +95,7 @@
                         <p><strong>Nivel:</strong>  Inicial</p>
                         <p><strong>Duracion:</strong>  14 semanas</p>
                         <p><strong>Requisitos previos:</strong> Conocimientos básicos de programación.</p>
-                        <a href="./detalle_java.html">
+                        <a href="./detalle-general.html?name=curso-java">
                             <button class="button_detalle" type="submit">Ver detalle</button>
                         </a>
                     </div>
@@ -113,49 +109,49 @@
                         <p><strong>Nivel:</strong>  Inicial</p>
                         <p><strong>Duracion:</strong>  12 semanas</p>
                         <p><strong>Requisitos previos:</strong> Conocimientos básicos de informática.</p>
-                        <a href="./detalle_python.html">
+                        <a href="./detalle-general.html?name=curso-python">
                             <button class="button_detalle" type="submit">Ver detalle</button>
                         </a>
                     </div>
                 </article>
                 <article class="curso-tarjeta">
                     <div class="curso-logo">
-                        <img class="imagenes_cursos" src="../assets/logo_phyton_home.jpg" alt="Logo Python">
+                        <img class="imagenes_cursos" src="../assets/html-css-pngg.png" alt="Logo Python">
                     </div>
                     <div class="curso-contenido">
-                        <h3>Curso de Python</h4>
+                        <h3>Curso de HTML & CSS</h4>
                         <p><strong>Nivel:</strong>  Inicial</p>
-                        <p><strong>Duracion:</strong>  12 semanas</p>
-                        <p><strong>Requisitos previos:</strong> Conocimientos básicos de informática.</p>
-                        <a href="./detalle_python.html">
+                        <p><strong>Duracion:</strong>  3 semanas</p>
+                        <p><strong>Requisitos previos:</strong> Ninguno, ideal para empezar desde cero.</p>
+                        <a href="./detalle-general.html?name=html-css-inicial">
                             <button class="button_detalle" type="submit">Ver detalle</button>
                         </a>
                     </div>
                 </article>
                 <article class="curso-tarjeta">
                     <div class="curso-logo">
-                        <img class="imagenes_cursos" src="../assets/logo_javascript_home.jpg" alt="Logo Typescript">
+                        <img class="imagenes_cursos" src="../assets/c+.png" alt="Logo Typescript">
                     </div>
                     <div class="curso-contenido">
-                       <h3>Curso de Javascript</h4>
-                        <p><strong>Nivel:</strong>  Inicial</p>
-                        <p><strong>Duracion:</strong>  10 semanas</p>
-                        <p><strong>Requisitos previos:</strong> Conocimientos básicos de informática.</p>
-                        <a href="./detalle_javascript.html">
+                       <h3>Curso de C++</h4>
+                        <p><strong>Nivel:</strong>   Intermedio</p>
+                        <p><strong>Duracion:</strong>  9 semanas</p>
+                        <p><strong>Requisitos previos:</strong> Conocimiento de programación estructurada.</p>
+                        <a href="./detalle-general.html?name=cpp-intermedio">
                             <button class="button_detalle" type="submit">Ver detalle</button>
                         </a>
                     </div>
                 </article>
                 <article class="curso-tarjeta">
                     <div class="curso-logo">
-                        <img class="imagenes_cursos" src="../assets/logo_java.jpg" alt="Logo Java">
+                        <img class="imagenes_cursos" src="../assets/react.png" alt="Logo Java">
                     </div>
                     <div class="curso-contenido">
-                        <h3>Curso de Java</h4>
-                        <p><strong>Nivel:</strong>  Inicial</p>
-                        <p><strong>Duracion:</strong>  14 semanas</p>
-                        <p><strong>Requisitos previos:</strong> Conocimientos básicos de programación.</p>
-                        <a href="./detalle_java.html">
+                        <h3>Curso de React</h4>
+                        <p><strong>Nivel:</strong>  Avanzado</p>
+                        <p><strong>Duracion:</strong>  8 semanas</p>
+                        <p><strong>Requisitos previos:</strong> Conocimiento intermedio de JavaScript y React.</p>
+                        <a href="./detalle-general.html?name=react-avanzado">
                             <button class="button_detalle" type="submit">Ver detalle</button>
                         </a>
                     </div>
@@ -195,10 +191,11 @@
         </footer>
         <div class="mobile-cart">
             <div class="fa-cart-background">
-                <a href="#">
+                <a href="./carrito.html">
                     <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
+        <script type="module" src="../js/script.js"></script>
     </body>
 </html>

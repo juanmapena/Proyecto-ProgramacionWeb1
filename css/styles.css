@@ -104,6 +104,20 @@ h1 {
 
 }
 
+.contador-style {
+    position: absolute; 
+    top: -0.5em;
+    right: -0.5em;
+    color: white; 
+    font-size: 1em; 
+    font-weight: 700;
+    line-height: 1.4;
+    padding: 0.1em 0.3em;
+    min-width: 1.5em;
+    text-align: center;
+    z-index: 10;
+}
+
 footer {
   background-color: #004346;
   color: white;
@@ -127,6 +141,57 @@ footer {
   color: white;
   text-decoration: none;
   list-style-type: none;
+}
+
+.modal-dialog {
+  
+    border: none;
+    padding: 0;
+    margin: auto; 
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 400px;
+}
+
+
+.modal-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 1.5em;
+    color: #172A3A;
+    margin-bottom: 0.5em;
+}
+
+.modal-body {
+    margin-bottom: 20px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center; 
+}
+
+.button-modal {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.aceptar {
+    background-color: #84c318;
+    color: white;
 }
 
 @media screen and (max-width: 1000px) {
@@ -156,6 +221,8 @@ footer {
       display: none;
     }
   }
+
+
 
   .header_nav {
     width: 100%;

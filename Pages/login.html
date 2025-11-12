@@ -27,7 +27,7 @@
                 <h2>Iniciar sesión</h2>
             </div>  
             <div class="div-form">
-                <form action="./home.html" method="get"> 
+                <form id="login-form"> 
                     <div class="div-inputs">
                         <label for="name">
                             <span>Usuario</span>
@@ -38,6 +38,7 @@
                             <input type="password" name="password" id="password" required>
                         </label>
                     </div>
+                    <div id="login-error"></div>
                     <div class="div-register">
                         <h4>¿No tienes usuario?</h4>
                         <a href="./registro.html">¡Registrate!</a>
@@ -47,5 +48,6 @@
             </div>
         </section>
     </main>
+    <script type="module" src="../js/login.js"></script>
 </body>
 </html>

@@ -16,9 +16,9 @@
 </head>
 
 <body>
-     <header class="header">
+    <header class="header">
         <div class="header_div">
-            <a href="./home.html">
+            <a href="../index.html">
                 <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
             </a>
         </div>
@@ -53,84 +53,104 @@
         </nav>
 
 
-        <div class="div_button">
+  <div class="div_button">
+  <form class="form_busqueda" action="./detalle-general.html?name=" autocomplete="off">
+    <input class="input_busqueda" type="text" id="search" name="search" placeholder="Buscar...">
+  </form>
 
-            <form class="form_busqueda" action="./cursos.html" autocomplete="off">
-                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
-            </form>
+  <a id="enlace-boton-sesion" href="./login.html">
+    <button id="boton-sesion" class="button">Iniciar sesión</button>
+  </a>
 
-
-            <a id="ancla_cerrarsesion" href="../index.html">
-                <button class="button">Cerrar sesión</button>
-            </a>
-
-            <a class="ancla_carrito" href="./carrito.html">
-
-                <i class="fa-solid fa-cart-shopping"></i> 
-
-            </a>
-            
-        </div>
+  <a class="ancla_carrito" href="./carrito.html" aria-label="Carrito">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="cart-count" class="contador-style" aria-live="polite"></span>
+  </a>
+</div>
     </header>
-    <main>
+    <main id="main-cuenta">
         <section class="profile-data">
             <article>
                 <h1>Mi Perfil</h1>
             </article>
             <article class="profile-img">
-                <img src="../Assets/perfilUsuario.jpg" alt="Foto de perfil">
-                <h2>Santi3214</h2>
-                <a href="../index.html" id="delete-account">Eliminar cuenta</a>
+                <img id="profile-avatar" src="../Assets/avatar1.png" alt="Foto de perfil">
+                <h2 id="profile-username">Usuario</h2>
+                <a id="delete-account">Eliminar cuenta</a>
             </article>
         </section>
         <section class="data-form">
             <article>
                 <h1>Datos personales</h1>
             </article>
-            <form action="./cuenta_datosguardados.html" method="get">
+            <form id="profile-form">
                 <label for="name">
                     <span>Nombre</span>
-                    <input type="text" class="name" id="name" placeholder="Santiago Javier" required>
+                    <input type="text" class="name" id="profile-name" placeholder="Nombre" required>
                 </label>
                 <label for="last-name">
                     <span>Apellido</span>
-                    <input type="text" class="last-name" id="last-name" placeholder="Falconi" required>
+                    <input type="text" class="last-name" id="profile-last-name" placeholder="Apellido" required>
                 </label>
                 <label for="email">
                     <span>Email</span>
-                    <input type="email" class="email" id="email" placeholder="santiJFalconi123@outlook.com.ar" required>
+                    <input type="email" class="email" id="profile-email" placeholder="Email" required>
                 </label>
                 <label for="current-password">
                     <span>Contraseña actual</span>
-                    <input type="password" class="current-password" id="current-password" placeholder="Ingrese su contraseña actual" required>
+                    <input type="password" class="current-password" id="profile-current-password" placeholder="Contraseña" required>
                 </label>
                 <label for="new-password">
                     <span>Nueva contraseña</span>
-                    <input type="password" class="new-password" id="new-password" placeholder="Ingrese la nueva contraseña" required>
+                    <input type="password" class="new-password" id="profile-new-password" placeholder="Nueva contraseña" required>
                 </label>
                 <label for="repeat-password">
                     <span>Repetir nueva contraseña</span>
-                    <input type="password" class="repeat-password" id="repeat-password" placeholder="Repita la nueva contraseña" required>
+                    <input type="password" class="repeat-password" id="profile-repeat-password" placeholder="Repita la nueva contraseña" required>
                 </label>
+                <div id="mensaje-dinamico"></div>
                 <button type="submit">Guardar</button>
             </form>
         </section>
-        <section class="courses-list">
+        <section id="courses-list" class="courses-list">
             <article>
                 <h1>Mis cursos</h1>
             </article>
             <article class="images-container">
-                <a href="./detalle_java.html">
-                    <img src="../Assets/java_detalle.jpg" alt="Imagen de curso de java">
-                    <p>Programación inicial en Java</p>
-                </a>
-                
-                <a href="./detalle_python.html">
-                    <img src="../Assets/python-imagen.jpg" alt="Imagen curso de Python">
-                    <p>Programación avanzada en Python</p>
-                </a>
+                Todavía no tienes cursos...
             </article>
         </section>
+        <dialog id="save-data-modal" class="modal-dialog">
+            <div class="modal-content">
+                <h3 class="modal-title">¡Datos guardados correctamente!</h3>
+                <div class="modal-actions">
+                    <button id="save-data-confirm" class="button-modal">Volver</button>
+                </div>
+            </div>
+        </dialog>
+        <dialog id="delete-account-modal" class="modal-dialog">
+            <div class="modal-content">
+                <h3 class="modal-title">Eliminar cuenta</h3>
+                <p class="modal-body">¿Estás seguro/a que desea eliminar la cuenta <span id="delete-modal-account-username"></span> ?</p>
+                <div class="modal-actions">
+                    <button id="delete-account-modal-yes" class="button-modal">Eliminar cuenta</button>
+                    <button id="delete-account-modal-no" class="button-modal">Volver</button>
+                </div>
+            </div>
+        </dialog>
+
+
+        <dialog id="dialog-login-requerido-cuenta" class="modal-dialog">
+            <div class="dialogo-contenido modal-content">
+                <h3 class="modal-title">Necesitas iniciar sesión para ver tu perfil y configuración de cuenta.</h3>
+                <div class="dialogo-botones modal-actions">
+                    <button class="dialogo-boton dialogo-aceptar" id="dialogo-cuenta-login">Ir a Iniciar Sesión</button>
+                </div>
+            </div>
+        </dialog>
+
+<script type="module" src="../js/cuenta.js"></script>
+</body>
     </main>
     <footer>
         <section class="about_us">
@@ -175,6 +195,7 @@
             </a>
         </div>
     </div>
+    <script type="module" src="../js/cuenta.js"></script>
+    <script type="module" src="../js/script.js"></script>
 </body>
-
 </html>

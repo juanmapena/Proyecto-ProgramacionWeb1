@@ -89,6 +89,66 @@ h3, h4, h5{
     font-weight: bold;
 }
 
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 10px;
+  padding: 1.5em 2em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  width: 90%;
+  background-color: #fff;
+  z-index: 1000; 
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1.5em;
+}
+
+.boton-detalle, .boton-cerrar {
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.aceptar {
+    background-color: #84c318;
+    color: white;
+}
+
+.fecha-con-curso {
+  background-color: #f0fbe7;
+  cursor: pointer;
+}
+
+.curso-en-dia {
+    color: #575c55;
+    margin-top: 0.4em;
+    padding: 0.5em;
+    border-radius: 10px;
+    background-color: #d9ff96;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.curso-en-dia:hover {
+  transform: scale(1.05);
+}
+
  @media screen and (max-width: 870px) {
     .calendario {
         padding: 1.5em 1em;

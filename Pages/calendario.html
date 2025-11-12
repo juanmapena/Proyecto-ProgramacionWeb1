@@ -16,7 +16,7 @@
 <body>
     <header class="header">
         <div class="header_div">
-            <a href="./home.html">
+            <a href="../index.html">
                 <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
             </a>
         </div>
@@ -52,26 +52,22 @@
 
 
         <div class="div_button">
-
-           <form class="form_busqueda" action="./cursos.html" autocomplete="off">
-                <input class="input_busqueda"  type="text" id="search" name="search" placeholder="Buscar..." >
+            <form class="form_busqueda" action="./detalle-general.html?name=" autocomplete="off">
+                <input class="input_busqueda" type="text" id="search" name="search" placeholder="Buscar...">
             </form>
 
-
-            <a id="ancla_cerrarsesion" href="../index.html">
-                <button class="button">Cerrar sesión</button>
+            <a id="enlace-boton-sesion" href="./login.html">
+                <button id="boton-sesion" class="button">Iniciar sesión</button>
             </a>
 
-            <a class="ancla_carrito" href="./carrito.html">
-
-                <i class="fa-solid fa-cart-shopping"></i> 
-
+            <a class="ancla_carrito" href="./carrito.html" aria-label="Carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count" class="contador-style" aria-live="polite"></span>
             </a>
-            
         </div>
     </header>
 
-    <main>
+    <main id="main-calendario">
         <section class="calendario">
              <div class="calendario-header">
                 <h3>Octubre 2025</h3>
@@ -134,9 +130,7 @@
                     <div class="fecha-info"><h5>8</h5></div>
                 </li>
                 <li class="fecha">
-                    <div class="fecha-info"><h5>9</h5>
-                        <a href="detalle_python.html">Curso de Python</a>
-                    </div>
+                    <div class="fecha-info"><h5>9</h5></div>
                 </li>
                 <li class="fecha">
                     <div class="fecha-info"><h5>10</h5></div>
@@ -160,9 +154,7 @@
                     <div class="fecha-info"><h5>16</h5></div>
                 </li>
                 <li class="fecha">
-                    <div class="fecha-info"><h5>17</h5>
-                        <a href="detalle_java.html">Curso de Java</a>
-                    </div>
+                    <div class="fecha-info"><h5>17</h5></div>
                 </li>
                 <li class="fecha">
                     <div class="fecha-info"><h5>18</h5></div>
@@ -252,5 +244,16 @@
             </a>
         </div>
     </div>
+    <dialog id="curso-dialog">
+        <h3 id="dialog-title"></h3>
+        <p><strong>Nivel:</strong> <span id="dialog-nivel"></span></p>
+        <p><strong>Duración:</strong> <span id="dialog-duracion"></span> semanas</p>
+        <div class="dialog-buttons">
+            <button id="dialog-detalle" class="boton-detalle">Ver Detalle</button>
+            <button id="dialog-cerrar" class="boton-cerrar">Cerrar</button>
+        </div>
+    </dialog>
+    <script type="module" src="../js/script.js"></script>
+    <script type="module" src="../js/calendario.js"></script>
 </body>
 </html>

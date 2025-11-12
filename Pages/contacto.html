@@ -20,7 +20,7 @@
 
     <header class="header">
         <div class="header_div">
-            <a href="./home.html">
+            <a href="../index.html">
                 <img class="imagen_logo" src="../assets/ProyectoAppscend.png" alt="Icono">
             </a>
         </div>
@@ -56,53 +56,49 @@
 
 
         <div class="div_button">
-
-            <form class="form_busqueda" action="./cursos.html" autocomplete="off">
+            <form class="form_busqueda" action="./detalle-general.html?name=" autocomplete="off">
                 <input class="input_busqueda" type="text" id="search" name="search" placeholder="Buscar...">
             </form>
 
-
-            <a id="ancla_cerrarsesion" href="../index.html">
-                <button class="button">Cerrar sesión</button>
+            <a id="enlace-boton-sesion" href="./login.html">
+                <button id="boton-sesion" class="button">Iniciar sesión</button>
             </a>
 
-            <a class="ancla_carrito" href="./carrito.html">
-
+            <a class="ancla_carrito" href="./carrito.html" aria-label="Carrito">
                 <i class="fa-solid fa-cart-shopping"></i>
-
+                <span id="cart-count" class="contador-style" aria-live="polite"></span>
             </a>
-
         </div>
     </header>
 
 
-    <main>
+    <main id="main-contacto">
 
         <section class="principal_section">
             <article class="data">
-                <form action="./mensaje-recibido.html" method="get" autocomplete="off">
+                <form id="formulario-contacto" method="get" action="../index.html" autocomplete="off">
                     <h2 class="h2_contacto"> CONTACTO </h2>
                     <label for="name">
-                        <input type="text" name="name" id="name" placeholder="Ingrese su nombre" required />
+                        <input type="text" name="name" id="name" placeholder="Ingrese su nombre" required
+                            pattern="[A-Za-z\s]+" title="Solo letras y espacios" />
                     </label>
                     <label for="lastname">
-                        <input type="text" name="lastname" id="lastname" placeholder="Ingrese su apellido" required />
+                        <input type="text" name="lastname" id="lastname" placeholder="Ingrese su apellido" required
+                            pattern="[A-Za-z\s]+" title="Solo letras y espacios" />
                     </label>
                     <label for="email">
                         <input type="email" name="email" id="email" placeholder="Ingrese su email" required />
                     </label>
                     <label for="phonenumber">
                         <input type="tel" name="phonenumber" id="phonenumber"
-                            placeholder="Ingrese su número de teléfono" required />
+                            placeholder="Ingrese su teléfono (Ej: 1234-5678)" required />
                     </label>
                     <label for="message">
-                        <textarea name="message" id="message" placeholder="Ingrese su consulta" required></textarea>
+                        <textarea name="message" id="message" placeholder="Ingrese su consulta" required
+                            maxlength="1000"></textarea>
+                        <p id="char-count" class="char-count-display">0/1000</p>
                     </label>
-
-
-                    <button class="button_send" type="submit">
-                        Enviar</button>
-
+                    <button class="button_send" type="submit">Enviar</button>
                 </form>
             </article>
 
@@ -129,6 +125,7 @@
         </section>
 
     </main>
+
 
 
     <footer>
@@ -175,6 +172,31 @@
             </a>
         </div>
     </div>
+
+    <dialog id="confirmacion-modal" class="modal-dialog">
+        <div class="modal-content">
+            <h3 class="modal-title">Confirmar Envío</h3>
+            <p class="modal-body">¿Estás seguro/a de enviar la consulta con los datos ingresados? <br> <br>
+                Presioná el botón "Cancelar" para desistir o editar tus datos.</p>
+            <div class="modal-actions">
+                <button id="modal-aceptar" class="button-modal aceptar">Enviar Mensaje</button>
+                <button id="modal-cancelar" class="button-modal cancelar">Cancelar</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="exito-modal" class="modal-dialog">
+        <div class="modal-content">
+            <h3 class="modal-title">¡Mensaje Enviado! 🎉</h3>
+            <p class="modal-body">Tu consulta ha sido enviada con éxito.</p>
+            <div class="modal-actions">
+                <button id="modal-exito-aceptar" class="button-modal aceptar">Ir al Home</button>
+            </div>
+        </div>
+    </dialog>
+
+
+    <script type="module" src="../js/script.js"></script>
 
 
 
