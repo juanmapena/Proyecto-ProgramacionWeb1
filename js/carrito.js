@@ -1,19 +1,4 @@
-import { getUsuarioLogueado, encontrarUsuario, guardarUsuarios, getUsuarios, obtenerContadorDelCarrito } from "./bbdd.js";
-import { mostrarElementoFlex, cambiarTextContent } from './utilities.js';
-
-function actualizarContadorCarrito() {
-    const contador = document.getElementById("contador-carrito");
-
-    if (contador) {
-        const contadorActual = obtenerContadorDelCarrito(); //obtenemos el contador de la bbdd
-
-        cambiarTextContent(contador, contadorActual);
-
-        mostrarElementoFlex(contador);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
+import { getUsuarioLogueado, encontrarUsuario, guardarUsuarios, getUsuarios } from "./bbdd.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -108,5 +93,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     actualizarCarrito(); //actualizamos siempre el carrito al final con los cambios que se hayan hecho
 
-    actualizarContadorCarrito();
 });

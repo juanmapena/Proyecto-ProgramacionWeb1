@@ -1,34 +1,89 @@
-import { getUsuarioLogueado, guardarUsuarios, getUsuarios, obtenerContadorDelCarrito, obtenerTodosLosCursos, encontrarUsuario } from './bbdd.js';
-import { mostrarElementoFlex, cambiarTextContent } from './utilities.js';
-
-function actualizarContadorCarrito() {
-    const contador = document.getElementById("contador-carrito");
-
-    if (contador) {
-        const contadorActual = obtenerContadorDelCarrito(); //obtenemos el contador de la bbdd
-
-        cambiarTextContent(contador, contadorActual);
-
-        mostrarElementoFlex(contador);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
+import { REGEXP, ERRORES, validarPorRegExp, cambiarTextContent, vaciarTextContent, cambiarColorDeFuente, COLORES_CSS } from './utilities.js';
+import { getUsuarioLogueado, guardarUsuarios, getUsuarios, obtenerTodosLosCursos } from './bbdd.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    obtenerContadorDelCarrito();
+    function crearErrorSpan(input) {
+        if (!input) return;
+
+        const id = input.id;
+        if (!id) return;
+
+        let span = document.getElementById(`${id}-error`);
+
+        if (!span) {
+            span = document.createElement("span");
+            span.id = `${id}-error`;
+            span.classList.add("mensaje-error");
+            input.insertAdjacentElement("afterend", span);
+        }
+
+        return span;
+    }
+
+    function limpiarError(input) {
+        const span = document.getElementById(`${input.id}-error`);
+        if (span) vaciarTextContent(span);
+    }
+
+    function validarTexto(input) {
+        limpiarError(input);
+        const span = crearErrorSpan(input);
+        const valor = input.value.trim();
+
+        if (!validarPorRegExp(valor, REGEXP.SOLO_LETRAS_Y_ESPACIOS)) {
+            cambiarColorDeFuente(span, COLORES_CSS.ROJO);
+            cambiarTextContent(span, "Solo letras");
+            return false;
+        }
+        return true;
+    }
+
+    function validarNumero(input, min, max) {
+        limpiarError(input);
+        const span = crearErrorSpan(input);
+        const valor = input.value.trim();
+
+        if (!/^[0-9]+$/.test(valor)) {
+            return false;
+        }
+
+        if (valor.length < min || valor.length > max) {
+            cambiarColorDeFuente(span, COLORES_CSS.ROJO);
+            cambiarTextContent(span, `Debe tener ${max} dígitos.`);
+            return false;
+        }
+
+        return true;
+    }
+
+    function validarEmail(input) {
+        limpiarError(input);
+        const span = crearErrorSpan(input);
+        const valor = input.value.trim();
+
+        if (!validarPorRegExp(valor, REGEXP.EMAIL)) {
+            cambiarColorDeFuente(span, COLORES_CSS.ROJO);
+            cambiarTextContent(span, "Email invalido.Ej: texto@dominio.com");
+            return false;
+        }
+        return true;
+    }
 
     function soloNumeros(event) {
         event.target.value = event.target.value.replace(/[^0-9]/g, '');
+    }
+
+    function soloLetras(event) {
+        event.target.value = event.target.value.replace(/[^a-zA-Z\sáéíóúÁÉÍÓÚñÑ]/g, '');
     }
 
     function generarOpcionesCursos() {
 
         const cursosSinFiltrar = obtenerTodosLosCursos();
 
-        const cursosDisponibles = cursosSinFiltrar.filter((curso) => {return curso.id < 7;});
-        
+        const cursosDisponibles = cursosSinFiltrar.filter((curso) => { return curso.id < 7; });
+
         let opcionesHTML = "";
 
         cursosDisponibles.forEach(curso => {
@@ -43,9 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const botonEmpresarial = document.getElementById("boton-empresarial");
     const botonPersonal = document.getElementById("boton-personal");
-
-    const formSection = document.getElementById("section-form");
-    const form = document.getElementById("inscripcion-form");
 
     const personaContainer = document.getElementById("persona-container");
     const agregarContainer = document.getElementById("agregar-container");
@@ -69,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const usuarioLogueado = getUsuarioLogueado();
 
         if (!usuarioLogueado) {
-            DIALOG_LOGIN_CUENTA.classList.remove("ocultar")
+            DIALOG_LOGIN_CUENTA.classList.remove("ocultar");
             DIALOG_LOGIN_CUENTA.showModal();
             DIALOG_LOGIN_CUENTA.style.display = 'block';
             BTN_IR_LOGIN_CUENTA.onclick = () => {
@@ -80,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return false;
         }
-
         return true;
     }
 
@@ -100,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     botonPersonal.addEventListener("click", () => {
         tipo = "personal";
         iniciarFormulario();
-    })
+    });
 
     function iniciarFormulario() {
 
@@ -121,23 +172,27 @@ document.addEventListener('DOMContentLoaded', () => {
         personaContainer.innerHTML = `
         <article id="persona" class="persona-style personal">
             <label for="nombre">Ingrese su nombre</label>
-            <input type="text" id="nombre" required>
+            <input type="text" id="nombre">
 
             <label for="apellido">Ingrese su apellido</label>
-            <input type="text" id="apellido" required>
+            <input type="text" id="apellido">
 
             <label for="email">Ingrese su email</label>
-            <input type="email" id="email" required>
+            <input type="email" id="email">
 
             <label for="tel">Ingrese su numero de telefono</label>
-            <input type="tel" id="tel" minlength="10" maxlength="10" required>
+            <input type="tel" id="tel" minlength="10" maxlength="10">
 
             <label for="curso">Seleccione el curso</label>
             <select class="selector-style" id="curso"> ${opcionesCursos} </select>
 
         </article>
     `;
+
+        document.getElementById("nombre").addEventListener("input", soloLetras);
+        document.getElementById("apellido").addEventListener("input", soloLetras);
         document.getElementById("tel").addEventListener('input', soloNumeros);
+        document.getElementById("email").addEventListener("input", (e) => validarEmail(e.target));
 
         const cursos = document.getElementById("curso");
         cursos.addEventListener("change", calcularTotal);
@@ -155,23 +210,23 @@ document.addEventListener('DOMContentLoaded', () => {
         article.id = `persona-${contadorPersona}`; //usamos el contador para indicar y distinguir que es por ejemplo "persona-1" y "persona-2" en base a como se fueron creando y que los datos no se pisen 
 
         article.innerHTML = `
-    <label for="nombre-${contadorPersona}">Nombre y Apellido:</label>
-    <input type="text" name="nombre-${contadorPersona}" id="nombre-${contadorPersona}" required>
+        <label for="nombre-${contadorPersona}">Nombre y Apellido:</label>
+        <input type="text" name="nombre-${contadorPersona}" id="nombre-${contadorPersona}">
 
-    <label for="dni-${contadorPersona}">DNI:</label>
-    <input type="text" name="dni-${contadorPersona}" id="dni-${contadorPersona}" minlength="7" maxlength="8" required>
+        <label for="dni-${contadorPersona}">DNI:</label>
+        <input type="text" name="dni-${contadorPersona}" id="dni-${contadorPersona}" minlength="7" maxlength="8">
 
-    <label for="email-${contadorPersona}">Email:</label>
-    <input type="email" name="email-${contadorPersona}" id="email-${contadorPersona}" required>
+        <label for="email-${contadorPersona}">Email:</label>
+        <input type="email" name="email-${contadorPersona}" id="email-${contadorPersona}">
 
-    <label for="telefono-${contadorPersona}">Teléfono:</label>
-    <input type="tel" name="telefono-${contadorPersona}" id="telefono-${contadorPersona}" minlength="10" maxlength="10" required>
+        <label for="telefono-${contadorPersona}">Teléfono:</label>
+        <input type="tel" name="telefono-${contadorPersona}" id="telefono-${contadorPersona}" minlength="10" maxlength="10">
 
-    <label for="curso-${contadorPersona}">Seleccione el curso</label>
+        <label for="curso-${contadorPersona}">Seleccione el curso</label>
         <select class="selector-style" id="curso-${contadorPersona}"> ${opcionesCursos} </select>
 
-    <button type="button" class="eliminar">&#x2212;</button>
-  `;
+        <button type="button" class="eliminar">&#x2212;</button>
+        `;
 
         personaContainer.appendChild(article); //se agrega todo al html
 
@@ -197,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 contadorPersona--;
                 calcularTotal();
             }
-        })
+        });
     }
 
     botonAgregar.addEventListener("click", () => {
@@ -233,13 +288,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+    const form = document.getElementById("inscripcion-form");
+
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        mostrarResumen(); //se llama a la funcion de mostrar resumen de toda la inscripcion
+        const inputs = personaContainer.querySelectorAll("input");
+
+        let valido = true;
+
+        inputs.forEach(input => {
+            const id = input.id;
+
+            if (id.includes("nombre")) {
+                if (!validarTexto(input)) {
+                    valido = false;
+                }
+            }
+            if (id.includes("dni")) {
+                if (!validarNumero(input, 7, 8)) {
+                    valido = false;
+                }
+            }
+            if (id.includes("tel")) {
+                if (!validarNumero(input, 10, 10)) {
+                    valido = false;
+                }
+            }
+            if (id.includes("email")) {
+                if (!validarEmail(input)) {
+                    valido = false;
+                }
+            }
+        });
+
+        if (!valido) {
+            return;
+        }
+
+        mostrarResumen();
         modal.classList.remove("ocultar");
         modal.showModal();
-    })
+    });
 
     function mostrarResumen() {
         let resumenHTML = ""; //aseguramos de que siempre arranque vacio para evitar acumulaciones de previos resumenes
@@ -351,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cancelar.addEventListener("click", () => {
         modal.classList.add("ocultar");
         modal.close();
-    })
+    });
 
     confirmar.addEventListener("click", () => {
         const nuevosItems = obtenerItemsParaElCarrito();
@@ -375,8 +465,6 @@ document.addEventListener('DOMContentLoaded', () => {
         guardarUsuarios(listaUsuarios); //guardamos al usuario actualizado
 
         localStorage.setItem('totalCarrito', nuevoTotalCarrito.toFixed(2));
-
-        actualizarContadorCarrito();
 
         modal.classList.add("ocultar");
         modal.close();
