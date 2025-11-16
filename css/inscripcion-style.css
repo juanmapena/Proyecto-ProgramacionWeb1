@@ -92,7 +92,7 @@ main {
     input,
     select {
         width: 50%;
-        margin-bottom: 1.5em;
+        margin-bottom: 0.25em;
     }
 }
 

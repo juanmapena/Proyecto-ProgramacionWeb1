@@ -296,9 +296,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const inputs = personaContainer.querySelectorAll("input");
 
         let valido = true;
+        let pasoPorAlMenosUnInput = false;
 
         inputs.forEach(input => {
+            pasoPorAlMenosUnInput = true;
             const id = input.id;
+
+            if (!input.value.trim()) {
+                
+                limpiarError(input);
+                const span = crearErrorSpan(input);
+
+                cambiarColorDeFuente(span, COLORES_CSS.ROJO);
+                cambiarTextContent(span, `El campo no debe estar vacío.`);
+                valido = false;
+                return;
+            }
 
             if (id.includes("nombre")) {
                 if (!validarTexto(input)) {
@@ -322,7 +335,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        if (!valido) {
+        if ( !pasoPorAlMenosUnInput ){
+            return;
+        }
+
+        if ( !valido) {
             return;
         }
 

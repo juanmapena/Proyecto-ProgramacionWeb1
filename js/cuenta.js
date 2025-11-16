@@ -212,19 +212,42 @@ function guardarDatosDeCuenta(event){
         return;
     }
 
+    let nombreIngresado = profileName.value;
+    let apellidoIngresado = profileLastName.value;
+    let emailIngresado = profileEmail.value;
+    let contraseniaActual = profileCurrentPassword.value;
+    let contraseniaIngresada = profileNewPassword.value;
+    let contraseniaRepetidaIngresada = profileRepeatNewPassword.value;
+
+    if(!nombreIngresado || !apellidoIngresado || !emailIngresado || !contraseniaActual || !contraseniaIngresada || !contraseniaRepetidaIngresada) {
+        mostrarError(ERRORES.REGISTRO.TODOS_LOS_CAMPOS_REQUERIDOS);
+        return;
+    }
+    
+    if (!validarPorRegExp(nombreIngresado, REGEXP.SOLO_LETRAS_Y_ESPACIOS) || nombreIngresado.length < 2 || nombreIngresado.length > 50) {
+        mostrarError("Nombre ingresado incorrecto. " + ERRORES.REGISTRO.SOLO_LETRAS_Y_MINIMO_DOS_CARACTERES);
+        return;
+    }
+
+    if (!validarPorRegExp(apellidoIngresado, REGEXP.SOLO_LETRAS_Y_ESPACIOS) || apellidoIngresado.length < 2 || apellidoIngresado.length > 50) {
+        mostrarError("Apellido ingresado incorrecto. " + ERRORES.REGISTRO.SOLO_LETRAS_Y_MINIMO_DOS_CARACTERES);
+        return;
+    }
+
+    if (!validarPorRegExp(emailIngresado, REGEXP.EMAIL)) {
+        mostrarError(ERRORES.REGISTRO.EMAIL_ERRONEO)
+        return;
+    }
+
     if( !contraseniaActualCorrecta() ) {
         mostrarError(ERRORES.CUENTA.CONTRASENIA_ACTUAL_INCORRECTA);
         return;
     }
-    
-    let contraseniaIngresada = profileNewPassword.value;
 
     if ( !validarContrasenia(contraseniaIngresada) ) {
         mostrarError(ERRORES.CUENTA.NUEVA_CONTRASENIA_INVALIDA);
         return;
     }
-
-    let contraseniaRepetidaIngresada = profileRepeatNewPassword.value;
 
     if ( contraseniaIngresada !== contraseniaRepetidaIngresada ) {
         mostrarError(ERRORES.CUENTA.CONTRASENIAS_NUEVAS_NO_IGUALES);
