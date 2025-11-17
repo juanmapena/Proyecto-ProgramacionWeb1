@@ -67,7 +67,7 @@ main {
 
 .persona-style {
     display: flex;
-    gap: 1em;
+    gap: 0.5em;
     padding: 1em;
     border: 0.063em solid #ccc;
     border-radius: 0.5em;
@@ -92,7 +92,7 @@ main {
     input,
     select {
         width: 50%;
-        margin-bottom: 1.5em;
+        margin-bottom: 0.25em;
     }
 }
 
@@ -122,6 +122,11 @@ main {
     font-size: 1.1em;
     display: flex;
     align-items: center;
+}
+
+.inscribir-style.btn-deshabilitado {
+    background-color: #C0C0C0;
+    cursor: not-allowed;
 }
 
 .agregar-persona {
@@ -254,6 +259,14 @@ main {
     font-size: 1.1em;
     display: flex;
     align-items: center; 
+}
+
+.mensaje-error {
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-top: 0.2em;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /* Este ocultar unicamente lo agrego para poder usarlo en js, con esto puedo ocultar el form personal cuando este el empresarial y viceversa*/

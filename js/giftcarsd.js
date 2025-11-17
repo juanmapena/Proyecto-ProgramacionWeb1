@@ -1,16 +1,56 @@
 import { getUsuarioLogueado, encontrarUsuario, getUsuarios, guardarUsuarios, obtenerCursoPorId } from "./bbdd.js";
+import { ERRORES, REGEXP } from './utilities.js'; 
+
+
+function vaciarTextContentSeguro(elemento){
+    if (elemento) {
+        elemento.textContent = '';
+        elemento.classList.remove('mensaje-alerta');
+        elemento.classList.remove('error-rojo-prolijo'); 
+        elemento.style.color = ''; 
+    }
+}
+
+function mostrarErrorPagoSeguro(mensaje, elementoMensaje) {
+    if (elementoMensaje) {
+        elementoMensaje.textContent = mensaje;
+        elementoMensaje.classList.add('mensaje-alerta');
+        elementoMensaje.classList.add('error-rojo-prolijo');
+        elementoMensaje.style.color = 'red'; 
+    }
+}
+
+const ERRORES_GIFTCARD_ADICIONALES = {
+    NOMBRE_REQUERIDO: "Nombre del destinatario es obligatorio.",
+    NOMBRE_FORMATO: "Solo se permiten letras y espacios.",
+    MONTO_REQUERIDO: "El monto es obligatorio.",
+    MONTO_MINIMO: "El monto debe ser mínimo $1.",
+    OPCION_REQUERIDA: "Debés seleccionar una opción.",
+};
+
+const ERRORES_COMPLETOS = {
+    ...ERRORES.REGISTRO,
+    ...ERRORES_GIFTCARD_ADICIONALES
+};
+
 
 export class PersonalizadorTarjetaRegalo {
 
     constructor() {
-
         this.tarjetaVistaPrevia = document.getElementById('vista-previa-tarjeta');
         this.nombreDestinatarioVistaPrevia = document.getElementById('nombre-destinatario-vista-previa');
         this.montoVistaPrevia = document.getElementById('monto-vista-previa');
 
         this.inputNombre = document.getElementById('input-nombre-destinatario');
         this.inputMonto = document.getElementById('input-monto');
-        this.formulario = document.querySelector('.form_dates form');
+        this.formulario = document.querySelector('.form_dates form'); 
+
+        this.errorNombre = document.getElementById('error-nombre');
+        this.errorMonto = document.getElementById('error-monto');
+        this.errorColor = document.getElementById('error-color');
+        this.errorFuente = document.getElementById('error-fuente');
+        this.errorUbicacion = document.getElementById('error-ubicacion');
+        this.errorFondo = document.getElementById('error-fondo');
 
         this.mapaColores = {
             'Dorado': 'goldenrod',
@@ -42,31 +82,104 @@ export class PersonalizadorTarjetaRegalo {
         this.dialogoBotonNo = document.getElementById('dialogo-cancelar-no');
         this.dialogoBotonSi = document.getElementById('dialogo-confirmar-si');
 
-        
         this.dialogoLoginRequerido = document.getElementById('dialog-login-requerido-cuenta');
         this.botonLoginDialogo = document.getElementById('dialogo-cuenta-login');
-        this.botonCerrarAlerta = document.getElementById('dialogo-alerta-cerrar'); 
+        this.botonCerrarAlerta = document.getElementById('dialogo-alerta-cerrar');
 
-       
-        this.URL_DESTINO_INDEX= '../index.html'; 
-        this.URL_DESTINO_CARRITO = './carrito.html'; 
-        // -------------------------
+        this.URL_DESTINO_INDEX= '../index.html';
+        this.URL_DESTINO_CARRITO = './carrito.html';
 
-        
         const nombreUsuario = getUsuarioLogueado();
-        
 
         if (!nombreUsuario) {
-            
             if (this.dialogoLoginRequerido && typeof this.dialogoLoginRequerido.showModal === 'function') {
                 this.dialogoLoginRequerido.showModal();
-            } 
-
+            }
         }
         
         this.inicializarEscuchadores();
         this.inicializarEstadoTarjeta();
     }
+    
+    obtenerValorRadio(nombre) {
+        return this.formulario.querySelector(`input[name="${nombre}"]:checked`)?.value;
+    }
+
+    vaciarTodosLosErrores() {
+        vaciarTextContentSeguro(this.errorNombre);
+        vaciarTextContentSeguro(this.errorMonto);
+        vaciarTextContentSeguro(this.errorColor);
+        vaciarTextContentSeguro(this.errorFuente);
+        vaciarTextContentSeguro(this.errorUbicacion);
+        vaciarTextContentSeguro(this.errorFondo);
+    }
+    
+
+    validarNombre() {
+        const nombre = this.inputNombre.value.trim();
+        if (nombre.length === 0) {
+            mostrarErrorPagoSeguro(ERRORES_COMPLETOS.NOMBRE_REQUERIDO, this.errorNombre);
+            return false;
+        }
+        if (!REGEXP.SOLO_LETRAS_Y_ESPACIOS.test(nombre)) {
+            mostrarErrorPagoSeguro(ERRORES_COMPLETOS.NOMBRE_FORMATO, this.errorNombre);
+            return false;
+        }
+        vaciarTextContentSeguro(this.errorNombre);
+        return true;
+    }
+
+    validarMonto() {
+        const monto = parseFloat(this.inputMonto.value);
+        if (isNaN(monto) || this.inputMonto.value.trim() === '') {
+            mostrarErrorPagoSeguro(ERRORES_COMPLETOS.MONTO_REQUERIDO, this.errorMonto);
+            return false;
+        }
+        if (monto <= 0) {
+            mostrarErrorPagoSeguro(ERRORES_COMPLETOS.MONTO_MINIMO, this.errorMonto);
+            return false;
+        }
+        vaciarTextContentSeguro(this.errorMonto);
+        return true;
+    }
+    
+    validarSeleccion(nombreGrupo, elementoError) {
+        const valor = this.obtenerValorRadio(nombreGrupo);
+        if (!valor) {
+            mostrarErrorPagoSeguro(ERRORES_COMPLETOS.OPCION_REQUERIDA, elementoError);
+            return false;
+        }
+        vaciarTextContentSeguro(elementoError);
+        return true;
+    }
+
+    manejarConfirmarClick(e) {
+        e.preventDefault();
+        
+        this.vaciarTodosLosErrores();
+
+        const validaciones = [
+            this.validarNombre(),
+            this.validarMonto(),
+            this.validarSeleccion('colores', this.errorColor),
+            this.validarSeleccion('fuente', this.errorFuente),
+            this.validarSeleccion('ubicaciones', this.errorUbicacion),
+            this.validarSeleccion('fondo', this.errorFondo)
+        ];
+
+        const esValido = validaciones.every(resultado => resultado === true);
+
+
+        if (esValido) {
+            if (this.dialogConfirmacion && typeof this.dialogConfirmacion.showModal === 'function') {
+                this.dialogConfirmacion.showModal();
+            } else {
+                this.agregarGiftCardAlCarrito(); 
+                window.location.href = this.URL_DESTINO_CARRITO;
+            }
+        }
+    }
+
 
     inicializarEstadoTarjeta() {
 
@@ -93,13 +206,20 @@ export class PersonalizadorTarjetaRegalo {
     }
 
     inicializarEscuchadores() {
-
         if (this.inputNombre) {
-            this.inputNombre.addEventListener('input', (e) => this.actualizarNombreDestinatario(e.target.value));
+            this.inputNombre.addEventListener('input', (e) => {
+                this.actualizarNombreDestinatario(e.target.value);
+                this.validarNombre(); 
+            });
+            this.inputNombre.addEventListener('blur', () => this.validarNombre());
         }
 
         if (this.inputMonto) {
-            this.inputMonto.addEventListener('input', (e) => this.actualizarMonto(e.target.value));
+            this.inputMonto.addEventListener('input', (e) => {
+                this.actualizarMonto(e.target.value);
+                this.validarMonto(); 
+            });
+            this.inputMonto.addEventListener('blur', () => this.validarMonto());
         }
 
         if (this.formulario) {
@@ -107,56 +227,45 @@ export class PersonalizadorTarjetaRegalo {
                 const nombreCampo = e.target.name;
                 const valorCampo = e.target.value;
                 const idCampo = e.target.id;
-
+                
+                let errorElement;
                 switch (nombreCampo) {
                     case 'colores':
                         this.actualizarColorNombre(valorCampo);
+                        errorElement = this.errorColor;
                         break;
                     case 'fuente':
                         this.actualizarTamanoFuente(valorCampo);
+                        errorElement = this.errorFuente;
                         break;
                     case 'ubicaciones':
                         this.actualizarUbicacionMonto(idCampo);
+                        errorElement = this.errorUbicacion;
                         break;
                     case 'fondo':
                         this.actualizarFondoTarjeta(valorCampo);
+                        errorElement = this.errorFondo;
                         break;
                 }
+                if (errorElement) vaciarTextContentSeguro(errorElement);
             });
         }
 
 
         if (this.botonCancelar) {
             this.botonCancelar.addEventListener('click', () => {
-                
                 window.location.href = this.URL_DESTINO_INDEX;
             });
         }
 
-
-        if (this.botonConfirmar && this.formulario) {
-            this.botonConfirmar.addEventListener('click', (e) => {
-                e.preventDefault();
-
-                if (this.formulario.checkValidity()) {
-
-                    if (this.dialogConfirmacion && typeof this.dialogConfirmacion.showModal === 'function') {
-                        this.dialogConfirmacion.showModal();
-                    } else {
-                        window.location.href = this.URL_DESTINO_CARRITO;
-                    }
-                } else {
-                    this.formulario.reportValidity();
-                }
-            });
+        if (this.botonConfirmar) {
+            this.botonConfirmar.addEventListener('click', this.manejarConfirmarClick.bind(this));
         }
 
         if (this.dialogoBotonSi && this.dialogConfirmacion) {
             this.dialogoBotonSi.addEventListener('click', () => {
                 const exito = this.agregarGiftCardAlCarrito();
-
                 this.dialogConfirmacion.close();
-
                 if (exito) {
                     window.location.href = this.URL_DESTINO_CARRITO;
                 }
@@ -188,7 +297,7 @@ export class PersonalizadorTarjetaRegalo {
         const monto = parseFloat(this.inputMonto.value);
 
         if (!nombreUsuario) {
-            
+
             if (this.dialogoLoginRequerido && typeof this.dialogoLoginRequerido.showModal === 'function') {
                 this.dialogoLoginRequerido.showModal();
             } else {
@@ -200,15 +309,10 @@ export class PersonalizadorTarjetaRegalo {
 
         const giftCardFinal = {
             id: 7,
-            
             nombre: `Gift Card Digital: ${this.inputNombre.value}`,
-
             precio: monto,
-
             cantidad: 1,
-
             imagen: "../assets/giftcard.png",
-
             tipo: 'GiftCard',
             destinatario: this.inputNombre.value
         };
@@ -218,15 +322,12 @@ export class PersonalizadorTarjetaRegalo {
 
         if (indiceUsuario !== -1) {
             let usuario = listaUsuarios[indiceUsuario];
-
             if (!usuario.carrito) {
                 usuario.carrito = [];
             }
-
             usuario.carrito.push(giftCardFinal);
             guardarUsuarios(listaUsuarios);
             return true;
-
         } else {
             return false;
         }

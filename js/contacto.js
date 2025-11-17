@@ -1,3 +1,17 @@
+import { ERRORES, mostrarErrorPago, vaciarTextContent, REGEXP } from './utilities.js';
+
+const ERRORES_CONTACTO_ADICIONALES = {
+    NOMBRE_APELLIDO_FORMATO: "El nombre y el apellido solo pueden contener letras y espacios.",
+    TELEFONO_FORMATO: "El teléfono debe contener exactamente 8 dígitos.",
+    CONSULTA_REQUERIDA: "Debe ingresar una consulta en el mensaje.",
+};
+
+const ERRORES_COMPLETOS = {
+    ...ERRORES.REGISTRO,
+    ...ERRORES_CONTACTO_ADICIONALES
+};
+
+
 export class FormularioContacto {
     constructor() {
         this.formulario = document.getElementById('formulario-contacto');
@@ -14,51 +28,21 @@ export class FormularioContacto {
         this.inputApellido = document.getElementById('lastname');
         this.inputTelefono = document.getElementById('phonenumber');
         this.inputEmail = document.getElementById('email');
+        this.mensajeError = document.getElementById('error-contacto-mensaje');
     }
 
-    validarEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+    validarEmail() {
+        return REGEXP.EMAIL.test(this.inputEmail.value.trim());
     }
 
     validarTelefono() {
         const telefonoLimpio = this.inputTelefono.value.replace(/\D/g, '');
-
-        if (telefonoLimpio === "") {
-            this.inputTelefono.setCustomValidity("");
-            return true;
-        }
-
-        const regexTelefono = /^\d{8}$/;
-        if (!regexTelefono.test(telefonoLimpio)) {
-            this.inputTelefono.setCustomValidity("El teléfono debe tener 8 dígitos.");
-            return false;
-        }
-
-        if (telefonoLimpio.length === 8) {
-            const telefonoFormateado = telefonoLimpio.substring(0, 4) + '-' + telefonoLimpio.substring(4);
-            this.inputTelefono.value = telefonoFormateado;
-        }
-
-        this.inputTelefono.setCustomValidity("");
-        return true;
+        return /^\d{8}$/.test(telefonoLimpio);
     }
-
-    validarNombreApellido(inputElement, nombreCampo) {
-        const regexLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
-
-        if (inputElement.value === "") {
-            inputElement.setCustomValidity("");
-            return true;
-        }
-
-        if (!regexLetras.test(inputElement.value)) {
-            inputElement.setCustomValidity(`El campo ${nombreCampo} solo puede contener letras y espacios.`);
-            return false;
-        }
-
-        inputElement.setCustomValidity("");
-        return true;
+    
+    validarNombreApellido(inputElement) {
+        const valorLimpio = inputElement.value.trim();
+        return valorLimpio === '' || REGEXP.SOLO_LETRAS_Y_ESPACIOS.test(valorLimpio);
     }
 
     actualizarContador() {
@@ -77,34 +61,48 @@ export class FormularioContacto {
 
     manejarEnvio(event) {
         event.preventDefault();
+        vaciarTextContent(this.mensajeError);
 
-        let esValido = true;
-
-        if (!this.validarNombreApellido(this.inputNombre, 'Nombre') || !this.validarNombreApellido(this.inputApellido, 'Apellido')) {
-            esValido = false;
+        if (this.inputNombre.value.trim() === '') {
+            mostrarErrorPago(ERRORES_COMPLETOS.TODOS_LOS_CAMPOS_REQUERIDOS, this.mensajeError);
+            return;
+        } else if (!this.validarNombreApellido(this.inputNombre)) {
+            mostrarErrorPago(ERRORES_COMPLETOS.NOMBRE_APELLIDO_FORMATO, this.mensajeError);
+            return;
         }
 
-        if (!this.validarEmail(this.inputEmail.value)) {
-            this.inputEmail.setCustomValidity("Ingrese un formato de email válido (ej: nombre@dominio.com).");
-            esValido = false;
-        } else {
-            this.inputEmail.setCustomValidity("");
+        if (this.inputApellido.value.trim() === '') {
+            mostrarErrorPago(ERRORES_COMPLETOS.TODOS_LOS_CAMPOS_REQUERIDOS, this.mensajeError);
+            return;
+        } else if (!this.validarNombreApellido(this.inputApellido)) {
+            mostrarErrorPago(ERRORES_COMPLETOS.NOMBRE_APELLIDO_FORMATO, this.mensajeError);
+            return;
         }
 
-        if (!this.validarTelefono()) {
-            esValido = false;
+        if (this.inputEmail.value.trim() === '') {
+            mostrarErrorPago(ERRORES_COMPLETOS.TODOS_LOS_CAMPOS_REQUERIDOS, this.mensajeError);
+            return;
+        } else if (!this.validarEmail()) {
+            mostrarErrorPago(ERRORES_COMPLETOS.EMAIL_ERRONEO, this.mensajeError); 
+            return;
         }
 
-        if (!this.formulario.checkValidity()) {
-            esValido = false;
+        if (this.inputTelefono.value.trim() === '') {
+            mostrarErrorPago(ERRORES_COMPLETOS.TODOS_LOS_CAMPOS_REQUERIDOS, this.mensajeError);
+            return;
+        } else if (!this.validarTelefono()) {
+            mostrarErrorPago(ERRORES_COMPLETOS.TELEFONO_FORMATO, this.mensajeError);
+            return;
         }
 
-        if (esValido) {
-            this.modalConfirmacion.showModal();
-        } else {
-            this.formulario.reportValidity();
+        if (this.areaConsulta.value.trim() === '') {
+            mostrarErrorPago(ERRORES_COMPLETOS.CONSULTA_REQUERIDA, this.mensajeError);
+            return;
         }
+        
+        this.modalConfirmacion.showModal();
     }
+
 
     manejarAceptarConfirmacion() {
         this.modalConfirmacion.close();
@@ -115,12 +113,9 @@ export class FormularioContacto {
         this.modalExito.close();
         this.formulario.submit();
     }
-
+    
     manejarInputEmail() {
-        this.inputEmail.setCustomValidity("");
-        if (!this.validarEmail(this.inputEmail.value) && this.inputEmail.value.length > 0) {
-            this.inputEmail.setCustomValidity("Ingrese un formato de email válido (ej: nombre@dominio.com).");
-        }
+        if (this.mensajeError) vaciarTextContent(this.mensajeError);
     }
 
     manejarInputLetras(event) {
@@ -130,7 +125,6 @@ export class FormularioContacto {
         if (!regex.test(valorActual)) {
             event.target.value = valorActual.slice(0, -1);
         }
-        this.validarNombreApellido(event.target, event.target.id === 'name' ? 'Nombre' : 'Apellido');
     }
 
     manejarInputTelefono(event) {
@@ -139,23 +133,30 @@ export class FormularioContacto {
         if (valorLimpio.length > 8) {
             valorLimpio = valorLimpio.substring(0, 8);
         }
-
-        event.target.value = valorLimpio;
-
-        this.validarTelefono();
+        
+        if (valorLimpio.length === 8) {
+             event.target.value = valorLimpio.substring(0, 4) + '-' + valorLimpio.substring(4);
+        } else {
+             event.target.value = valorLimpio;
+        }
+    }
+    
+    manejarInputAreaConsulta() {
+        if (this.mensajeError) vaciarTextContent(this.mensajeError);
     }
 
     render() {
-
         const mainC = document.getElementById("main-contacto");
         if (!mainC) return;
         
         if (this.areaConsulta && this.contadorCaracteres) {
             this.actualizarContador();
-            this.areaConsulta.addEventListener('input', () => this.actualizarContador());
+            this.areaConsulta.addEventListener('input', () => {
+                this.actualizarContador();
+                this.manejarInputAreaConsulta();
+            });
         }
 
-       
         if (this.inputNombre) {
             this.inputNombre.addEventListener('input', (event) => this.manejarInputLetras(event));
         }
@@ -163,22 +164,18 @@ export class FormularioContacto {
             this.inputApellido.addEventListener('input', (event) => this.manejarInputLetras(event));
         }
 
-   
         if (this.inputTelefono) {
             this.inputTelefono.addEventListener('input', (event) => this.manejarInputTelefono(event));
         }
 
-       
         if (this.inputEmail) {
             this.inputEmail.addEventListener('input', () => this.manejarInputEmail());
         }
 
-     
         if (this.formulario) {
             this.formulario.addEventListener('submit', (event) => this.manejarEnvio(event));
         }
 
-     
         if (this.btnAceptarConf) {
             this.btnAceptarConf.addEventListener('click', () => this.manejarAceptarConfirmacion());
         }

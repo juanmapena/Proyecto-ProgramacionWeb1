@@ -369,6 +369,16 @@ label[for="fondo5"]::before {
     color: #333;
 }
 
+
+span.error-mensaje-js {
+    display: block; 
+    font-size: 1em; 
+    margin-top: 5px; 
+    margin-bottom: 10px; 
+    text-align: left; 
+    color: red; 
+}
+
 @media screen and (max-width: 1070px) {
 
     .contenedor_principal {

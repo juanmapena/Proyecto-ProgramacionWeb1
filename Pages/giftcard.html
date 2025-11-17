@@ -87,118 +87,119 @@
 
             <article class="form_dates">
                 <h2 class="titulo-gift">Personalización de Gift Card</h2>
-                <form action="./giftcard-confirmacion.html" method="get" autocomplete="off">
+                <form action="./giftcard-confirmacion.html" method="get" autocomplete="off" id="form-giftcard">
 
                     <h4>Nombre Destinatario:</h4>
                     <input class="input_name" type="text" name="nombre" id="input-nombre-destinatario"
-                        placeholder="Nombre:" required>
+                        placeholder="Nombre:">
+                    <span id="error-nombre" class="error-mensaje-js"></span>
 
 
                     <h4>Seleccione el color del nombre del destinatario:</h4>
 
                     <label for="golden" class="caja-color">
-                        <input type="radio" name="colores" id="golden" value="Dorado" required>
+                        <input type="radio" name="colores" id="golden" value="Dorado">
                     </label>
                     <label for="red" class="caja-color">
-                        <input type="radio" name="colores" id="red" value="Rojo" required>
+                        <input type="radio" name="colores" id="red" value="Rojo">
                     </label>
                     <label for="blue" class="caja-color">
-                        <input type="radio" name="colores" id="blue" value="Azul" required>
+                        <input type="radio" name="colores" id="blue" value="Azul">
                     </label>
                     <label for="green" class="caja-color">
-                        <input type="radio" name="colores" id="green" value="Verde" required>
+                        <input type="radio" name="colores" id="green" value="Verde">
                     </label>
                     <label for="grey" class="caja-color">
-                        <input type="radio" name="colores" id="grey" value="Gris" required>
+                        <input type="radio" name="colores" id="grey" value="Gris">
                     </label>
+                    <span id="error-color" class="error-mensaje-js"></span>
 
 
                     <h4>Seleccione el tamaño de fuente:</h4>
 
                     <label for="20px" class="caja-pixel">
                         20px:
-                        <input type="radio" name="fuente" id="20px" value="20px" required>
+                        <input type="radio" name="fuente" id="20px" value="20px">
                     </label>
                     <label for="28px" class="caja-pixel">
                         28px:
-                        <input type="radio" name="fuente" id="28px" value="28px" required>
+                        <input type="radio" name="fuente" id="28px" value="28px">
                     </label>
                     <label for="32px" class="caja-pixel">
                         32px:
-                        <input type="radio" name="fuente" id="32px" value="32px" required>
+                        <input type="radio" name="fuente" id="32px" value="32px">
                     </label>
                     <label for="48px" class="caja-pixel">
                         48px:
-                        <input type="radio" name="fuente" id="48px" value="48px" required>
+                        <input type="radio" name="fuente" id="48px" value="48px">
                     </label>
                     <label for="60px" class="caja-pixel">
                         60px:
-                        <input type="radio" name="fuente" id="60px" value="60px" required>
+                        <input type="radio" name="fuente" id="60px" value="60px">
                     </label>
+                    <span id="error-fuente" class="error-mensaje-js"></span>
+
 
                     <h4>Monto $:</h4>
-                    <input class="input_name" type="number" name="monto" id="input-monto" placeholder="$0000.00"
-                        required min="1">
+                    <input class="input_name" type="number" name="monto" id="input-monto" placeholder="$0000.00">
+                    <span id="error-monto" class="error-mensaje-js"></span>
+
 
                     <h4>Seleccione la ubicación del valor:</h4>
 
                     <label for="ubicacion_inferior_izquierda" class="opcion-ubicacion">
                         <input type="radio" name="ubicaciones" id="ubicacion_inferior_izquierda"
-                            value="Esquina inferior izquierda" required>
+                            value="Esquina inferior izquierda">
                     </label>
 
                     <label for="ubicacion_inferior_derecha" class="opcion-ubicacion">
                         <input type="radio" name="ubicaciones" id="ubicacion_inferior_derecha"
-                            value="Esquina inferior derecha" required>
+                            value="Esquina inferior derecha">
                     </label>
 
                     <label for="ubicacion_superior_derecha" class="opcion-ubicacion">
                         <input type="radio" name="ubicaciones" id="ubicacion_superior_derecha"
-                            value="Esquina superior derecha" required>
+                            value="Esquina superior derecha">
                     </label>
 
                     <label for="ubicacion_superior_izquierda" class="opcion-ubicacion">
                         <input type="radio" name="ubicaciones" id="ubicacion_superior_izquierda"
-                            value="Esquina superior izquierda" required>
+                            value="Esquina superior izquierda">
                     </label>
+                    <span id="error-ubicacion" class="error-mensaje-js"></span>
 
 
                     <h4>Seleccione un fondo:</h4>
 
                     <label for="fondo1" class="opcion-fondo">
-                        <input type="radio" name="fondo" id="fondo1" value="fondo1" required>
+                        <input type="radio" name="fondo" id="fondo1" value="fondo1">
                     </label>
 
                     <label for="fondo2" class="opcion-fondo">
-                        <input type="radio" name="fondo" id="fondo2" value="fondo2" required>
+                        <input type="radio" name="fondo" id="fondo2" value="fondo2">
                     </label>
 
                     <label for="fondo3" class="opcion-fondo">
-                        <input type="radio" name="fondo" id="fondo3" value="fondo3" required>
+                        <input type="radio" name="fondo" id="fondo3" value="fondo3">
                     </label>
 
                     <label for="fondo4" class="opcion-fondo">
-                        <input type="radio" name="fondo" id="fondo4" value="fondo4" required>
+                        <input type="radio" name="fondo" id="fondo4" value="fondo4">
                     </label>
 
                     <label for="fondo5" class="opcion-fondo">
-                        <input type="radio" name="fondo" id="fondo5" value="fondo5" required>
+                        <input type="radio" name="fondo" id="fondo5" value="fondo5">
                     </label>
+                    <span id="error-fondo" class="error-mensaje-js"></span>
 
 
                     <div class="button_contaniner">
                         <button class="cancel" type="button" id="boton-cancelar"> Cancelar ❌ </button>
-
                         <button class="confirm" type="button" id="boton-confirmar"> Confirmar ✓</button>
                     </div>
                 </form>
             </article>
         </section>
-
-        </seccion>
-    </main>
-
-
     </main>
 
     <footer>
