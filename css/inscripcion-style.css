@@ -124,6 +124,11 @@ main {
     align-items: center;
 }
 
+.inscribir-style.btn-deshabilitado {
+    background-color: #C0C0C0;
+    cursor: not-allowed;
+}
+
 .agregar-persona {
     display: flex;
     align-items: center;

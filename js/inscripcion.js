@@ -153,8 +153,13 @@ document.addEventListener('DOMContentLoaded', () => {
         iniciarFormulario();
     });
 
-    function iniciarFormulario() {
+    function habilitarInscripcion(){
+        let inscribirseBtn = document.getElementById("inscribir-btn");
+        inscribirseBtn.classList.remove("btn-deshabilitado");
+    }
 
+    function iniciarFormulario() {
+        habilitarInscripcion();
         personaContainer.innerHTML = "";
         total = 0;
         totalMostrar.textContent = "$0.00";
@@ -261,6 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         crearCampoEmpresarial(false); //como el agregar siempre se va a usar cuando necesitemos sumar mas campos, previamente debe existir una persona primero, por ello se pone esPrimeraPersona=false
         //entonces cuando se quieran eliminar los campos creados con el agregar, se eliminaran y no se limpiar los valores que contengan
+        habilitarInscripcion();
     });
 
     function calcularTotal() {
