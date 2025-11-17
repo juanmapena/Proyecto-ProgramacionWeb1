@@ -186,6 +186,11 @@ main textarea {
     margin-bottom: 0;
 }
 
+.mensaje-error {
+    text-align: center;  
+    color: red;
+}
+
 
 @media screen and (max-width: 1050px) {}
 

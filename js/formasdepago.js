@@ -3,6 +3,18 @@ import { ERRORES, mostrarErrorPago, vaciarTextContent } from './utilities.js';
 
 const obtenerElemento = id => document.getElementById(id);
 
+const ERRORES_PAGO_ADICIONALES = {
+    CAMPO_VACIO: "TODOS los campos son obligatorios y no pueden estar vacíos.",
+    NOMBRE_FORMATO: "El nombre debe contener solo letras y espacios.",
+    VENCIMIENTO_INVALIDO: "La fecha de vencimiento es inválida. Asegúrate de seleccionar una fecha posterior a la actual.",
+};
+
+const ERRORES_COMPLETOS = {
+    ...ERRORES.PAGO,
+    ...ERRORES_PAGO_ADICIONALES
+};
+
+
 export class SimuladorPago {
     constructor() {
         this.formulario = document.querySelector('main form');
@@ -28,7 +40,8 @@ export class SimuladorPago {
     }
 
     validarTarjeta() {
-        return /^\d{16}$/.test(this.inputTarjeta.value.replace(/\s+/g, ''));
+        const tarjetaLimpia = this.inputTarjeta.value.replace(/\s+/g, '');
+        return /^\d{16}$/.test(tarjetaLimpia);
     }
 
     validarCodigoSeguridad() {
@@ -38,24 +51,24 @@ export class SimuladorPago {
 
     validarNombre() {
         const nombreUsuario = this.inputNombre.value.trim();
-        if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombreUsuario)) {
-            return false;
-        }
-        return true;
+        return /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombreUsuario);
     }
 
     validarDNI() {
-        return /^\d{7,8}$/.test(this.inputDNI.value.replace(/\./g, '').replace(/\s+/g, ''));
+        const dniLimpio = this.inputDNI.value.replace(/\./g, '').replace(/\s+/g, '');
+        return /^\d{7,8}$/.test(dniLimpio);
     }
 
     validarVencimiento() {
         const mes = parseInt(this.selectMes.value);
         const anio = parseInt(this.selectAnio.value);
-        if (!mes || !anio) return false;
+
+        if (isNaN(mes) || isNaN(anio) || mes <= 0 || anio <= 0) return false;
 
         const hoy = new Date();
         const actualMes = hoy.getMonth() + 1;
         const actualAnio = hoy.getFullYear();
+
         return anio > actualAnio || (anio === actualAnio && mes >= actualMes);
     }
 
@@ -103,30 +116,49 @@ export class SimuladorPago {
 
         if (this.mensajeError) vaciarTextContent(this.mensajeError);
 
-        if (!this.validarTarjeta()) {
-            mostrarErrorPago(ERRORES.PAGO.TARJETA_LONGITUD, this.mensajeError);
-            this.formulario.reportValidity();
+      
+        if (this.inputTarjeta.value.trim() === '') {
+            mostrarErrorPago(ERRORES_COMPLETOS.CAMPO_VACIO, this.mensajeError);
+            return;
+        } else if (!this.validarTarjeta()) {
+            mostrarErrorPago(ERRORES_COMPLETOS.TARJETA_LONGITUD, this.mensajeError);
             return;
         }
 
-        if (!this.validarCodigoSeguridad()) {
-            mostrarErrorPago(ERRORES.PAGO.CODIGO_LONGITUD, this.mensajeError);
-            this.formulario.reportValidity();
+        if (this.inputCodigoSeguridad.value.trim() === '') {
+            mostrarErrorPago(ERRORES_COMPLETOS.CAMPO_VACIO, this.mensajeError);
+            return;
+        } else if (!this.validarCodigoSeguridad()) {
+            mostrarErrorPago(ERRORES_COMPLETOS.CODIGO_LONGITUD, this.mensajeError);
             return;
         }
 
-        if (!this.validarDNI()) {
-            mostrarErrorPago(ERRORES.PAGO.DNI_LONGITUD, this.mensajeError);
-            this.formulario.reportValidity();
+        if (this.inputNombre.value.trim() === '') {
+            mostrarErrorPago(ERRORES_COMPLETOS.CAMPO_VACIO, this.mensajeError);
+            return;
+        } else if (!this.validarNombre()) {
+            mostrarErrorPago(ERRORES_COMPLETOS.NOMBRE_FORMATO, this.mensajeError);
             return;
         }
 
-        if (this.validarTodo()) {
-            this.dialogoConfirmar.showModal();
-        } else {
-            this.formulario.reportValidity();
-            mostrarErrorPago(ERRORES.PAGO.VALIDACION_CAMPOS, this.mensajeError);
+        if (this.inputDNI.value.trim() === '') {
+            mostrarErrorPago(ERRORES_COMPLETOS.CAMPO_VACIO, this.mensajeError);
+            return;
+        } else if (!this.validarDNI()) {
+            mostrarErrorPago(ERRORES_COMPLETOS.DNI_LONGITUD, this.mensajeError);
+            return;
         }
+
+        if (this.selectMes.value === '' || this.selectAnio.value === '') {
+            mostrarErrorPago(ERRORES_COMPLETOS.CAMPO_VACIO, this.mensajeError);
+            return;
+        } else if (!this.validarVencimiento()) {
+            mostrarErrorPago(ERRORES_COMPLETOS.VENCIMIENTO_INVALIDO, this.mensajeError);
+            return;
+        }
+
+        this.dialogoConfirmar.showModal();
+
     }
 
     ejecutarTransaccion() {

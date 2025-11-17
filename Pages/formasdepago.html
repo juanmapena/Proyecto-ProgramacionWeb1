@@ -76,13 +76,12 @@
                 <h2>Pago con tarjeta</h2>
                 <label for="card">
                     Numero de tarjeta:
-                    <input type="text" name="card" id="card" maxlength="19" placeholder="Ingrese numero de la tarjeta"
-                        required>
+                    <input type="text" name="card" id="card" maxlength="19" placeholder="Ingrese numero de la tarjeta">
                 </label>
                 <h4 class="dates_h4"> Seleccione la fecha de vencimiento de la tarjeta</h4>
                 <div class="dates">
                     <label for="mes">Mes:</label>
-                    <select id="mes" name="mes" required>
+                    <select id="mes" name="mes">
                         <option value="" disabled selected></option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -98,7 +97,7 @@
                         <option value="12">12</option>
                     </select>
                     <label for="anio">Año:</label>
-                    <select id="anio" name="anio" required>
+                    <select id="anio" name="anio">
                         <option value="" disabled selected></option>
                         <option value="2025">2025</option>
                         <option value="2026">2026</option>
@@ -130,15 +129,15 @@
                 </div>
                 <label for="code">
                     Ingrese el código de seguridad:
-                    <input type="password" name="code" id="code" placeholder="555" maxlength="3" required>
+                    <input type="password" name="code" id="code" placeholder="555" maxlength="3">
                 </label>
                 <label for="name">
                     Ingrese el nombre del titular:
-                    <input type="text" name="name" id="name" placeholder="Ingrese el nombre del titular" required>
+                    <input type="text" name="name" id="name" placeholder="Ingrese el nombre del titular">
                 </label>
                 <label for="id">
                     Ingrese el DNI:
-                    <input type="text" name="id" id="id" maxlength="10" placeholder="00.000.000" required>
+                    <input type="text" name="id" id="id" maxlength="10" placeholder="00.000.000">
                 </label>
 
                 <div id="error-pago-mensaje"></div>

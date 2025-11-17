@@ -71,7 +71,6 @@
         </div>
     </header>
 
-
     <main id="main-contacto">
 
         <section class="principal_section">
@@ -79,25 +78,26 @@
                 <form id="formulario-contacto" method="get" action="../index.html" autocomplete="off">
                     <h2 class="h2_contacto"> CONTACTO </h2>
                     <label for="name">
-                        <input type="text" name="name" id="name" placeholder="Ingrese su nombre" required
-                            pattern="[A-Za-z\s]+" title="Solo letras y espacios" />
+                        <input type="text" name="name" id="name" placeholder="Ingrese su nombre" />
                     </label>
                     <label for="lastname">
-                        <input type="text" name="lastname" id="lastname" placeholder="Ingrese su apellido" required
-                            pattern="[A-Za-z\s]+" title="Solo letras y espacios" />
+                        <input type="text" name="lastname" id="lastname" placeholder="Ingrese su apellido" />
                     </label>
                     <label for="email">
-                        <input type="email" name="email" id="email" placeholder="Ingrese su email" required />
+                        <input type="text" name="email" id="email" placeholder="Ingrese su email" />
                     </label>
                     <label for="phonenumber">
                         <input type="tel" name="phonenumber" id="phonenumber"
-                            placeholder="Ingrese su teléfono (Ej: 1234-5678)" required />
+                            placeholder="Ingrese su teléfono (Ej: 1234-5678)" />
                     </label>
                     <label for="message">
-                        <textarea name="message" id="message" placeholder="Ingrese su consulta" required
+                        <textarea name="message" id="message" placeholder="Ingrese su consulta"
                             maxlength="1000"></textarea>
                         <p id="char-count" class="char-count-display">0/1000</p>
                     </label>
+
+                    <div class="mensaje-error"  id="error-contacto-mensaje"></div>
+
                     <button class="button_send" type="submit">Enviar</button>
                 </form>
             </article>
@@ -113,9 +113,6 @@
                 </aside>
             </article>
         </section>
-
-
-
 
         <section class="ubication">
             <h2>UBICACIÓN</h2>
